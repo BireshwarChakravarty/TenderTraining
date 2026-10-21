@@ -106,7 +106,7 @@ CI runs both on every push and pull request. See [CONTRIBUTING.md](CONTRIBUTING.
 
 ## Publishing
 
-On every push to `main`, `.github/workflows/pages.yml` copies the site to the `gh-pages` branch, which GitHub Pages serves.
+On every push to `main`, `.github/workflows/pages.yml` deploys the site to GitHub Pages (Settings → Pages → Source: GitHub Actions).
 
 ## Privacy
 
