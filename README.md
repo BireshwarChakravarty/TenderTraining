@@ -1,48 +1,95 @@
 <div align="center">
   <h1>Tender Training</h1>
-  <p><strong>Winning on GeM: an interactive, slide-style training on government tenders.</strong></p>
+  <p><strong>Winning on GeM: a hands-on training deck for the Avian WE bid team.</strong></p>
+  <p><a href="docs/facilitator-guide.md">Facilitator guide</a> · <a href="docs/editing-content.md">Editing the content</a> · <a href="practice/tender.html">Practice tender</a></p>
 </div>
+
+![The deck's cover, styled as an office file](docs/screenshots/start.jpg)
 
 ## What it is
 
-A presenter deck in the browser that takes a new bid team member from finding a tender to submitting it on the Government e-Marketplace (GeM). It covers:
+A slide deck that runs in the browser and walks a new bid team member through a Government e-Marketplace (GeM) tender, from finding the bid to the submission receipt. It is built from the way our team ran its 2026 bids, with client names, money and people's details taken out.
 
-1. Where government tenders live (GeM, CPPP, state portals, defence, railways, PSUs, empanelments, multilateral)
-2. Scouting bids on GeM and the five-minute triage of the bid document
-3. Understanding the scope with Claude, with a copy-ready prompt library
-4. Turning eligibility criteria into documents, and the GeM experience rule
-5. The bid or no-bid decision
-6. QCBS and reading the scoring matrix
-7. Building the documents, and the evergreen document vault
-8. Working across teams with a master tracker and a backward plan
-9. The five GeM participation tabs, with real (redacted) screenshots
-10. File limits and the most common rejection reasons
+Nearly every page asks the room to do something:
 
-It ends with a fictional practice tender at medium difficulty (`sample-tender.html`), six exercises with answers, and a quiz.
+| Chapter | What trainees do |
+| --- | --- |
+| Platforms | Pick the right portal for six real-world tenders; flip index cards of GeM terms |
+| Scouting | Search sample bids and build a pipeline; triage a bilingual bid document against a five-minute clock |
+| Scope with Claude | Catch the planted mistake in Claude's answer and open its source; copy tested prompts; put documents in order of authority |
+| Eligibility | Match criteria to evidence; test the 3 × 40%, 2 × 50%, 1 × 80% experience rule |
+| Bid or no-bid | Fill a decision note that stamps itself; red-pen risky commercial clauses |
+| Scoring | Move QCBS sliders and see what the runner-up would need; fill a marks sheet |
+| Documents | Circle seven mistakes in a draft bid letter; open the evergreen vault |
+| Teams | Sort documents to their owners; plan back from a deadline; run a live tracker |
+| Submitting | Submit the practice bid in a simulator of the five participation tabs; explore real, redacted GeM screenshots |
+| File limits | Estimate scanned PDF sizes; decide which mistakes cause rejection |
+| Practice | Hunt eight traps in a full fictional tender, then work six exercises |
+| Quiz | A two-team quiz with a scoreboard |
 
-Interactive parts include a bid search, a bid-document field explainer, an experience-rule calculator, a bid or no-bid scorecard, a QCBS calculator, a scoring matrix, a deadline planner, a file-size checker and the quiz. Nothing typed into them leaves the browser.
+<table>
+  <tr>
+    <td><img src="docs/screenshots/gem-sim.jpg" alt="GeM submission simulator"></td>
+    <td><img src="docs/screenshots/letter.jpg" alt="Red-pen exercise on a bid letter"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/claude-check.jpg" alt="Catch Claude's mistake"></td>
+    <td><img src="docs/screenshots/practice-tender.jpg" alt="Trap hunt in the practice tender"></td>
+  </tr>
+</table>
 
-## Presenting
+## Running it
 
-Open `index.html` in a browser.
+Open `index.html` in a browser. No build step and no internet needed apart from web fonts.
+
+To serve it locally (needed for the tests, handy for sharing on a network):
+
+```sh
+npm install
+npm start          # http://localhost:4173
+```
 
 | Key | Action |
 | --- | --- |
 | `→` `Space` / `←` | Next / previous slide |
-| `O` | Overview of all slides |
-| `N` | Speaker notes |
+| `O` | Every slide at a glance |
+| `N` | Trainer's notes |
 | `F` | Full screen |
-| `T` | Light or dark theme |
+| `T` | Light or dark |
 
-Every slide has its own link, for example `index.html#file-limits`.
+Every slide has its own address, for example `index.html#gem-sim`.
 
-## Hosting on GitHub Pages
+## Project layout
 
-The workflow in `.github/workflows/pages.yml` publishes the site on every push. Turn it on once under **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+```
+index.html              the deck: one <section class="slide"> per slide
+practice/tender.html    the fictional practice tender with its trap hunt
+assets/css/             deck.css (tokens, layout), widgets.css, tender.css
+assets/js/core.js       helpers and the widget registry
+assets/js/deck.js       navigation, notes, overview, theme
+assets/js/widgets/      games, red pen, tools, Claude simulator, GeM simulator
+assets/img/gem/         redacted GeM screenshots
+docs/                   facilitator guide, editing guide, README screenshots
+tests/                  Playwright checks for every slide and widget
+scripts/serve.mjs       zero-dependency static server
+```
+
+## Checks
+
+```sh
+npm run lint       # ESLint
+npm test           # Playwright: every slide, phone and desktop, plus each game
+```
+
+CI runs both on every push and pull request. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Publishing
+
+`.github/workflows/pages.yml` publishes the site to GitHub Pages on every push to `main`. Turn it on once under **Settings → Pages → Source: GitHub Actions**.
 
 ## Privacy
 
-This repository is public. The deck is built from patterns in our own past bids, but it contains no client financials, bank details, quoted prices, bid numbers or personal data. The screenshots are from the GeM seller view with the account name removed. The practice tender and its bidder are fictional.
+This repository is public. It holds no client financials, bank details, quoted prices, real bid numbers or personal data. The screenshots come from the GeM seller view with the account name removed. The practice tender, its buyer and its bidder are fictional.
 
 ## License
 

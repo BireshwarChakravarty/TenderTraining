@@ -5,774 +5,942 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Winning on GeM</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Avian WE tender training: from finding a GeM bid to final submission, with a practice tender.">
+<meta name="description" content="Avian WE tender training: finding, reading, preparing and submitting a GeM bid, with a practice tender.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Mono:wght@400;600&amp;family=Public+Sans:ital,wght@0,400..700;1,400&amp;display=swap">
-<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&amp;family=Courier+Prime:wght@400;700&amp;family=Hind:wght@400;500;600&amp;family=Kalam:wght@400;700&amp;display=swap">
+<link rel="stylesheet" href="assets/css/deck.css">
+<link rel="stylesheet" href="assets/css/widgets.css">
 </head>
 <body>
 <div class="app">
 
   <nav class="rail" id="rail" aria-label="Chapters">
-    <div class="brand">
-      <b>Winning on GeM</b>
-      <span>Tender training · Avian WE</span>
-    </div>
+    <div class="brand"><b>Winning on GeM</b><span>Bid team training · Avian WE</span></div>
     <ol class="chapters" id="chapters"></ol>
     <div class="rail-foot">
-      <div class="keys"><span><kbd>←</kbd> <kbd>→</kbd> move</span><span><kbd>O</kbd> all slides</span><span><kbd>N</kbd> notes</span><span><kbd>F</kbd> full screen</span><span><kbd>T</kbd> theme</span></div>
-      <span>Built from our own past bids. No client financials, bank details or personal data are included.</span>
+      <span><kbd>←</kbd> <kbd>→</kbd> move · <kbd>O</kbd> all slides · <kbd>N</kbd> notes · <kbd>F</kbd> full screen · <kbd>T</kbd> theme</span>
+      <span>Made from our own 2026 bids. Client names, money and people's details are left out.</span>
     </div>
   </nav>
 
   <main class="stage" id="stage">
 
-<!-- ============ START ============ -->
-<section class="slide title-slide" id="start" data-chapter="0" data-title="Winning on GeM">
-  <div class="eyebrow"><span class="tab">Session 01</span><span>Tender training · Avian WE</span></div>
-  <h1>Winning on GeM</h1>
-  <p class="lede">From spotting a bid on the Government e-Marketplace to clicking final submit, the way our bid team actually does it.</p>
-  <div class="docket-line"><span>Bid no. <b>GEM/2026/B/TRAINING</b></span><span>Duration <b>2.5 hrs</b></span><span>Format <b>slides + live exercises</b></span></div>
-  <div class="stamp title-stamp" aria-hidden="true">Bid submitted<small>Signed · Stamped · Uploaded</small></div>
-  <aside class="notes">
-    <ul>
-      <li>Welcome. Today is practical: by the end, everyone should be able to run a GeM bid end to end with a tracker.</li>
-      <li>Everything here comes from bids our team ran this year for central ministries and agencies. Client names and numbers are kept out.</li>
-      <li>Use arrow keys to move. Press N for these notes, O for the slide overview.</li>
-    </ul>
-  </aside>
+<!-- =================================================================== 00 · THE FILE -->
+<section class="slide cover-slide" id="start" data-chapter="0" data-title="Winning on GeM">
+  <div class="file-cover">
+    <div class="fc-top"><span>File No. BT/GeM/2026/01</span><span>Avian WE · Bid Team</span></div>
+    <h1>Winning on GeM</h1>
+    <p class="fc-sub">How we find a government bid, read it, decide, build every document, and submit it without losing a mark.</p>
+    <dl class="fc-fields">
+      <dt>Subject</dt><dd>Tender training, session 1</dd>
+      <dt>Portal</dt><dd>Government e-Marketplace (GeM)</dd>
+      <dt>Practice bid</dt><dd>GEM/2026/B/TRN-0421 (fictional)</dd>
+      <dt>Time</dt><dd>3½ hours with a break, or 2½ for the short version</dd>
+    </dl>
+    <button class="btn ink fc-open" type="button" data-go="contents">Open the file →</button>
+    <span class="stamp cover-stamp" aria-hidden="true">For training<small>Not a real bid</small></span>
+  </div>
+  <aside class="notes"><ul><li>Welcome. Everything today is hands-on. Laptops open, one per pair.</li><li>Every example comes from bids our team ran this year for central ministries and agencies. Names and numbers are taken out.</li><li>N opens these notes, O shows every slide.</li></ul></aside>
 </section>
 
-<section class="slide" id="route" data-chapter="0" data-title="Today's route">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">Agenda</span><span>Ten stops, in the order a bid actually moves</span></div>
-    <h2>Today's route</h2>
-  </div>
-  <ol class="route" id="routeList">
-    <li><button data-go="platforms"><span class="no">01</span><b>Where tenders live</b><span>Every government platform, and why we focus on GeM</span></button></li>
-    <li><button data-go="scout-where"><span class="no">02</span><b>Scouting on GeM</b><span>Finding bids and triaging them in five minutes</span></button></li>
-    <li><button data-go="claude-flow"><span class="no">03</span><b>Scope with Claude</b><span>Reading a 90-page RFP in minutes, then verifying it</span></button></li>
-    <li><button data-go="eligibility-map"><span class="no">04</span><b>Eligibility to documents</b><span>Turning every criterion into a piece of evidence</span></button></li>
-    <li><button data-go="decision"><span class="no">05</span><b>Bid or no-bid</b><span>An informed decision, not a hopeful one</span></button></li>
-    <li><button data-go="qcbs"><span class="no">06</span><b>The scoring matrix</b><span>QCBS, cut-offs and where marks are won</span></button></li>
-    <li><button data-go="doc-types"><span class="no">07</span><b>Building the documents</b><span>Annexures, certificates, stamp paper, proposals</span></button></li>
-    <li><button data-go="raci"><span class="no">08</span><b>Teams and the tracker</b><span>So that no document gets missed</span></button></li>
-    <li><button data-go="submit-flow"><span class="no">09</span><b>Submitting on GeM</b><span>The five participation tabs, screen by screen</span></button></li>
-    <li><button data-go="file-limits"><span class="no">10</span><b>File limits</b><span>10 MB, 100 pages, PDF only, and how to fit</span></button></li>
+<section class="slide" id="contents" data-chapter="0" data-title="Contents of the file">
+  <span class="tab">Index</span>
+  <div class="head"><h2>What's in this file</h2><p class="lede">Ten stops, in the order a bid actually moves. Then a practice tender and a quiz.</p></div>
+  <ol class="contents">
+    <li><button type="button" data-go="platforms"><span class="no">01</span><b>Where government tenders live</b><span class="pg">p. 3</span></button></li>
+    <li><button type="button" data-go="scout"><span class="no">02</span><b>Finding bids on GeM</b><span class="pg">p. 7</span></button></li>
+    <li><button type="button" data-go="claude-flow"><span class="no">03</span><b>Reading the scope with Claude</b><span class="pg">p. 10</span></button></li>
+    <li><button type="button" data-go="evidence"><span class="no">04</span><b>Eligibility into documents</b><span class="pg">p. 14</span></button></li>
+    <li><button type="button" data-go="decision"><span class="no">05</span><b>Bid or no bid</b><span class="pg">p. 17</span></button></li>
+    <li><button type="button" data-go="qcbs"><span class="no">06</span><b>The scoring matrix</b><span class="pg">p. 19</span></button></li>
+    <li><button type="button" data-go="doc-kinds"><span class="no">07</span><b>Making the documents</b><span class="pg">p. 21</span></button></li>
+    <li><button type="button" data-go="owners"><span class="no">08</span><b>Teams and the tracker</b><span class="pg">p. 24</span></button></li>
+    <li><button type="button" data-go="gem-sim"><span class="no">09</span><b>Submitting on GeM</b><span class="pg">p. 27</span></button></li>
+    <li><button type="button" data-go="pdf-size"><span class="no">10</span><b>File limits and rejections</b><span class="pg">p. 31</span></button></li>
+    <li><button type="button" data-go="practice"><span class="no">11</span><b>Practice tender</b><span class="pg">p. 33</span></button></li>
+    <li><button type="button" data-go="quiz"><span class="no">12</span><b>Quiz and the golden rules</b><span class="pg">p. 35</span></button></li>
   </ol>
-  <div class="grid cols-2">
-    <div class="panel accent"><span class="kicker">Then we practise</span><p>A full practice tender at medium difficulty, built from patterns in our past bids, with six exercises and an answer key.</p></div>
-    <div class="panel"><span class="kicker">And close with</span><p>A nine-question quiz and the golden rules to pin above your desk.</p></div>
-  </div>
-  <aside class="notes"><ul><li>Each tile is clickable. Use it if someone wants to jump back to a topic during Q&amp;A.</li><li>The order matches the life of a bid. That is deliberate: the tracker we build later follows the same order.</li></ul></aside>
+  <div class="sticky r"><b>How this works</b><p>Almost every page asks you to do something: answer, match, sort, circle the mistake, or run the simulator. Nothing you type leaves the browser.</p></div>
+  <aside class="notes"><ul><li>Each line is clickable. Use it to jump back during questions.</li></ul></aside>
 </section>
 
-<section class="slide" id="howto" data-chapter="0" data-title="How to use this deck">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">Before we start</span></div>
-    <h2>This deck is a working tool</h2>
-    <p class="lede">Anything marked <span class="try">Try it</span> is live. Change the numbers, click the fields, copy the prompts. Nothing you type leaves your browser.</p>
-  </div>
-  <div class="grid cols-3">
-    <div class="panel"><h3>Present</h3><ul class="checks dot"><li><kbd>→</kbd> or <kbd>Space</kbd> next, <kbd>←</kbd> back</li><li><kbd>O</kbd> overview of every slide</li><li><kbd>F</kbd> full screen, <kbd>T</kbd> light or dark</li><li>Swipe on a phone or tablet</li></ul></div>
-    <div class="panel"><h3>Speaker notes</h3><p>Press <kbd>N</kbd> to open notes for the current slide. They hold the talking points and the stories from our past bids.</p></div>
-    <div class="panel"><h3>Afterwards</h3><p>Send the link to the team. Every slide has its own address, so you can point someone straight at "File limits" or the practice tender.</p></div>
-  </div>
-  <div class="panel warn"><span class="kicker">One rule for the room</span><p>GeM changes menu names and layouts often. Learn the logic of each step, not the exact button position. When the portal and this deck disagree, the portal and the bid document win.</p></div>
-  <aside class="notes"><ul><li>Show the overview with O once, so people know they can find things later.</li></ul></aside>
-</section>
-
-<!-- ============ PLATFORMS ============ -->
+<!-- =================================================================== 01 · PLATFORMS -->
 <section class="slide" id="platforms" data-chapter="1" data-title="Where government tenders live">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">01 · Platforms</span><span>The map before the journey</span></div>
-    <h2>Where government tenders live</h2>
-    <p class="lede">There is no single portal. These are the places a communications agency like ours should watch.</p>
+  <span class="tab">01 · Platforms</span>
+  <div class="head"><h2>Where government tenders live</h2><p class="lede">There is no single portal. These are the ones a communications agency should watch.</p></div>
+  <div class="table-wrap">
+    <table class="ledger">
+      <thead><tr><th>Portal</th><th>Address</th><th>Who publishes there</th><th>For us</th></tr></thead>
+      <tbody>
+        <tr><td><b><mark>GeM</mark></b></td><td class="typed">gem.gov.in · bidplus.gem.gov.in</td><td>Central ministries, departments, PSUs, autonomous bodies, many state bodies</td><td>Most of our pipeline. <span class="hand">Today's focus</span></td></tr>
+        <tr><td><b>CPPP</b></td><td class="typed">eprocure.gov.in/cppp</td><td>Central tenders run outside GeM, on NIC's e-procurement with a digital signature certificate</td><td>Occasional PR and media work</td></tr>
+        <tr><td><b>State portals</b></td><td class="typed">govtprocurement.delhi.gov.in · mahatenders.gov.in · etender.up.nic.in</td><td>State departments of tourism, information and PR, state PSUs</td><td>Tourism and state campaigns</td></tr>
+        <tr><td><b>Defence</b></td><td class="typed">defproc.gov.in</td><td>Defence services and organisations</td><td>Rare</td></tr>
+        <tr><td><b>Railways</b></td><td class="typed">ireps.gov.in</td><td>Railway zones and Railway PSUs</td><td>Publicity, now and then</td></tr>
+        <tr><td><b>Own portals</b></td><td class="typed">each organisation's tender page</td><td>Large PSUs, banks, regulators</td><td>Watch the big ones</td></tr>
+        <tr><td><b>Empanelment</b></td><td class="typed">e.g. Central Bureau of Communication</td><td>Not a tender, but some buyers invite only empanelled agencies</td><td>Keep ours current</td></tr>
+        <tr><td><b>Multilateral</b></td><td class="typed">ungm.org · World Bank and ADB project pages</td><td>UN agencies and bank-funded projects in India</td><td>Separate registration</td></tr>
+        <tr><td><b>Alert sites</b></td><td class="typed">paid tender aggregators</td><td>Copies of the above</td><td>Discovery only. Never bid from their copy.</td></tr>
+      </tbody>
+    </table>
   </div>
-  <div class="platforms">
-    <article class="platform focus"><header><h3>GeM</h3><span class="pill accent">Today's focus</span></header><span class="url">gem.gov.in · bidplus.gem.gov.in</span><p>Government e-Marketplace. Central ministries, departments, PSUs, autonomous bodies and many state bodies. Goods and services listed on GeM must be bought through it.</p></article>
-    <article class="platform"><header><h3>CPPP</h3><span class="pill">Central</span></header><span class="url">eprocure.gov.in/cppp</span><p>Central Public Procurement Portal. Central ministry and CPSE tenders run outside GeM, usually on NIC's e-procurement system with a digital signature certificate.</p></article>
-    <article class="platform"><header><h3>State e-procurement</h3><span class="pill">State</span></header><span class="url">e.g. govtprocurement.delhi.gov.in · mahatenders.gov.in · etender.up.nic.in · kppp.karnataka.gov.in</span><p>Each state runs its own portal. Tourism, information and public relations departments, and state PSUs publish here.</p></article>
-    <article class="platform"><header><h3>Defence</h3><span class="pill">Central</span></header><span class="url">defproc.gov.in</span><p>Defence e-procurement for services and the armed forces. Occasional communication and event mandates.</p></article>
-    <article class="platform"><header><h3>Railways · IREPS</h3><span class="pill">Central</span></header><span class="url">ireps.gov.in</span><p>Indian Railways e-procurement. Mostly works and goods, but zones and PSUs under Railways also tender publicity work.</p></article>
-    <article class="platform"><header><h3>PSU and body portals</h3><span class="pill">Varies</span></header><span class="url">Each organisation's own tender page</span><p>Large PSUs, banks and regulators often run their own e-tender systems and also post a notice on CPPP.</p></article>
-    <article class="platform"><header><h3>Empanelments</h3><span class="pill">Gateway</span></header><span class="url">e.g. Central Bureau of Communication (CBC)</span><p>Not a tender, but a door to many: some buyers only invite empanelled agencies, and their rates often anchor government pricing.</p></article>
-    <article class="platform"><header><h3>Multilateral</h3><span class="pill">International</span></header><span class="url">ungm.org · World Bank and ADB project pages</span><p>UN agencies and bank-funded projects in India. Different rules and formats, with their own registration.</p></article>
-    <article class="platform"><header><h3>Tender aggregators</h3><span class="pill">Discovery only</span></header><span class="url">Paid alert services</span><p>Useful to spot bids early. Never bid from an aggregator's copy. Always download the documents from the source portal.</p></article>
-  </div>
-  <aside class="notes"><ul><li>Ask the room: who has bid on CPPP before? The difference is the signature certificate and the folder-style upload.</li><li>Empanelments matter for us. Several RFPs we read this year referenced government rate benchmarks when judging cost.</li><li>Aggregator copies go stale the moment a corrigendum is issued. That alone has sunk bids elsewhere in the industry.</li></ul></aside>
+  <aside class="notes"><ul><li>Ask: who has bid on CPPP before? The big difference is the signature certificate and folder-style uploads.</li><li>Alert-site copies go stale the moment a corrigendum is issued.</li></ul></aside>
 </section>
 
-<section class="slide" id="why-gem" data-chapter="1" data-title="Why this session is only about GeM">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">01 · Platforms</span></div>
-    <h2>Why this session is only about GeM</h2>
+<section class="slide" id="where-look" data-chapter="1" data-title="Round 1: where would you look?">
+  <span class="tab">01 · Platforms</span>
+  <div class="head"><h2>Round 1: where would you look?</h2><p class="lede">Six tenders. Call out the portal before anyone clicks.</p></div>
+  <div data-widget="rounds">
+    <script type="application/json">
+    {"items": [
+      {"q": "A central ministry wants a social media agency for two years.", "options": ["GeM", "CPPP", "A state portal", "UNGM"], "answer": 0, "why": "Central ministries must buy listed services through GeM (GFR 2017, Rule 149)."},
+      {"q": "Maharashtra's tourism department is hiring a creative agency through its own state system.", "options": ["GeM", "mahatenders.gov.in", "IREPS", "defproc.gov.in"], "answer": 1, "why": "State departments often use their own e-procurement portal."},
+      {"q": "A UN agency in Delhi needs a partner for an awareness campaign.", "options": ["GeM", "CPPP", "UNGM", "An alert site"], "answer": 2, "why": "UN agencies publish on the UN Global Marketplace, with their own registration."},
+      {"q": "A railway zone wants publicity for a new train service.", "options": ["IREPS", "GeM only", "UNGM", "defproc.gov.in"], "answer": 0, "why": "Railway zones tender on IREPS. Some publicity work also appears on GeM, so check both."},
+      {"q": "You spotted a bid on a paid alert website. Where do you download the RFP?", "options": ["From the alert site", "From the original portal", "Ask a friend who bid last year"], "answer": 1, "why": "Always the source portal. The alert copy may be missing a corrigendum."},
+      {"q": "A large PSU posts a PR tender on its own site and on the central portal, signed with a DSC.", "options": ["GeM", "CPPP", "A state portal", "UNGM"], "answer": 1, "why": "Outside GeM, central and PSU tenders appear on CPPP and usually need a digital signature certificate."}
+    ]}
+    </script>
   </div>
-  <div class="split">
+  <aside class="notes"><ul><li>Read each out. Let the room shout an answer, then click.</li></ul></aside>
+</section>
+
+<section class="slide" id="why-gem" data-chapter="1" data-title="Why this session is about GeM">
+  <span class="tab">01 · Platforms</span>
+  <div class="head"><h2>Why this session is only about GeM</h2></div>
+  <div class="cols">
     <div class="stack">
-      <div class="panel"><h3>It is mandatory for most of our buyers</h3><p>Under the General Financial Rules 2017 (Rule 149), ministries and departments must procure goods and services that are available on GeM through GeM. Social media agencies, consultants and event services are all listed categories.</p></div>
-      <div class="panel"><h3>It is where our work is</h3><p>Every large government mandate our bid team prepared this year ran on GeM: social media management, social listening and ORM, PR and integrated communication, and media consulting.</p></div>
-      <div class="panel"><h3>The process is standard</h3><p>Every GeM bid has the same skeleton: a system-generated bid document, buyer's additional terms (ATC), the same five participation tabs and the same upload rules. Learn it once and reuse it.</p></div>
-    </div>
-    <div class="stack">
-      <div class="panel accent">
-        <span class="kicker">The shape of every GeM services bid</span>
-        <ol>
-          <li><b>Bid document</b> generated by GeM: dates, EMD, turnover, experience, evaluation method.</li>
-          <li><b>Buyer attachments</b>: RFP, scope of work, ATC, formats, payment terms.</li>
-          <li><b>Corrigenda</b> that supersede earlier versions.</li>
-          <li><b>Participation</b> in five tabs, then e-sign and submit.</li>
-          <li><b>Evaluation</b>: technical, then financial (and sometimes a reverse auction).</li>
-        </ol>
-      </div>
-      <p class="small">What we cover also applies to CPPP and state portals with small changes: a digital signature certificate instead of eSign, and folder-wise uploads instead of named slots.</p>
-    </div>
-  </div>
-  <aside class="notes"><ul><li>Keep this short. The point is: one well-understood process covers most of our pipeline.</li></ul></aside>
-</section>
-
-<section class="slide" id="glossary" data-chapter="1" data-title="GeM vocabulary">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">01 · Platforms</span><span class="try">Try it · tap a card</span></div>
-    <h2>Words you will hear every day</h2>
-  </div>
-  <div class="glossary" id="glossary"></div>
-  <aside class="notes"><ul><li>Go round the room: each person picks a card and explains it before flipping.</li><li>ATC and corrigendum are the two that cause the most mistakes.</li></ul></aside>
-</section>
-
-<!-- ============ SCOUT ============ -->
-<section class="slide" id="scout-where" data-chapter="2" data-title="Finding bids on GeM">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">02 · Scouting</span><span class="try">Try it · filter the list</span></div>
-    <h2>Finding bids on GeM</h2>
-  </div>
-  <div class="split wide-left">
-    <div class="mock" aria-label="Illustrative recreation of the GeM bid listing">
-      <div class="mock-bar"><i></i><i></i><i></i><span class="addr">bidplus.gem.gov.in/all-bids</span></div>
-      <div class="mock-body">
-        <span class="mock-label">Illustrative recreation with sample bids · not the live portal</span>
-        <label class="field" for="bidSearch"><span>Search bids by keyword</span><input type="text" id="bidSearch" placeholder="e.g. social media" autocomplete="off"></label>
-        <div class="chips" id="bidChips" aria-label="Quick keywords"></div>
-        <div class="stack" id="bidResults" aria-live="polite"></div>
-      </div>
-    </div>
-    <div class="stack">
-      <div class="panel"><h3>Two places to look</h3><ol><li><b>All Bids</b> on bidplus.gem.gov.in. Public, no login. Search by keyword, filter by ministry, organisation or date.</li><li><b>Seller dashboard</b> after login. Bids in the categories where we hold a service offering. To bid, we must have an offering in that exact category.</li></ol></div>
-      <div class="panel"><h3>A daily habit</h3><ul class="checks dot"><li>One owner checks every morning, same keyword list.</li><li>Log every relevant bid in the pipeline sheet the same day, even if we drop it.</li><li>Note the publication date. Some rights expire four days after it (see Representation).</li></ul></div>
-    </div>
-  </div>
-  <aside class="notes"><ul><li>Type "monitoring" or "event" in the search box to show how keywords change results.</li><li>Stress the category point. If we do not hold an offering in the category, the Catalogue Offering tab will block us at submission time.</li></ul></aside>
-</section>
-
-<section class="slide" id="scout-keywords" data-chapter="2" data-title="Our keyword and category list">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">02 · Scouting</span></div>
-    <h2>Our keyword and category list</h2>
-    <p class="lede">Buyers describe the same work in many ways. Search all of them.</p>
-  </div>
-  <div class="grid cols-3">
-    <div class="panel"><h3>Digital and social</h3><p class="mono small">social media · digital media · content development · community management · influencer · YouTube · newsletter · SEO · website</p></div>
-    <div class="panel"><h3>Reputation and listening</h3><p class="mono small">social listening · media monitoring · online reputation · ORM · sentiment · dashboard · fact check · crisis communication</p></div>
-    <div class="panel"><h3>PR and communication</h3><p class="mono small">public relations · PR agency · media relations · communication strategy · IEC · outreach · campaign · branding</p></div>
-    <div class="panel"><h3>Creative and production</h3><p class="mono small">creative agency · audio visual · film · documentary · video production · animation · photography · print collateral</p></div>
-    <div class="panel"><h3>Events</h3><p class="mono small">event management · conference · summit · exhibition · pavilion · stall design · roadshow</p></div>
-    <div class="panel"><h3>Consulting</h3><p class="mono small">consultant · consultancy · project management unit · PMU · media consultant · strategic partner</p></div>
-  </div>
-  <div class="panel accent"><span class="kicker">Categories we have bid under</span><ul><li>Hiring of Social Media Agency · Social Media Content development and Management</li><li>Hiring of Consultants · Milestone/Deliverable Based</li></ul><p class="small">The category decides which service offering you need and which upload slots GeM shows you.</p></div>
-  <aside class="notes"><ul><li>Ask the room to add three keywords we are missing. Write them in the pipeline sheet.</li></ul></aside>
-</section>
-
-<section class="slide" id="scout-triage" data-chapter="2" data-title="The five-minute triage">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">02 · Scouting</span><span class="try">Try it · click a field</span></div>
-    <h2>The five-minute triage</h2>
-    <p class="lede">Page one of the GeM bid document tells you most of what you need. Read these fields before anything else.</p>
-  </div>
-  <div class="split">
-    <div class="mock">
-      <div class="mock-bar"><i></i><i></i><i></i><span class="addr">Bid Document · Bid Details</span></div>
-      <div class="mock-body">
-        <span class="mock-label">Illustrative · values from our practice tender</span>
-        <div class="bidfields" id="bidFields"></div>
-      </div>
-    </div>
-    <div class="stack">
-      <div class="panel accent explain" id="fieldExplain" aria-live="polite"><span class="kicker">What this field tells you</span><p>Click any field on the left.</p></div>
-      <div class="panel"><h3>Kill questions</h3><ul class="checks dot"><li>Is there enough time? Under 10 days for a QCBS bid is tight.</li><li>Do we clear turnover and experience on paper?</li><li>Is it two-packet QCBS, or lowest price (L1)?</li><li>Do we hold an offering in this category?</li></ul></div>
-    </div>
-  </div>
-  <aside class="notes"><ul><li>Click "Minimum number of bids to disable automatic extension". Most people do not know the deadline can move on its own.</li><li>Click "Show documents to all bidders". After opening, competitors may see what we uploaded. Upload what is asked, nothing extra.</li></ul></aside>
-</section>
-
-<!-- ============ CLAUDE ============ -->
-<section class="slide" id="claude-flow" data-chapter="3" data-title="Understanding the scope with Claude">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">03 · Scope with Claude</span></div>
-    <h2>Understanding the scope with Claude</h2>
-    <p class="lede">RFPs run 60 to 120 pages plus ATC files and corrigenda. Claude reads all of it in minutes. Your job is to direct it and check it.</p>
-  </div>
-  <div class="split">
-    <div class="stack">
-      <ol class="callouts">
-        <li><span><b>Collect everything.</b> GeM bid document, RFP, scope of work, ATC files, formats, payment terms, every corrigendum and the pre-bid replies.</span></li>
-        <li><span><b>One Claude project per tender.</b> Upload all files there and name it after the bid number.</span></li>
-        <li><span><b>Run the prompt set</b> on the next slide, in order: summary, eligibility, scoring, checklist, red flags.</span></li>
-        <li><span><b>Verify every line</b> against the page number Claude cites. No page number, no trust.</span></li>
-        <li><span><b>Output two things:</b> a one-page bid summary for leadership and the master tracker for the team.</span></li>
+      <div class="clause"><p>General Financial Rules 2017, Rule 149: procurement of goods and services by ministries or departments <mark>will be mandatory for goods or services available on GeM</mark>.</p></div>
+      <p>Social media agencies, consultants, events and creative services are all GeM categories. Every large government mandate our bid team prepared this year ran on GeM.</p>
+      <p>Every GeM services bid has the same skeleton, so you learn it once:</p>
+      <ol>
+        <li>A <b>bid document</b> that GeM generates: dates, EMD, turnover, experience, evaluation method.</li>
+        <li><b>Buyer attachments</b>: RFP, scope, additional terms (ATC), formats, payment terms.</li>
+        <li><b>Corrigenda</b> that replace earlier text.</li>
+        <li><b>Five participation tabs</b>, then e-sign and submit.</li>
+        <li><b>Evaluation</b>: technical, then price, sometimes a reverse auction.</li>
       </ol>
     </div>
-    <div class="mock" aria-label="Illustrative Claude conversation">
-      <div class="mock-bar"><i></i><i></i><i></i><span class="addr">Claude · Project: GEM-2026-B-TRAINING</span></div>
-      <div class="mock-body">
-        <span class="mock-label">Illustrative conversation</span>
-        <div class="chat">
-          <div class="msg user"><span class="who">Bid manager</span>List every pre-qualification criterion as a table: criterion, exact RFP wording, page, evidence document, owner team. Flag anything the corrigendum changed.<div class="attach"><span>GeM_Bid_Document.pdf</span><span>RFP.pdf</span><span>ATC.pdf</span><span>Corrigendum_1.pdf</span></div></div>
-          <div class="msg ai"><span class="who">Claude</span>Found 10 criteria. Two changed in Corrigendum 1 (p. 2):<br>• <b>Turnover period</b> is now FY 2023-24 to 2025-26 (was 2022-23 to 2024-25, RFP p. 14).<br>• <b>Team size</b> reduced from 12 to 10 (RFP p. 31).<br>Also: the PQ table cites Annexure V for the Integrity Pact, but the format is Annexure VI (p. 52). Worth a pre-bid query.</div>
+    <div class="sticky"><b>On CPPP or a state portal?</b><p>The same thinking applies. What changes: a digital signature certificate instead of Aadhaar eSign, and folder-wise uploads instead of named slots.</p></div>
+  </div>
+  <aside class="notes"><ul><li>Keep this short. One process, learnt well, covers most of our pipeline.</li></ul></aside>
+</section>
+
+<section class="slide" id="glossary" data-chapter="1" data-title="Words you will hear every day">
+  <span class="tab">01 · Platforms</span>
+  <div class="head"><h2>Words you will hear every day</h2><div class="note-row"><p class="lede">Explain the card to your partner, then turn it over.</p><span class="hand">↓ tap a card</span></div></div>
+  <div data-widget="cards">
+    <script type="application/json">
+    {"cards": [
+      ["Bid", "A tender on GeM", "The buyer's call for offers. Each has a number like GEM/2026/B/1234567."],
+      ["Bid document", "System-generated PDF", "GeM's summary: dates, EMD, turnover, experience, evaluation and documents required."],
+      ["ATC", "Additional Terms & Conditions", "Clauses the buyer adds. Where they clash with GeM's general terms, the ATC says it wins."],
+      ["GTC", "General Terms & Conditions", "GeM's standard terms behind every bid and contract."],
+      ["Corrigendum", "Official change", "Changes the bid after publication. The newest one wins. Read every one."],
+      ["EMD", "Earnest Money Deposit", "Bid security, lost if you withdraw after opening. MSE service providers can be exempt."],
+      ["ePBG", "Performance guarantee", "What the winner deposits after award, often 3% of the contract."],
+      ["QCBS", "Quality & Cost Based Selection", "Technical and price scores combined, often 70:30. Price opens only for those above the cut-off."],
+      ["L1", "Lowest price wins", "The cheapest technically compliant bid wins."],
+      ["RA", "Reverse Auction", "A live price-cutting round, only if the buyer switches it on."],
+      ["Representation", "Seller's objection", "A complaint about a bid clause, raised within 4 days of publication."],
+      ["MII", "Make in India", "Local-content preference. You declare it on the upload page."],
+      ["UDIN", "CA's document number", "Every CA certificate needs one. Many RFPs reject certificates without it."],
+      ["Integrity Pact", "Anti-corruption pact", "Signed on stamp paper in the buyer's format. Missing it usually means rejection."]
+    ]}
+    </script>
+  </div>
+  <aside class="notes"><ul><li>Go round the room. ATC and corrigendum cause the most mistakes.</li></ul></aside>
+</section>
+
+<!-- =================================================================== 02 · SCOUTING -->
+<section class="slide" id="scout" data-chapter="2" data-title="Finding bids on GeM">
+  <span class="tab">02 · Scouting</span>
+  <div class="head"><h2>Finding bids on GeM</h2><div class="note-row"><p class="lede">Search, then put anything relevant into the pipeline the same day, even if we drop it later.</p></div></div>
+  <div class="cols l">
+    <div class="portal" data-widget="bidsearch">
+      <script type="application/json">
+      {"chips": ["social media", "monitoring", "event", "consultant", "film", "IEC"],
+       "bids": [
+        {"no": "GEM/2026/B/TRN-0421", "title": "Hiring of Social Media Agency - Social Media Content development and Management", "org": "Bharat Craft & Culture Mission", "end": "17-11-2026", "tags": "social media digital content"},
+        {"no": "GEM/2026/B/TRN-0388", "title": "Social listening, media monitoring and online reputation management", "org": "A central department", "end": "05-11-2026", "tags": "monitoring listening orm reputation social media"},
+        {"no": "GEM/2026/B/TRN-0402", "title": "Event management for a national investment summit", "org": "A state industrial body", "end": "12-11-2026", "tags": "event conference summit exhibition"},
+        {"no": "GEM/2026/B/TRN-0415", "title": "Hiring of Consultants - Milestone/Deliverable Based: PR and media consultant", "org": "A central PSU", "end": "20-11-2026", "tags": "consultant pr public relations media"},
+        {"no": "GEM/2026/B/TRN-0397", "title": "Creative agency for documentary films and audio-visual content", "org": "A central ministry", "end": "09-11-2026", "tags": "film video documentary creative audio visual"},
+        {"no": "GEM/2026/B/TRN-0409", "title": "Agency for an IEC campaign on public health", "org": "A state health mission", "end": "14-11-2026", "tags": "iec campaign outreach awareness"},
+        {"no": "GEM/2026/B/TRN-0412", "title": "Supply of ergonomic office chairs", "org": "A district office", "end": "02-11-2026", "tags": "chairs furniture"}
+       ]}
+      </script>
+      <div class="portal-bar"><span>bidplus.gem.gov.in/all-bids</span><span class="sim-tag">sample bids · not the live portal</span></div>
+      <div class="portal-body">
+        <label class="field"><span>Search by keyword</span><input type="text" id="bidSearch" placeholder="social media" autocomplete="off"></label>
+        <div class="chips" aria-label="Quick keywords"></div>
+        <div class="results" aria-live="polite"></div>
+        <div class="stack tight">
+          <span class="label">Our pipeline sheet</span>
+          <div class="table-wrap"><table class="ledger pipeline"><thead><tr><th>Bid no.</th><th>Title</th><th>Closes</th><th>Decision</th></tr></thead><tbody></tbody></table></div>
+          <p class="small muted pipeline-empty">Nothing added yet.</p>
         </div>
       </div>
     </div>
+    <div class="stack">
+      <p><b>All Bids</b> on bidplus.gem.gov.in is public, no login needed. Filter by ministry, organisation and dates.</p>
+      <p><b>The seller dashboard</b> shows bids in categories where we hold a service offering. No offering in the bid's category means we can't bid at all.</p>
+      <div class="sticky r"><b>One person, every morning</b><ul><li>Same keyword list, same time.</li><li>Log the publication date. Some rights expire four days after it.</li><li>Triage within 24 hours.</li></ul></div>
+    </div>
   </div>
-  <aside class="notes"><ul><li>This is a real pattern. In one of our 2026 bids the RFP cited the wrong annexure number for a mandatory declaration, and Claude caught it on the first pass.</li><li>Use the company-approved Claude workspace only. Tender files often include our audited financials.</li></ul></aside>
+  <aside class="notes"><ul><li>Type "monitoring". Add two bids to the pipeline. Show the chair tender as noise you must ignore.</li></ul></aside>
 </section>
 
-<section class="slide" id="claude-prompts" data-chapter="3" data-title="The prompt library">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">03 · Scope with Claude</span><span class="try">Try it · copy a prompt</span></div>
-    <h2>The prompt library</h2>
+<section class="slide" id="keywords" data-chapter="2" data-title="Our keyword list">
+  <span class="tab">02 · Scouting</span>
+  <div class="head"><h2>Buyers describe our work in many ways</h2><p class="lede">Search all of them. Add the ones we miss.</p></div>
+  <div class="cols three">
+    <div class="stack"><h3>Digital and social</h3><p class="typed small">social media · digital media · content development · community management · influencer · YouTube · newsletter · SEO · website</p>
+      <h3>Reputation</h3><p class="typed small">social listening · media monitoring · online reputation · ORM · sentiment · dashboard · fact check · crisis communication</p></div>
+    <div class="stack"><h3>PR and communication</h3><p class="typed small">public relations · PR agency · media relations · communication strategy · IEC · outreach · campaign · branding</p>
+      <h3>Creative and production</h3><p class="typed small">creative agency · audio visual · film · documentary · video production · animation · photography · print</p></div>
+    <div class="stack"><h3>Events and consulting</h3><p class="typed small">event management · conference · summit · exhibition · pavilion · roadshow · consultant · PMU · strategic partner</p>
+      <div class="sticky"><b>Categories we have bid under</b><p class="small">Hiring of Social Media Agency · Social Media Content development and Management</p><p class="small">Hiring of Consultants · Milestone/Deliverable Based</p></div></div>
   </div>
-  <div class="prompts">
-    <div class="prompt-list" id="promptList" role="group" aria-label="Prompts"></div>
-    <div class="stack">
-      <pre class="prompt" id="promptText"></pre>
-      <div style="display:flex;gap:.5rem;flex-wrap:wrap;align-items:center"><button class="btn primary" id="copyPrompt" type="button">Copy prompt</button><span class="small" id="copyState" aria-live="polite"></span></div>
-    </div>
-  </div>
-  <aside class="notes"><ul><li>Run them in this order. The summary gives Claude the context for the rest.</li><li>The red-flags prompt is the one that has saved us the most time.</li></ul></aside>
+  <aside class="notes"><ul><li>Ask for three keywords we are missing. Add them to the pipeline sheet today.</li></ul></aside>
 </section>
 
-<section class="slide" id="claude-rules" data-chapter="3" data-title="Rules for using AI on a tender">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">03 · Scope with Claude</span></div>
-    <h2>Claude reads. You verify.</h2>
-  </div>
-  <div class="split">
+<section class="slide" id="triage" data-chapter="2" data-title="The five-minute triage">
+  <span class="tab">02 · Scouting</span>
+  <div class="head"><h2>The five-minute triage</h2><p class="lede">Page one of the bid document, in Hindi and English, tells you most of what you need. Start the clock.</p></div>
+  <div class="cols" data-widget="triage">
+    <script type="application/json">
+    {"fields": [
+      ["बिड बंद होने की तारीख/समय", "Bid End Date/Time", "17-11-2026 15:00:00", "The hard deadline. Check the corrigendum tab, because extensions are common. Our internal deadline sits four days earlier."],
+      ["बिड पेशकश वैधता", "Bid Offer Validity (From End Date)", "120 (Days)", "Our offer must stay valid this long. Every submission letter must say the same number."],
+      ["संगठन का नाम", "Organisation Name", "Bharat Craft & Culture Mission", "Who the buyer is. Check our history with them and any conflict of interest."],
+      ["वस्तु श्रेणी", "Item Category", "Hiring of Social Media Agency", "We need a service offering in exactly this category, or we can't participate."],
+      ["अनुबंध अवधि", "Contract Period", "2 Year(s)", "Price the whole term. Rates are usually fixed throughout."],
+      ["न्यूनतम औसत वार्षिक टर्नओवर", "Minimum Average Annual Turnover (3 Years)", "600 Lakh(s)", "Pass or fail. Confirm which three financial years apply, because corrigenda change this."],
+      ["विगत अनुभव के वर्ष", "Years of Past Experience Required", "5 Year(s)", "Years of similar government work, with a contract for each year."],
+      ["एमएसई को छूट", "MSE Relaxation for Experience and Turnover", "No", "If Yes, MSEs and DPIIT startups are relaxed on these criteria, with proof uploaded."],
+      ["सभी निविदाकारों को दस्तावेज़ दिखाएं?", "Show uploaded documents to all bidders?", "Yes", "Competitors may see what we upload. Upload what is asked and nothing more."],
+      ["स्वतः विस्तार रोकने हेतु न्यूनतम बिड", "Minimum bids to disable automatic extension", "3", "With fewer bids, GeM moves the deadline on its own, here by 5 days, once. Don't plan around it."],
+      ["बिड का प्रकार", "Type of Bid", "Two Packet Bid", "Technical packet first. Price opens only for those who qualify."],
+      ["अनुमानित बिड मूल्य", "Estimated Bid Value", "30000000", "Sets EMD and eligibility thresholds. Look for a price floor in the ATC and corrigenda."],
+      ["मूल्यांकन पद्धति", "Evaluation Method", "QCBS 70:30 · cut-off 70", "Quality is 70% of the final score. Technical marks matter more than a lower price."],
+      ["ईएमडी राशि", "EMD Amount", "600000", "Arrange it, or confirm exemption, in week one."],
+      ["रिवर्स नीलामी", "Bid to RA enabled", "No", "No reverse auction. The price you submit is final."]
+    ],
+    "checks": [
+      {"q": "At least 10 days left before the deadline?", "pass": true, "fail": "too little time for a QCBS bid."},
+      {"q": "Do we hold a GeM offering in this category?", "pass": true, "fail": "we can't participate without the right service offering."},
+      {"q": "Do we clear the turnover on paper?", "pass": true, "fail": "turnover is pass or fail."},
+      {"q": "Do we clear the experience rule on paper?", "pass": true, "fail": "experience is pass or fail."},
+      {"q": "Is it a lowest-price (L1) bid in a category where we can't win on price?", "pass": false, "fail": "an L1 bid on price alone rarely suits us."}
+    ]}
+    </script>
     <div class="stack">
-      <div class="panel"><h3>The order of authority</h3><ol><li>Latest corrigendum</li><li>Earlier corrigenda</li><li>Buyer ATC (it states that it prevails over GeM's general terms)</li><li>RFP and scope of work</li><li>GeM bid document defaults and GTC</li></ol><p class="small">Tell Claude this order in every project. When two documents disagree, it must say which one wins and why.</p></div>
-      <div class="panel bad"><h3>Never</h3><ul class="checks x"><li>Accept a number without a page reference.</li><li>Let Claude write a declaration's wording. Use the buyer's format exactly.</li><li>Upload documents to unapproved tools.</li><li>Skip a human read of the eligibility and scoring sections.</li></ul></div>
+      <div class="bid-sheet" aria-label="Bid details, bilingual"></div>
+      <span class="small muted">Fields from the practice tender. Click any field.</span>
     </div>
     <div class="stack">
-      <div class="panel accent"><span class="kicker">Things Claude caught in our 2026 bids</span>
-        <ul class="checks dot">
-          <li>An RFP cited one annexure number for a mandatory declaration while the format sat at another.</li>
-          <li>A clarification deadline in the data sheet contradicted the seven-day window in the main RFP.</li>
-          <li>A corrigendum switched the price from GST-inclusive to GST-exclusive.</li>
-          <li>A corrigendum cut the team from 11 positions to 9 and lowered the turnover bar.</li>
-          <li>A corrigendum added a price floor: no quote more than 15% below the estimate.</li>
-          <li>An ATC asked for physical delivery of a document on an online bid.</li>
-        </ul>
-      </div>
+      <div class="box inset explain" aria-live="polite"><span class="hand blue">Click a field</span><p>Its meaning for us shows up here.</p></div>
+      <div class="row"><span class="clock" aria-live="off">5:00</span><button type="button" class="btn ink clock-btn">Start the clock</button></div>
+      <ul class="kill"></ul>
+      <p class="verdict fb" aria-live="polite"></p>
     </div>
   </div>
-  <aside class="notes"><ul><li>Each of these is from a real bid we prepared. Every one of them would have cost marks or caused rejection if missed.</li></ul></aside>
+  <aside class="notes"><ul><li>Start the clock and let a pair do it live.</li><li>Click "Show uploaded documents to all bidders". Most people don't know competitors may see our files.</li></ul></aside>
 </section>
 
-<!-- ============ ELIGIBILITY ============ -->
-<section class="slide" id="eligibility-map" data-chapter="4" data-title="From eligibility to documents">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">04 · Eligibility</span><span class="try">Try it · filter by team</span></div>
-    <h2>Every criterion needs a piece of evidence</h2>
-    <p class="lede">Pre-qualification is pass or fail. Fail one line and the technical bid is never opened.</p>
+<!-- =================================================================== 03 · CLAUDE -->
+<section class="slide" id="claude-flow" data-chapter="3" data-title="Reading the scope with Claude">
+  <span class="tab">03 · Scope with Claude</span>
+  <div class="head"><h2>Claude reads 120 pages in minutes. You check it.</h2></div>
+  <div class="cols">
+    <ol class="stack">
+      <li><b>Collect everything.</b> The GeM bid document, RFP, scope of work, ATC files, formats, payment terms, every corrigendum, pre-bid replies.</li>
+      <li><b>One Claude project per bid,</b> named after the bid number, with all files uploaded.</li>
+      <li><b>Run the prompts in order:</b> summary, eligibility, scoring, checklist, red flags.</li>
+      <li><b>Check every line</b> against the page Claude cites. No page number, no trust.</li>
+      <li><b>Produce two things:</b> a one-page summary for leadership and the master tracker for the team.</li>
+    </ol>
+    <div class="stack">
+      <div class="sticky"><b>Tell Claude the pecking order</b><p>Latest corrigendum › earlier corrigenda › buyer ATC › RFP › GeM bid document and GTC. When two documents disagree, Claude must say which wins.</p></div>
+      <div class="box red"><span class="label">Never</span><ul><li>Accept a number without a page reference.</li><li>Let Claude rewrite a declaration. Use the buyer's format word for word.</li><li>Upload our financials to an unapproved tool.</li></ul></div>
+    </div>
   </div>
-  <div class="teams chips" id="pqTeams"></div>
-  <div class="table-wrap">
-    <table id="pqTable">
-      <thead><tr><th>Typical criterion</th><th>Evidence that proves it</th><th>Owner</th><th>Watch out for</th></tr></thead>
-      <tbody></tbody>
-    </table>
-  </div>
-  <aside class="notes"><ul><li>Filter by Finance and show how many items depend on the CA. That is why CA requests go out on day one.</li></ul></aside>
+  <aside class="notes"><ul><li>Use the company-approved Claude workspace only. Tender folders carry audited financials.</li></ul></aside>
 </section>
 
-<section class="slide" id="experience-math" data-chapter="4" data-title="The experience rule, decoded">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">04 · Eligibility</span><span class="try">Try it · enter project values</span></div>
-    <h2>The GeM experience rule, decoded</h2>
-    <p class="lede">Most GeM services bids use the same past-experience clause: similar completed work in the last three financial years plus the current one.</p>
+<section class="slide" id="claude-check" data-chapter="3" data-title="Catch Claude's mistake">
+  <span class="tab">03 · Scope with Claude</span>
+  <div class="head"><h2>Catch the mistake</h2><p class="lede">Claude has read the practice tender. Each answer has one wrong line. Find it and open its source.</p></div>
+  <div class="cs" data-widget="claudesim">
+    <script type="application/json">
+    {"prompts": [
+      {"name": "Summarise the bid", "ask": "Summarise this bid in six lines with a page or section reference for each. Apply the latest corrigendum.",
+       "files": ["GeM_Bid_Document.pdf", "RFP.pdf", "ATC.pdf", "Corrigendum_1.pdf"],
+       "claims": [
+        {"text": "Buyer is Bharat Craft & Culture Mission; category Hiring of Social Media Agency.", "cite": "Bid doc §1", "href": "practice/tender.html#s1"},
+        {"text": "Evaluation is QCBS 70:30 with a technical cut-off of 70.", "cite": "Bid doc §1, RFP §5", "href": "practice/tender.html#s5"},
+        {"text": "Bids close on 10-11-2026 at 15:00.", "cite": "Bid doc §1", "href": "practice/tender.html#s9", "wrong": true, "why": "Corrigendum 1 moved the deadline to 17-11-2026, 15:00. Claude quoted the original bid document."},
+        {"text": "EMD is ₹6,00,000 and the ePBG is 3%.", "cite": "Bid doc §1", "href": "practice/tender.html#s1"},
+        {"text": "Two of our people must sit at BCCM three days a week.", "cite": "RFP §3", "href": "practice/tender.html#s3"},
+        {"text": "All proposed team members must attend the interview.", "cite": "RFP §5, ATC 5", "href": "practice/tender.html#s8"}
+       ]},
+      {"name": "List eligibility criteria", "ask": "List every pre-qualification criterion with the exact wording, page and the evidence we need. Flag anything a corrigendum changed.",
+       "files": ["GeM_Bid_Document.pdf", "RFP.pdf", "Corrigendum_1.pdf"],
+       "claims": [
+        {"text": "PQ-1: registered in India for at least 7 years.", "cite": "RFP §4", "href": "practice/tender.html#s4"},
+        {"text": "PQ-2: average turnover of ₹6 crore over FY 2023-24 to 2025-26, as changed by Corrigendum 1.", "cite": "Corr. 1, item 2", "href": "practice/tender.html#s9"},
+        {"text": "PQ-4: private-sector projects count if the scope is similar.", "cite": "RFP §4", "href": "practice/tender.html#s4", "wrong": true, "why": "PQ-4 accepts only Central or State Government, PSU or autonomous bodies. Private clients do not count."},
+        {"text": "PQ-5: at least 60 full-time employees in relevant roles.", "cite": "RFP §4", "href": "practice/tender.html#s4"},
+        {"text": "PQ-8: Integrity Pact on ₹100 stamp paper. The table says Annexure V, but the format is Annexure VI.", "cite": "RFP §4, §7", "href": "practice/tender.html#s7"}
+       ]},
+      {"name": "What did the corrigendum change?", "ask": "Compare Corrigendum 1 with the original bid and RFP. List every change and what we must redo.",
+       "files": ["RFP.pdf", "ATC.pdf", "Corrigendum_1.pdf"],
+       "claims": [
+        {"text": "Deadline moved to 17-11-2026, 15:00.", "cite": "Corr. 1, item 1", "href": "practice/tender.html#s9"},
+        {"text": "Team cut from 12 positions to 10.", "cite": "Corr. 1, item 3", "href": "practice/tender.html#s9"},
+        {"text": "The quote is now exclusive of GST.", "cite": "Corr. 1, item 4", "href": "practice/tender.html#s9"},
+        {"text": "The hard-copy Integrity Pact requirement was withdrawn.", "cite": "Corr. 1", "href": "practice/tender.html#s8", "wrong": true, "why": "The corrigendum says nothing about it. ATC clause 3 still asks for a hard copy, which is why we raise a representation."},
+        {"text": "New floor: no quote more than 15% below ₹3 crore, so nothing under ₹2.55 crore.", "cite": "Corr. 1, item 5", "href": "practice/tender.html#s9"}
+       ]}
+    ]}
+    </script>
+    <div class="cs-prompts opts" role="group" aria-label="Prompts"></div>
+    <div class="cs-chat" aria-live="polite"></div>
+    <p class="cs-fb fb" aria-live="polite"></p>
   </div>
-  <div class="split">
+  <aside class="notes"><ul><li>This is the habit we want: every line checked against its source. In a 2026 bid, Claude caught a wrong annexure reference for us. Here, it is Claude that slips.</li></ul></aside>
+</section>
+
+<section class="slide" id="prompts" data-chapter="3" data-title="The prompt library">
+  <span class="tab">03 · Scope with Claude</span>
+  <div class="head"><h2>The prompt library</h2><p class="lede">Tested on our bids. Copy, paste into the bid's Claude project, run in order.</p></div>
+  <div class="prompt-lib" data-widget="prompts">
+    <script type="application/json">
+    {"prompts": [
+      ["1 · Bid summary", "You are helping an Indian communications agency bid on a GeM tender. I have uploaded the GeM bid document, the RFP, ATC files, formats and all corrigenda.\n\nOrder of authority: latest corrigendum > earlier corrigenda > buyer ATC > RFP and scope of work > GeM bid document and GTC. When documents disagree, say which one wins.\n\nWrite a one-page summary:\n1. Buyer, bid number, category, contract period, estimated value\n2. Dates: publication, pre-bid, query deadline, representation window (4 days from publication), bid end, opening, validity\n3. EMD, ePBG, evaluation method, technical cut-off, QCBS weightage\n4. Scope in 8 bullets: platforms, volumes, turnaround times, reports, team, on-site needs\n5. The five things most likely to decide who wins\n\nCite the document and page for every fact, like (RFP p. 14). If something is not stated, write \"Not stated\"."],
+      ["2 · Eligibility", "List every pre-qualification criterion as a table:\nS.No | Criterion | Exact wording | Document + page | Evidence we must submit | Format (letterhead, CA with UDIN, stamp paper, notarised) | Owner team\n\nThen:\n- Mark any criterion a corrigendum changed, with old and new text.\n- Copy MSE / Startup relaxations and EMD exemption conditions exactly.\n- List ambiguous criteria with a one-line pre-bid query for each.\nCopy numbers exactly. Do not round or paraphrase."],
+      ["3 · Scoring matrix", "Extract the technical evaluation matrix as a table:\nCriterion | Sub-criterion | Scoring bands as written | Max marks | What earns it (document, interview, presentation) | Page\n\nThen:\n- Group the marks: banked from documents, earned at interview, earned in the presentation.\n- State the cut-off and any sectional cut-offs.\n- Write the QCBS or L1 formula exactly as given.\n- List every mandatory element of the sample campaign or case exercise."],
+      ["4 · Document checklist", "Build the master document checklist:\nS.No | Document | Annexure / form | Page | Format and signing (letterhead, every page signed and stamped, stamp paper value, notary, witnesses, UDIN) | Packet (technical or financial) | Likely GeM upload slot | Owner team\n\nInclude documents the RFP needs but gives no format for (incorporation, audited financials, work orders, CVs, employee list).\nFlag anything that must also be delivered physically.\nFlag annexure numbers cited inconsistently."],
+      ["5 · Red flags", "Act as a strict bid reviewer. Find everything that could get a bid rejected or cost marks:\n- Contradictions in dates, annexure numbers, team sizes, GST basis\n- Clauses that may breach GeM rules (mandatory physical documents, EMD from exempt sellers, brand names)\n- Price rules: GST basis, price floors, conditional or nil quotes\n- Penalties: LD rate and cap, PBG, payment cycle, termination\n- Hidden costs: dedicated team, on-site days, tools, travel, equipment\nFor each: what it says, where (document + page), risk (rejection / marks / commercial), and what we should do."],
+      ["6 · Corrigendum diff", "Compare Corrigendum [number] with the original RFP and bid document.\nFor every change: Clause | Original text (page) | New text (page) | What we must change | Which tracker rows are affected.\nSay whether each change helps or hurts our eligibility."],
+      ["7 · Pre-bid queries", "Draft pre-bid queries in the buyer's format if one is given.\nEach: RFP clause and page | Current text | Clarification sought | Suggested revision.\nNeutral and specific. At most 10, ordered by impact on our eligibility and score."],
+      ["8 · Representation", "Draft a short, polite representation for the GeM representation window (within 4 days of publication) about this clause: [paste clause].\nExplain how it conflicts with GeM's ATC disclaimer or GTC, cite clause numbers, and ask for a specific change. Under 150 words."]
+    ]}
+    </script>
+    <div class="prompt-list" role="group" aria-label="Prompts"></div>
     <div class="stack">
-      <div class="table-wrap"><table><thead><tr><th>Option</th><th>Number of projects</th><th class="num">Each at least</th></tr></thead><tbody><tr><td>A</td><td>3 similar completed services</td><td class="num">40% of estimate</td></tr><tr><td>B</td><td>2 similar completed services</td><td class="num">50% of estimate</td></tr><tr><td>C</td><td>1 similar completed service</td><td class="num">80% of estimate</td></tr></tbody></table></div>
-      <p class="small">You need to meet one option. The RFP may add its own rules: only government clients, a minimum duration, or ongoing projects counted only after a set share has been paid.</p>
-    </div>
-    <div class="panel">
-      <label class="field" for="expEstimate"><span>Estimated bid value (₹ crore)</span><input type="number" id="expEstimate" value="3" min="0" step="0.1"></label>
-      <label class="field" for="expProjects"><span>Values of qualifying completed projects (₹ crore, comma separated)</span><input type="text" id="expProjects" value="1.6, 1.55, 0.9"></label>
-      <div class="stack" id="expOut" aria-live="polite"></div>
-      <p class="small">Sample values from the practice tender. Only count projects that meet the RFP's definition of "similar".</p>
+      <pre class="prompt-text"></pre>
+      <div class="row"><button type="button" class="btn ink copy-btn">Copy prompt</button><span class="small muted copy-state" aria-live="polite"></span></div>
     </div>
   </div>
-  <aside class="notes"><ul><li>Try 1.6, 1.3, 0.9. It fails. Then 1.6, 1.55: it passes on option B. One project's value decides the bid.</li></ul></aside>
+  <aside class="notes"><ul><li>The red-flags prompt has saved us the most time this year.</li></ul></aside>
+</section>
+
+<section class="slide" id="authority" data-chapter="3" data-title="Which document wins?">
+  <span class="tab">03 · Scope with Claude</span>
+  <div class="head"><h2>Which document wins?</h2><p class="lede">Click them from the one that overrides everything to the one that gives way to everything.</p></div>
+  <div data-widget="order">
+    <script type="application/json">
+    {"items": ["Corrigendum 2", "Corrigendum 1", "Buyer ATC", "RFP and scope of work", "GeM bid document and GTC"],
+     "done": "That's the order. Give it to Claude at the start of every bid project."}
+    </script>
+  </div>
+  <div class="cols">
+    <div class="stack"><h3>What this caught in our 2026 bids</h3>
+      <ul>
+        <li>A corrigendum switched the price from GST-inclusive to GST-exclusive.</li>
+        <li>A corrigendum cut the team from 11 positions to 9 and lowered the turnover bar.</li>
+        <li>A corrigendum added a price floor: no quote more than 15% below the estimate.</li>
+      </ul></div>
+    <div class="stack"><h3>And inside a single RFP</h3>
+      <ul>
+        <li>A mandatory declaration cited one annexure number while its format sat at another.</li>
+        <li>A data-sheet query deadline contradicted the seven-day window in the main text.</li>
+        <li>An ATC asked for physical delivery of a document on an online bid.</li>
+      </ul></div>
+  </div>
+  <aside class="notes"><ul><li>Each of these is real. Any one would have cost marks or caused rejection.</li></ul></aside>
+</section>
+
+<!-- =================================================================== 04 · ELIGIBILITY -->
+<section class="slide" id="evidence" data-chapter="4" data-title="Match criterion to evidence">
+  <span class="tab">04 · Eligibility</span>
+  <div class="head"><h2>Every criterion needs one piece of evidence</h2><p class="lede">Pre-qualification is pass or fail. Miss one line and the technical bid is never opened.</p></div>
+  <div data-widget="match">
+    <script type="application/json">
+    {"left": "Criterion", "right": "Evidence",
+     "pairs": [
+      ["Average annual turnover", "CA or auditor certificate with UDIN, year-wise and average"],
+      ["Similar work experience", "Work orders with completion certificates showing value and dates"],
+      ["Staff on payroll", "Certified employee list with EPF records"],
+      ["Company age", "Certificate of Incorporation"],
+      ["Not blacklisted", "Declaration on letterhead in the buyer's format"],
+      ["Authorised signatory", "Notarised Power of Attorney or board resolution"],
+      ["Integrity Pact", "Signed pact on stamp paper of the stated value"],
+      ["Positive net worth", "Audited financial statements"]
+     ]}
+    </script>
+  </div>
+  <aside class="notes"><ul><li>Then ask: which of these needs someone outside the company? CA certificates and completion certificates. They go out on day one.</li></ul></aside>
+</section>
+
+<section class="slide" id="experience" data-chapter="4" data-title="The experience rule">
+  <span class="tab">04 · Eligibility</span>
+  <div class="head"><h2>The GeM experience rule</h2><p class="lede">Most services bids use it: similar completed work in the last three financial years plus the current one. Meet any one option.</p></div>
+  <div class="cols r" data-widget="experience">
+    <div class="stack">
+      <label class="field"><span>Estimated bid value (₹ crore)</span><input type="number" class="typed exp-est" value="3" min="0" step="0.1"></label>
+      <span class="label">Qualifying projects (₹ crore)</span>
+      <div class="exp-projects"></div>
+      <button type="button" class="btn quiet exp-add">Add a project</button>
+      <div class="sticky"><b>Try this</b><p>Change P2 from 1.3 to 1.55. One project's value decides the whole bid.</p></div>
+    </div>
+    <div class="stack">
+      <div class="exp-out" aria-live="polite"></div>
+      <p class="small muted">The red line is the threshold. Green bars clear it. RFPs often add rules: government clients only, minimum duration, ongoing work counted only after most of it is paid.</p>
+    </div>
+  </div>
+  <aside class="notes"><ul><li>With 1.6, 1.3 and 0.9 it fails. With 1.6 and 1.55 it passes on option B.</li></ul></aside>
 </section>
 
 <section class="slide" id="relaxations" data-chapter="4" data-title="Relaxations and EMD">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">04 · Eligibility</span></div>
-    <h2>Relaxations, exemptions and EMD</h2>
+  <span class="tab">04 · Eligibility</span>
+  <div class="head"><h2>Relaxations, exemptions and EMD</h2></div>
+  <div class="cols three">
+    <div class="stack"><h3>MSE and startup relaxation</h3><p>The bid document says whether MSEs or DPIIT startups are relaxed on turnover and experience. If you claim it, upload proof with the bid.</p></div>
+    <div class="stack"><h3>EMD exemption</h3><p>Under GeM's terms, MSE service providers can be exempt from EMD. Traders cannot. A buyer's ATC can't take the exemption away.</p></div>
+    <div class="stack"><h3>Bid Securing Declaration</h3><p>Some buyers accept a notarised declaration on stamp paper (GFR Rule 170) instead of an EMD. We used this route in a 2026 bid.</p></div>
   </div>
-  <div class="grid cols-3">
-    <div class="panel"><h3>MSE and Startup relaxations</h3><p>The bid document says whether Micro and Small Enterprises or DPIIT-registered startups are relaxed from turnover and experience. If you claim it, upload the proof with the bid.</p></div>
-    <div class="panel"><h3>EMD exemption</h3><p>Under GeM terms, MSE service providers can be exempt from EMD (traders are not). A buyer's ATC cannot take that exemption away.</p></div>
-    <div class="panel"><h3>Bid Securing Declaration</h3><p>Some buyers accept a notarised declaration on stamp paper (GFR Rule 170) instead of an EMD instrument. We used this route in a 2026 bid.</p></div>
-  </div>
-  <div class="panel bad"><span class="kicker">The warning GeM shows on the declarations screen</span><p>Incorrect or misleading EMD exemption, MSE or Make in India declarations can lead to <b>disablement on GeM without further notice</b>. One wrong click can lock the whole company out of the marketplace.</p></div>
-  <aside class="notes"><ul><li>We will see this advisory on the real screenshot later.</li><li>If unsure about MSE status for a given bid, ask Finance before answering the EMD exemption question.</li></ul></aside>
+  <div class="clause"><p>From GeM's upload page: "In case of providing incorrect/misleading EMD exemption document/MSE/MII declarations for seeking EMD exemption or otherwise in violation of GeM GTC, <mark>the Service Provider will be liable for disablement on GeM without any further notice</mark>."</p></div>
+  <p class="hand">One wrong radio button can lock the whole company out of GeM. Ask Finance before you answer it.</p>
+  <aside class="notes"><ul><li>We'll see this exact advisory on the real screenshot later.</li></ul></aside>
 </section>
 
-<!-- ============ DECISION ============ -->
-<section class="slide" id="decision" data-chapter="5" data-title="Bid or no-bid">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">05 · Decision</span><span class="try">Try it · score the practice tender</span></div>
-    <h2>Bid or no-bid, decided in one meeting</h2>
-  </div>
-  <div class="split">
+<!-- =================================================================== 05 · DECISION -->
+<section class="slide" id="decision" data-chapter="5" data-title="Bid or no bid">
+  <span class="tab">05 · Decision</span>
+  <div class="head"><h2>Bid or no bid, in one meeting</h2><p class="lede">Bid manager, the account lead, Finance and the signatory. Thirty minutes, the Claude summary, and this note.</p></div>
+  <div class="cols" data-widget="decision">
+    <script type="application/json">
+    {"gates": ["Meets every pre-qualification criterion on paper, after corrigenda", "Holds a GeM service offering in the bid category", "Every mandatory document can be ready before the internal deadline", "Commercial terms we can live with: LD, PBG, payment cycle, price floor"],
+     "factors": [["Technical score we can reach", 25, 4], ["Strategic value of the client", 20, 5], ["Fit with work we can prove", 15, 4], ["Competition (5 = light)", 10, 3], ["Team free for interview and delivery", 15, 3], ["Effort against the time left", 15, 3]]}
+    </script>
     <div class="stack">
-      <div class="panel"><span class="kicker">Gates · any "no" means no-bid</span><div class="stack" id="gates"></div></div>
-      <div class="panel"><span class="kicker">Weighted factors · 1 is poor, 5 is strong</span><div class="stack" id="factors"></div></div>
+      <span class="label">Gates: any "no" means no bid</span>
+      <div class="gates"></div>
+      <hr class="divider">
+      <span class="label">Weighted factors, 1 poor to 5 strong</span>
+      <div class="factors"></div>
+    </div>
+    <div class="decision-note" aria-live="polite">
+      <span>BID / NO-BID NOTE</span>
+      <span>Bid: GEM/2026/B/TRN-0421 (practice)</span>
+      <span>Weighted score: <b class="score"></b></span>
+      <p class="line"></p>
+      <span class="stamp"></span>
+      <span class="sig">Approved by authorised signatory</span>
+    </div>
+  </div>
+  <aside class="notes"><ul><li>Pre-filled for the practice tender. Untick the commercial-terms gate: one gate overrides any score.</li></ul></aside>
+</section>
+
+<section class="slide" id="terms" data-chapter="5" data-title="Red-pen the commercial terms">
+  <span class="tab">05 · Decision</span>
+  <div class="head"><h2>Red-pen the commercial terms</h2><p class="lede">This paragraph mixes terms seen across our 2026 RFPs. Circle every clause that costs us money or risk.</p></div>
+  <div class="cols l" data-widget="redpen">
+    <div class="clause">
+      <p>The contract shall be for two years. <span class="rp" data-why="Up to 5% of contract value a month if we're late, capped at 10%. Hitting the cap allows termination.">Liquidated damages of 0.5% of the contract value shall apply for each week of delay, up to 10%</span>. <span class="rp" data-ok="Standard and fair.">Payment shall be made against invoices supported by work-done reports.</span> <span class="rp" data-why="Cash flow: we carry two to three months of salaries before the first payment.">No advance payment is admissible; payment shall be monthly in arrears after approval.</span></p>
+      <p><span class="rp" data-why="No inflation adjustment for two or three years. Price in salary increments now.">Rates quoted shall remain firm for the entire contract period, including any extension.</span> <span class="rp" data-why="The buyer can add up to a quarter more work at the same price.">The buyer may increase the quantity or duration by up to 25% at the same rates.</span> <span class="rp" data-ok="Normal. Just plan the PBG with Finance.">A performance guarantee of 3% shall be furnished within 15 days of award.</span></p>
+      <p><span class="rp" data-why="Tool licences, travel and devices come out of our price, not theirs.">All listening tools, equipment and travel of deployed staff shall be at the agency's cost.</span> <span class="rp" data-ok="Normal good practice.">The agency shall follow the buyer's brand guidelines.</span> <span class="rp" data-why="A dedicated team can't be shared with other clients, so it's a fixed cost.">The team shall be exclusively dedicated to this assignment.</span></p>
     </div>
     <div class="stack">
-      <div class="panel accent" id="decisionOut" aria-live="polite"></div>
-      <div class="panel"><h3>Who sits in the meeting</h3><p>Bid manager, the account lead who would run the work, Finance and the authorised signatory. Thirty minutes, using the Claude summary and this scorecard. Record the decision in the pipeline sheet.</p></div>
+      <div class="row between"><span class="tally rp-tally"></span><button type="button" class="btn quiet rp-reveal">Show all</button></div>
+      <p class="rp-say fb">Click a phrase you would flag for Finance.</p>
+      <ol class="rp-log"></ol>
     </div>
   </div>
-  <aside class="notes"><ul><li>Pre-filled for the practice tender. Untick "Commercial terms we can live with" to show how a single gate overrides a strong score.</li></ul></aside>
+  <aside class="notes"><ul><li>Ask Finance to run this slide in the decision meeting. Each circled clause changes the price.</li></ul></aside>
 </section>
 
-<section class="slide" id="decision-flags" data-chapter="5" data-title="Commercial terms to read first">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">05 · Decision</span></div>
-    <h2>Read the commercial terms before you say yes</h2>
-    <p class="lede">A bid we win on bad terms costs more than a bid we lose. These clauses appeared across our 2026 RFPs.</p>
-  </div>
-  <div class="grid cols-3">
-    <div class="panel"><h3>Liquidated damages</h3><p>Often 0.5% of contract value per week of delay, capped at 10%. Reaching the cap can allow termination.</p></div>
-    <div class="panel"><h3>Performance guarantee</h3><p>Usually 3% of contract value as an ePBG or bank guarantee, within 14 to 15 days of award, valid beyond the contract.</p></div>
-    <div class="panel"><h3>Payment cycle</h3><p>Monthly or quarterly in arrears, against accepted deliverables. No advance. Invoices with work-done reports and attendance.</p></div>
-    <div class="panel"><h3>Fixed rates</h3><p>Rates locked for the full term, sometimes with a fixed yearly increment. Check whether the price is GST-inclusive or exclusive.</p></div>
-    <div class="panel"><h3>Option clause</h3><p>Buyer can raise or cut quantity or duration, typically by up to 25%, at award and after. Price for that flexibility.</p></div>
-    <div class="panel"><h3>Hidden costs</h3><p>Dedicated team, on-site days, listening tools, travel and equipment at our cost. Physical presentations with the full team.</p></div>
-  </div>
-  <aside class="notes"><ul><li>Ask Finance to own this slide in the decision meeting.</li></ul></aside>
-</section>
-
-<!-- ============ SCORING ============ -->
+<!-- =================================================================== 06 · SCORING -->
 <section class="slide" id="qcbs" data-chapter="6" data-title="How QCBS picks the winner">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">06 · Scoring</span><span class="try">Try it · change scores and prices</span></div>
-    <h2>How QCBS picks the winner</h2>
-    <p class="lede">Most of our bids are Quality and Cost Based Selection at 70:30. Only bidders above the technical cut-off have their price opened.</p>
-  </div>
-  <div class="panel accent"><p class="mono small">Final = 70 × (Your tech ÷ Highest tech) + 30 × (Lowest price ÷ Your price)</p></div>
-  <div class="split wide-left">
-    <div class="table-wrap">
-      <table id="qcbsTable">
-        <thead><tr><th>Bidder</th><th class="num">Technical (of 100)</th><th class="num">Price (₹ crore)</th><th class="num">Tech pts</th><th class="num">Price pts</th><th class="num">Final</th></tr></thead>
-        <tbody></tbody>
-      </table>
-    </div>
-    <div class="stack">
-      <div class="panel" id="qcbsOut" aria-live="polite"></div>
-      <label class="field" for="qcbsCut"><span>Technical cut-off</span><input type="number" id="qcbsCut" value="70" min="0" max="100"></label>
-      <label class="field" for="qcbsWeight"><span>Technical weight (%)</span><input type="number" id="qcbsWeight" value="70" min="0" max="100"></label>
+  <span class="tab">06 · Scoring</span>
+  <div class="head"><h2>How QCBS picks the winner</h2><p class="lede">Final = 70 × (your tech ÷ highest tech) + 30 × (lowest price ÷ your price). Move the sliders.</p></div>
+  <div data-widget="qcbs">
+    <script type="application/json">{"bidders": [["Bidder A", 88, 3.05], ["Bidder B", 76, 2.7], ["Bidder C", 72, 2.6], ["Bidder D", 66, 2.4]]}</script>
+    <div class="legend"><span><i style="background:var(--blue)"></i>technical points</span><span><i style="background:var(--file-2)"></i>price points</span></div>
+    <div class="q-rows"></div>
+    <div class="cols">
+      <div class="q-out stack" aria-live="polite"></div>
+      <div class="row">
+        <label class="field"><span>Technical weight (%)</span><input type="number" class="q-weight typed" value="70" min="0" max="100"></label>
+        <label class="field"><span>Cut-off</span><input type="number" class="q-cut typed" value="70" min="0" max="100"></label>
+      </div>
     </div>
   </div>
-  <aside class="notes"><ul><li>Point out: Bidder A is the most expensive qualified bid and still wins. A few technical marks are worth more than a big price cut.</li><li>Drop A's technical score to 82 and watch the result flip.</li></ul></aside>
+  <aside class="notes"><ul><li>A is the most expensive qualified bid and still wins. Drop A to 82 and watch it flip.</li><li>Bidder D is below the cut-off, so its cheap price never gets opened.</li></ul></aside>
 </section>
 
-<section class="slide" id="scoring-matrix" data-chapter="6" data-title="Reading the scoring matrix">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">06 · Scoring</span><span class="try">Try it · tick what we can prove</span></div>
-    <h2>Read the matrix as a list of marks to collect</h2>
-  </div>
-  <div class="split wide-left">
-    <div class="table-wrap">
-      <table id="matrixTable">
-        <thead><tr><th>Criterion (practice tender)</th><th>How marks are given</th><th class="num">Max</th><th class="num">Ours</th></tr></thead>
-        <tbody></tbody>
-      </table>
-    </div>
+<section class="slide" id="marks" data-chapter="6" data-title="Fill in the marks sheet">
+  <span class="tab">06 · Scoring</span>
+  <div class="head"><h2>Read the matrix as marks to collect</h2><p class="lede">The practice tender's matrix. Enter what you think Northstar can score.</p></div>
+  <div class="cols l" data-widget="marks">
+    <script type="application/json">
+    {"cutoff": 70, "rows": [
+      ["A1 · Similar government projects of ₹50 lakh+", "3 = 4 · 5 = 7 · 7 or more = 10", 10, 7, "Banked"],
+      ["A2 · Average turnover", "₹6–10 cr = 4 · ₹10–20 cr = 7 · ₹20 cr+ = 10", 10, 4, "Banked"],
+      ["A3 · Case studies with measurable outcomes", "5 each, up to 2", 10, 10, "Banked"],
+      ["B · Team interview, six key roles", "Experience and interview", 25, 23, "Interview"],
+      ["C1 · Understanding of the buyer and sector", "Committee", 10, 8, "Room"],
+      ["C2 · Approach, calendar, governance", "Committee", 15, 12, "Room"],
+      ["C3 · Sample campaign \"Haath Se\"", "All five elements, quality", 15, 11, "Room"],
+      ["C4 · Innovation, including AI tools", "Committee", 5, 4, "Room"]
+    ]}
+    </script>
+    <div class="table-wrap"><table class="ledger"><thead><tr><th>Criterion</th><th>How marks are given</th><th class="num">Max</th><th class="num">Ours</th></tr></thead><tbody></tbody></table></div>
     <div class="stack">
-      <div class="panel" id="matrixOut" aria-live="polite"></div>
-      <div class="panel"><h3>Three kinds of marks</h3><ul class="checks dot"><li><b>Banked</b>: counted from documents (projects, turnover, case studies). Fix these before the presentation.</li><li><b>Interview</b>: every proposed person must attend. An absent person is lost marks.</li><li><b>Room</b>: understanding, approach and the sample campaign. Usually the biggest block.</li></ul></div>
+      <div class="marks-out stack" aria-live="polite"></div>
+      <div class="sticky r"><b>Three kinds of marks</b><ul><li><b>Banked</b> from documents. Fix them before the presentation.</li><li><b>Interview</b>: an absent person scores zero.</li><li><b>Room</b>: the presentation. Often the biggest block.</li></ul></div>
     </div>
   </div>
-  <aside class="notes"><ul><li>In two of our 2026 bids the presentation and sample campaign carried 30 to 45 marks. Build the deck early.</li></ul></aside>
+  <aside class="notes"><ul><li>In two of our 2026 bids the presentation and sample work carried 30 to 45 marks.</li></ul></aside>
 </section>
 
-<!-- ============ DOCUMENTS ============ -->
-<section class="slide" id="doc-types" data-chapter="7" data-title="Six kinds of documents">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">07 · Documents</span></div>
-    <h2>Six kinds of documents, six lead times</h2>
-  </div>
+<!-- =================================================================== 07 · DOCUMENTS -->
+<section class="slide" id="doc-kinds" data-chapter="7" data-title="Six kinds of documents">
+  <span class="tab">07 · Documents</span>
+  <div class="head"><h2>Six kinds of document, six lead times</h2></div>
   <div class="table-wrap">
-    <table>
+    <table class="ledger">
       <thead><tr><th>Kind</th><th>Examples</th><th>Lead time</th><th>Owner</th></tr></thead>
       <tbody>
-        <tr><td><b>Company standard</b></td><td>Certificate of Incorporation, MoA/AoA, PAN, GST, Udyam/MSME, EPF and ESIC registrations</td><td>Same day, from the vault</td><td>Documentation</td></tr>
-        <tr><td><b>Third-party certificates</b></td><td>CA or statutory auditor certificate for turnover and net worth with UDIN; client completion certificates</td><td>3 to 5 days for the CA; weeks for clients</td><td>Finance · Account leads</td></tr>
-        <tr><td><b>RFP-format annexures</b></td><td>Bid submission letter, bidder profile, non-blacklisting, land border (GFR 144(xi)), no-deviation, conflict of interest</td><td>1 to 2 days</td><td>Documentation</td></tr>
-        <tr><td><b>Stamp paper and notarised</b></td><td>Integrity Pact, Power of Attorney, Bid Securing Declaration</td><td>1 to 2 days, needs physical stamp paper, notary, witnesses</td><td>Documentation · Admin</td></tr>
-        <tr><td><b>Technical proposal</b></td><td>Approach and methodology, work plan, case studies, sample campaign, CVs in the prescribed format, presentation</td><td>5 to 10 days</td><td>Strategy · Creative · HR</td></tr>
-        <tr><td><b>Financial</b></td><td>Price on GeM, price break-up document, financial submission letter, rate cards</td><td>2 days, after the decision</td><td>Finance · Leadership</td></tr>
+        <tr><td><b>Company standard</b></td><td>Incorporation, MoA/AoA, PAN, GST, Udyam, EPF and ESIC registration</td><td class="typed">same day</td><td>Documentation</td></tr>
+        <tr><td><b>Third-party certificates</b></td><td>CA or auditor certificate with UDIN; client completion certificates</td><td class="typed"><mark>3–5 days; weeks</mark></td><td>Finance · Account leads</td></tr>
+        <tr><td><b>RFP-format annexures</b></td><td>Submission letter, bidder profile, non-blacklisting, land border, no-deviation, conflict of interest</td><td class="typed">1–2 days</td><td>Documentation</td></tr>
+        <tr><td><b>Stamp paper, notarised</b></td><td>Integrity Pact, Power of Attorney, Bid Securing Declaration</td><td class="typed">1–2 days</td><td>Documentation · Admin</td></tr>
+        <tr><td><b>Technical proposal</b></td><td>Approach, work plan, case studies, sample campaign, CVs in the set format, presentation</td><td class="typed">5–10 days</td><td>Strategy · Creative · HR</td></tr>
+        <tr><td><b>Financial</b></td><td>Price on GeM, price break-up, financial letter, rate cards</td><td class="typed">2 days</td><td>Finance · Leadership</td></tr>
       </tbody>
     </table>
   </div>
-  <aside class="notes"><ul><li>The two that always run late: CA certificates and client completion certificates. Ask for both on day one.</li></ul></aside>
+  <p class="hand">The highlighted row always runs late. Ask on day one.</p>
+  <aside class="notes"><ul><li>Every bid this year, the CA certificate was the last document in.</li></ul></aside>
 </section>
 
-<section class="slide" id="doc-rules" data-chapter="7" data-title="House rules for every document">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">07 · Documents</span></div>
-    <h2>House rules for every document</h2>
-  </div>
-  <div class="grid cols-2">
-    <div class="panel"><h3>Content</h3><ul class="checks"><li>Use the buyer's format word for word. Strike out "not applicable" lines; do not delete them.</li><li>Same legal entity name everywhere: PAN, GST, incorporation, forms, letterhead.</li><li>Correct bid number, RFP reference and date on every letter.</li><li>Validity days exactly as the bid says (e.g. 120 days).</li><li>Turnover figures identical in the CA certificate, financials and forms.</li></ul></div>
-    <div class="panel"><h3>Signing and assembly</h3><ul class="checks"><li>Every page signed and stamped by the authorised signatory where the RFP asks.</li><li>Signatory matches the Power of Attorney or board resolution.</li><li>Index page first, then page numbers through the whole file.</li><li>Merge in the order of the checklist, with bookmarks.</li><li>File names like <code>AnnexIV_CA_Turnover_Certificate.pdf</code>.</li></ul></div>
-  </div>
-  <div class="panel bad"><span class="kicker">The rule that rejects bids outright</span><p>No price, rate, fee or cost anywhere in the technical bid. Not in a case study, a CV, the presentation or a sample invoice. Price lives only in the Offer Price tab and the price break-up file.</p></div>
-  <aside class="notes"><ul><li>Every RFP we read this year carried this rejection clause in some form.</li></ul></aside>
-</section>
-
-<section class="slide" id="evergreen" data-chapter="7" data-title="The evergreen vault">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">07 · Documents</span></div>
-    <h2>The evergreen vault</h2>
-    <p class="lede">Half of every bid is the same documents. Keep them current in one place so the team spends its time on the parts that win marks.</p>
-  </div>
-  <div class="split">
-<pre class="tree">Bid Vault/
-├── 00_Company/        incorporation, MoA-AoA, PAN, GST, Udyam, startup
-├── 01_Finance/        audited statements (3 FY), CA certificates
-├── 02_Experience/
-│   ├── by_client/     work order + completion certificate per project
-│   └── index.xlsx     client, scope tags, dates, govt or private
-├── 03_People/         CV bank in a standard format, EPF/ESIC records
-├── 04_Declarations/   editable templates for common annexures
-├── 05_Credentials/    case studies, awards, sample work
-├── 06_Signatory/      PoA, board resolution, eSign holder details
-└── Bids/
-    └── GEM-2026-B-xxxx/  tracker, RFP set, drafts, final PDFs</pre>
+<section class="slide" id="letter" data-chapter="7" data-title="Spot the mistakes in the letter">
+  <span class="tab">07 · Documents</span>
+  <div class="head"><h2>Seven mistakes in one letter</h2><p class="lede">A draft Annexure I for the practice tender. Circle every mistake before it reaches the signatory.</p></div>
+  <div class="cols l" data-widget="redpen">
+    <div class="letter">
+      <div class="letterhead"><b>Northstar Media Pvt Ltd</b><span class="typed small">Plot 14, Sector 44, Gurugram 122003</span></div>
+      <p class="typed">Ref: NSM/BID/2026/118 &nbsp;&nbsp; Date: 12-11-2026</p>
+      <p>To<br>The Director, Bharat Craft &amp; Culture Mission, New Delhi</p>
+      <p><b>Subject: Annexure I, Bid Submission Letter for <span class="rp" data-why="Wrong bid number. The bid is GEM/2026/B/TRN-0421.">GEM/2026/B/TRN-0412</span></b></p>
+      <p>Sir/Madam,</p>
+      <p>We, <span class="rp" data-why="Entity name must match PAN, GST and incorporation exactly: Northstar Media Pvt Ltd.">Northstar Digital LLP</span>, submit our bid for the selection of a Digital Communication &amp; Social Media Agency. <span class="rp" data-ok="Good. Always confirm the corrigenda.">We have read the RFP and Corrigendum 1.</span> <span class="rp" data-why="Conditional acceptance. The RFP needs unconditional acceptance and a no-deviation certificate.">We accept the terms of the RFP, subject to the deviations listed in Annex A.</span></p>
+      <p><span class="rp" data-why="The bid asks for 120 days.">Our bid shall remain valid for 90 days</span> from <span class="rp" data-why="Corrigendum 1 moved the bid end date to 17-11-2026.">the bid end date of 10-11-2026</span>. <span class="rp" data-why="A price in the technical bid means outright rejection. Price belongs only on GeM and in the break-up file.">Our all-inclusive fee of ₹2.90 crore covers the full scope.</span></p>
+      <p><span class="rp" data-ok="Correct. This is required.">We confirm that we hold a GeM service offering in this category</span> and <span class="rp" data-ok="Fine.">enclose the documents listed in the index.</span></p>
+      <p>Yours faithfully,</p>
+      <p class="typed"><span class="rp" data-why="Must be signed by the person named in the Power of Attorney, with name, designation and stamp.">Signed: Head of Sales</span><br>For Northstar Media Pvt Ltd</p>
+    </div>
     <div class="stack">
-      <div class="panel"><h3>Keep it fresh</h3><ul class="checks dot"><li>Refresh financial certificates after each audit.</li><li>Ask for a completion certificate the week a project ends.</li><li>Tag every project in the index: scope, duration, government or private, completed or ongoing.</li></ul></div>
-      <div class="panel warn"><h3>Access</h3><p>The vault holds audited financials and personal data in CVs. Limit access to the bid team and never share it outside approved tools.</p></div>
+      <div class="row between"><span class="tally rp-tally"></span><button type="button" class="btn quiet rp-reveal">Show all</button></div>
+      <p class="rp-say fb">Click any phrase that looks wrong.</p>
+      <ol class="rp-log"></ol>
+      <div class="sticky r"><b>House rules</b><ul><li>Buyer's format, word for word.</li><li>One legal name everywhere.</li><li>Right bid number and validity.</li><li>No prices anywhere in the technical bid.</li><li>Signed and stamped by the PoA holder.</li></ul></div>
     </div>
   </div>
-  <aside class="notes"><ul><li>The project index is what lets us answer the experience question in five minutes during triage.</li></ul></aside>
+  <aside class="notes"><ul><li>Give pairs three minutes. Most people find four or five. The validity and the bid number are the usual misses.</li></ul></aside>
 </section>
 
-<!-- ============ TEAMS ============ -->
-<section class="slide" id="raci" data-chapter="8" data-title="Who owns what">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">08 · Teams</span><span class="try">Try it · pick a team</span></div>
-    <h2>Who owns what</h2>
-    <p class="lede">One bid manager owns the tracker. Every document has exactly one owner and one deadline.</p>
+<section class="slide" id="vault" data-chapter="7" data-title="The evergreen vault">
+  <span class="tab">07 · Documents</span>
+  <div class="head"><h2>The evergreen vault</h2><p class="lede">Half of every bid is the same paperwork. Keep it current in one place. Click a folder.</p></div>
+  <div class="cols">
+    <div class="stack vault">
+      <details><summary><b>00 Company</b> <span class="muted small">incorporation, MoA-AoA, PAN, GST, Udyam</span></summary><p class="small">Refresh after any change of address or directors. Self-attested scans, one PDF each.</p></details>
+      <details><summary><b>01 Finance</b> <span class="muted small">audited statements, CA certificates</span></summary><p class="small">New set after every audit. A standard turnover and net-worth certificate saves a week per bid.</p></details>
+      <details><summary><b>02 Experience</b> <span class="muted small">work orders and completion certificates</span></summary><p class="small">One folder per client. Ask for the completion certificate the week a project ends. Keep an index: scope tags, value, dates, government or private, completed or ongoing.</p></details>
+      <details><summary><b>03 People</b> <span class="muted small">CV bank, EPF and ESIC records</span></summary><p class="small">CVs in one standard layout, updated every quarter. They hold personal data, so restrict access.</p></details>
+      <details><summary><b>04 Declarations</b> <span class="muted small">templates for common annexures</span></summary><p class="small">Non-blacklisting, land border, no-deviation, conflict of interest. Always swap in the buyer's own format when given.</p></details>
+      <details><summary><b>05 Credentials</b> <span class="muted small">case studies, awards, sample work</span></summary><p class="small">Outcomes in numbers, no fees. Clear sample work with the account lead before using it.</p></details>
+      <details><summary><b>06 Signatory</b> <span class="muted small">PoA, board resolution, eSign holder</span></summary><p class="small">Who can sign, and until when. Check the PoA hasn't expired.</p></details>
+      <details><summary><b>Bids / GEM-2026-B-xxxx</b> <span class="muted small">one folder per bid</span></summary><p class="small">RFP set, tracker, drafts, final PDFs, screenshots and the submission receipt.</p></details>
+    </div>
+    <div class="sticky"><b>Who can open it</b><p>The vault holds audited financials and personal data. Bid team only, approved tools only.</p></div>
   </div>
-  <div class="teams chips" id="raciTeams"></div>
-  <div class="split">
-    <div class="panel" id="raciRole" aria-live="polite"></div>
-    <div class="panel"><span class="kicker">Their documents in a typical bid</span><ul class="checks dot" id="raciDocs"></ul></div>
+  <aside class="notes"><ul><li>The experience index is what lets us answer the experience question in five minutes during triage.</li></ul></aside>
+</section>
+
+<!-- =================================================================== 08 · TEAMS -->
+<section class="slide" id="owners" data-chapter="8" data-title="Who owns which document?">
+  <span class="tab">08 · Teams</span>
+  <div class="head"><h2>Who owns which document?</h2><p class="lede">One owner per document. Click a document, then its team.</p></div>
+  <div class="stack" data-widget="sort">
+    <script type="application/json">
+    {"lanes": ["Documentation", "Finance", "HR", "Account leads", "Strategy & Creative", "Leadership", "Admin"],
+     "items": [
+      {"text": "CA turnover certificate (UDIN)", "lane": "Finance"},
+      {"text": "Price break-up", "lane": "Finance"},
+      {"text": "Integrity Pact draft", "lane": "Documentation"},
+      {"text": "Non-blacklisting declaration", "lane": "Documentation"},
+      {"text": "10 CVs in Annexure X", "lane": "HR"},
+      {"text": "Employee list with EPF", "lane": "HR"},
+      {"text": "Completion certificates", "lane": "Account leads"},
+      {"text": "Sample campaign", "lane": "Strategy & Creative"},
+      {"text": "Technical proposal", "lane": "Strategy & Creative"},
+      {"text": "Power of Attorney", "lane": "Leadership"},
+      {"text": "Final price approval", "lane": "Leadership"},
+      {"text": "Stamp paper and notary", "lane": "Admin"}
+     ]}
+    </script>
   </div>
-  <aside class="notes"><ul><li>Click HR: CVs and the interview are worth 20 to 25 marks in our recent bids. HR is a scoring team, not a support team.</li></ul></aside>
+  <p class="hand">The bid manager owns none of these, and chases all of them.</p>
+  <aside class="notes"><ul><li>HR is a scoring team: CVs and interviews were worth 20 to 25 marks in our recent bids.</li></ul></aside>
 </section>
 
 <section class="slide" id="timeline" data-chapter="8" data-title="Plan backwards from the deadline">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">08 · Teams</span><span class="try">Try it · set a deadline</span></div>
-    <h2>Plan backwards from the deadline</h2>
-  </div>
-  <div class="split wide-left">
-    <ol class="timeline" id="timelineList"></ol>
+  <span class="tab">08 · Teams</span>
+  <div class="head"><h2>Plan backwards from the deadline</h2><p class="lede">Enter a real bid's end date. Watch for Sundays.</p></div>
+  <div class="cols l" data-widget="timeline">
+    <script type="application/json">
+    {"steps": [
+      [-21, "Bid found, logged, triaged"], [-20, "Claude summary and bid or no-bid meeting", true],
+      [-19, "CA and completion-certificate requests sent; tracker live"], [-18, "Representation and pre-bid queries (within 4 days of publication)"],
+      [-14, "Annexure drafts done; team frozen"], [-10, "Technical proposal first draft"], [-7, "Leadership review; price approved"],
+      [-5, "Stamp paper documents signed and notarised"], [-4, "Internal deadline: everything final, signed, merged", true],
+      [-3, "Compress, check limits, upload, save each tab"], [-2, "Verify, e-sign, submit, download receipt", true],
+      [-1, "Buffer for a late corrigendum or a slow portal"], [0, "GeM bid end date", true]
+    ]}
+    </script>
+    <ol class="timeline"></ol>
     <div class="stack">
-      <label class="field" for="deadline"><span>GeM bid end date</span><input type="date" id="deadline" value="2026-11-17"></label>
-      <div class="panel accent"><h3>The internal deadline</h3><p>All documents final, signed and merged four days before the GeM deadline. Our trackers this year set it at T-4 or T-5 for every bid.</p></div>
-      <div class="panel warn"><h3>Why the buffer</h3><p>The portal slows down near popular deadlines, signatories travel, and a corrigendum can arrive two days before closing.</p></div>
+      <label class="field"><span>Bid end date</span><input type="date" value="2026-11-17"></label>
+      <div class="sticky"><b>Why T-4</b><p>Portals slow down near popular deadlines, signatories travel, and corrigenda arrive two days before closing. Our 2026 trackers put the internal deadline at T-4 or T-5 every time.</p></div>
     </div>
   </div>
-  <aside class="notes"><ul><li>Change the date to a real upcoming bid during the session.</li></ul></aside>
+  <aside class="notes"><ul><li>Change the date to an upcoming real bid.</li></ul></aside>
 </section>
 
 <section class="slide" id="tracker" data-chapter="8" data-title="The master tracker">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">08 · Teams</span></div>
-    <h2>The master tracker is the single source of truth</h2>
-    <p class="lede">Every bid this year ran on one spreadsheet with the same tabs. Claude drafts it from the RFP; the bid manager owns it.</p>
+  <span class="tab">08 · Teams</span>
+  <div class="head"><h2>Ten minutes on the tracker, every day</h2><p class="lede">Run the stand-up. Click a status to move it on.</p></div>
+  <div class="cols l" data-widget="tracker">
+    <script type="application/json">
+    {"statuses": ["Not started", "In progress", "With signatory", "Done"],
+     "rows": [
+      ["A1", "Certificate of Incorporation", "Documentation", 3],
+      ["A3", "CA certificate, new FY period, UDIN", "Finance", 1],
+      ["A4", "Work orders and completion certificates", "Account leads", 1],
+      ["A5", "Employee list with EPF", "HR", 3],
+      ["A8", "Integrity Pact on ₹100 stamp paper", "Documentation", 2],
+      ["B2", "Two case studies, no fees", "Strategy & Creative", 1],
+      ["B3", "10 CVs in Annexure X", "HR", 0],
+      ["C1", "Price break-up, Annexure XI", "Finance", 0]
+     ]}
+    </script>
+    <div class="table-wrap"><table class="ledger"><thead><tr><th>S.No.</th><th>Document</th><th>Owner</th><th>Status</th></tr></thead><tbody></tbody></table></div>
+    <div class="stack">
+      <span class="tally tracker-sum"></span>
+      <div class="meter"><i></i></div>
+      <p>Our tracker has the same tabs for every bid: summary, document checklist, team actions, eligibility check, scoring strategy, critical alerts, key dates, people.</p>
+      <p class="small muted">Claude drafts it from the RFP with prompt 4. The bid manager owns it.</p>
+    </div>
   </div>
-  <div class="grid cols-4">
-    <div class="panel"><h3>Summary</h3><p class="small">Bid at a glance, key dates, EMD, evaluation method, scoring quick reference.</p></div>
-    <div class="panel"><h3>Document checklist</h3><p class="small">Every document with RFP reference, page, format, upload slot, owner, status.</p></div>
-    <div class="panel"><h3>Team responsibilities</h3><p class="small">Action items per team with dependencies and internal deadlines.</p></div>
-    <div class="panel"><h3>Eligibility check</h3><p class="small">Each PQ criterion, exact wording, compliant yes or no, evidence.</p></div>
-    <div class="panel"><h3>Scoring strategy</h3><p class="small">Max marks, our target, action to maximise each line.</p></div>
-    <div class="panel"><h3>Critical alerts</h3><p class="small">Rejection-level risks, contradictions, corrigendum changes.</p></div>
-    <div class="panel"><h3>Key dates</h3><p class="small">Pre-bid, queries, representation window, deadline, opening, validity.</p></div>
-    <div class="panel"><h3>People</h3><p class="small">Each required role, minimum experience, proposed person, CV status.</p></div>
-  </div>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>S.No.</th><th>Document</th><th>RFP ref · page</th><th>Upload slot</th><th>Owner</th><th>Status</th></tr></thead>
-      <tbody>
-        <tr><td class="mono">A3</td><td>CA certificate, turnover and net worth (UDIN)</td><td>Annexure IV · p. 44</td><td>Bidder Turnover</td><td>Finance</td><td><span class="pill ok">Done</span></td></tr>
-        <tr><td class="mono">A8</td><td>Integrity Pact on ₹100 stamp paper</td><td>Annexure VI · p. 52</td><td>Additional Doc 2</td><td>Documentation</td><td><span class="pill warn">With signatory</span></td></tr>
-        <tr><td class="mono">B3</td><td>CVs of 10 proposed members</td><td>Annexure X · p. 58</td><td>Additional Doc 3</td><td>HR</td><td><span class="pill bad">3 pending</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-  <aside class="notes"><ul><li>Run a ten-minute stand-up on the tracker every day from T-15. Status words only: Done, In progress, Blocked, Not applicable.</li></ul></aside>
+  <aside class="notes"><ul><li>Status words only. Nobody says "almost done".</li></ul></aside>
 </section>
 
-<!-- ============ SUBMIT ============ -->
-<section class="slide" id="submit-flow" data-chapter="9" data-title="The five participation tabs">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">09 · Submitting</span><span class="try">Try it · open each tab</span></div>
-    <h2>The five tabs of Bid Participation</h2>
-    <p class="lede">After you click Participate on a bid, GeM walks you through these tabs. Save as you go; nothing is submitted until the last one.</p>
+<!-- =================================================================== 09 · SUBMITTING -->
+<section class="slide" id="gem-sim" data-chapter="9" data-title="Submit the practice bid">
+  <span class="tab">09 · Submitting</span>
+  <div class="head"><h2>Submit the practice bid</h2><p class="lede">The five participation tabs, with the practice tender's rules switched on. Some files on the table are traps.</p></div>
+  <div class="sim" data-widget="gemsim">
+    <script type="application/json">
+    {"bid": "GEM/2026/B/TRN-0421", "bidder": "Northstar Media Pvt Ltd",
+     "category": "Hiring of Social Media Agency - Social Media Content development and Management",
+     "offerings": [
+      {"label": "Digital Marketing Services", "id": "Offering DM-0044 · different category", "ok": false, "why": "This offering is in a different category. GeM won't let you bid with it."},
+      {"label": "Hiring of Social Media Agency - Social Media Content development and Management", "id": "Offering SM-0091 · matches the bid", "ok": true}
+     ],
+     "floor": 25500000, "emd": 600000,
+     "gstins": ["06AAACN0000A1Z5 · Haryana", "07AAACN0000A1Z3 · Delhi"],
+     "slots": [
+      {"name": "Experience Criteria", "required": true, "std": true, "want": "experience"},
+      {"name": "Bidder Turnover", "required": true, "std": true, "want": "turnover"},
+      {"name": "Certificate (Requested in ATC)", "required": true, "std": true, "want": "atc"},
+      {"name": "Additional Doc 1 (Requested in ATC)", "required": true, "std": true},
+      {"name": "Additional Doc 2 (Requested in ATC)", "required": true, "std": true},
+      {"name": "Additional Doc 3 (Requested in ATC)", "required": true, "std": true},
+      {"name": "Additional Doc 4 (Requested in ATC)", "required": true, "std": true},
+      {"name": "Technical Proposal and Presentation", "required": true, "std": false, "want": "proposal"},
+      {"name": "Power of Attorney", "required": true, "std": false, "want": "poa"}
+     ],
+     "files": [
+      {"name": "WorkOrders_CompletionCerts.pdf", "mb": 8.9, "pages": 86, "kind": "experience", "must": true},
+      {"name": "AnnexIV_CA_Turnover_NetWorth.pdf", "mb": 1.1, "pages": 4, "kind": "turnover", "must": true},
+      {"name": "ATC_Annexures_merged.pdf", "mb": 9.6, "pages": 64, "kind": "atc", "must": true},
+      {"name": "AnnexIII_Experience_Sheets.pdf", "mb": 6.2, "pages": 38, "kind": "add", "must": true},
+      {"name": "AnnexX_CVs_10_members.pdf", "mb": 5.4, "pages": 30, "kind": "add", "must": true},
+      {"name": "CVs_12_members_old_draft.pdf", "mb": 6.6, "pages": 36, "kind": "stale"},
+      {"name": "EPF_Employee_List.pdf", "mb": 3.1, "pages": 22, "kind": "add", "must": true},
+      {"name": "Audited_Financials_3FY.pdf", "mb": 14.2, "pages": 96, "kind": "big"},
+      {"name": "Audited_Financials_3FY_compressed.pdf", "mb": 7.8, "pages": 96, "kind": "add", "must": true},
+      {"name": "Technical_Proposal.pdf", "mb": 9.1, "pages": 58, "kind": "proposal", "must": true},
+      {"name": "PoA_Notarised.pdf", "mb": 0.8, "pages": 3, "kind": "poa", "must": true},
+      {"name": "AnnexXI_Price_Breakup.pdf", "mb": 0.4, "pages": 2, "kind": "price"}
+     ]}
+    </script>
   </div>
-  <div class="stepper" id="stepper" role="group" aria-label="Participation tabs"></div>
-  <div class="split">
-    <div class="panel" id="stepWhat" aria-live="polite"></div>
-    <div class="panel warn" id="stepWatch" aria-live="polite"></div>
-  </div>
-  <aside class="notes"><ul><li>Walk through all five. Then go to the next slide for the real screenshot of tab three.</li></ul></aside>
+  <aside class="notes"><ul><li>Let one pair drive on the projector while the room shouts instructions.</li><li>Traps: the wrong offering, a price below the floor, GST ticked, the 14 MB financials, the old 12-CV file, the price file in a technical slot, and claiming EMD exemption.</li></ul></aside>
 </section>
 
-<section class="slide" id="screen-upload" data-chapter="9" data-title="Screenshot: Upload Documents">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">09 · Submitting</span><span>Actual screenshot from one of our bids</span></div>
-    <h2>Inside the Upload Documents tab</h2>
-  </div>
-  <div class="split wide-left">
+<section class="slide" id="screen-upload" data-chapter="9" data-title="The real Upload Documents tab">
+  <span class="tab">09 · Submitting</span>
+  <div class="head"><h2>The real Upload Documents tab</h2><p class="lede">A screenshot from one of our 2026 bids, account name blacked out. Click a pin.</p></div>
+  <div class="cols l" data-widget="pins">
     <figure class="shot">
-      <div class="shot-frame"><img src="assets/img/gem-upload-documents.jpg" alt="GeM Bid Participation page, Upload Documents tab, listing upload slots for experience, turnover, ATC certificate, four additional documents and buyer-specific documents" width="1400" height="1385" loading="lazy"></div>
-      <figcaption>GeM seller view, 2026. Account name hidden. Scroll inside the frame, or <a href="assets/img/gem-upload-documents.jpg" target="_blank" rel="noopener">open full size</a>.</figcaption>
+      <img src="assets/img/gem/upload-documents.jpg" alt="GeM Bid Participation page on the Upload Documents tab, with upload slots for experience, turnover, ATC certificate, four additional documents and buyer-specific documents" width="1400" height="1385" loading="lazy">
+      <button type="button" class="pin" style="left:10.4%;top:25%" aria-label="Pin 1">1</button>
+      <button type="button" class="pin" style="left:52.6%;top:27%" aria-label="Pin 2">2</button>
+      <button type="button" class="pin" style="left:27.6%;top:34.7%" aria-label="Pin 3">3</button>
+      <button type="button" class="pin" style="left:27.6%;top:45.9%" aria-label="Pin 4">4</button>
+      <button type="button" class="pin" style="left:27.6%;top:63.2%" aria-label="Pin 5">5</button>
+      <button type="button" class="pin" style="left:27.6%;top:89.3%" aria-label="Pin 6">6</button>
     </figure>
-    <ol class="callouts">
-      <li><span>Left side: the five tabs. A green tick shows a completed tab.</span></li>
-      <li><span>Starred slots are mandatory. Each takes <b>one PDF, up to 10 MB and 100 pages</b>.</span></li>
-      <li><span><b>Certificate (Requested in ATC)</b>: GeM asks you to merge all ATC documents into a single file.</span></li>
-      <li><span><b>Additional Doc 1 to 4</b>: your overflow space when the ATC pack is larger than one slot.</span></li>
-      <li><span>Below them, slots the buyer added for this bid, such as approach and methodology, NDA or Power of Attorney.</span></li>
-      <li><span><b>Financial document indicating price break-up</b> is the one upload where prices belong.</span></li>
+    <ol class="pins-list">
+      <li><span class="n">1</span><span>The five tabs. A green tick means that tab is saved.</span></li>
+      <li><span class="n">2</span><span>Each standard slot takes <mark>one PDF, up to 10 MB and 100 pages</mark>.</span></li>
+      <li><span class="n">3</span><span>Certificate (Requested in ATC): GeM asks you to merge all ATC documents into a single file.</span></li>
+      <li><span class="n">4</span><span>Additional Doc 1 to 4: room for an ATC pack too big for one slot.</span></li>
+      <li><span class="n">5</span><span>Slots the buyer added for this bid. They change from bid to bid, so map them in the tracker.</span></li>
+      <li><span class="n">6</span><span>Financial document with the price break-up: the only upload where prices belong.</span></li>
     </ol>
   </div>
-  <aside class="notes"><ul><li>The buyer-added slots change from bid to bid. Map each one in the tracker before you start merging files.</li></ul></aside>
+  <p class="small"><a href="assets/img/gem/upload-documents.jpg" target="_blank" rel="noopener">Open the full-size screenshot</a></p>
+  <aside class="notes"><ul><li>Compare with the simulator: same slots, same limits.</li></ul></aside>
 </section>
 
-<section class="slide" id="screen-declare" data-chapter="9" data-title="Screenshot: declarations">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">09 · Submitting</span><span>Actual screenshot, same page further down</span></div>
-    <h2>The declarations at the bottom of the page</h2>
-  </div>
-  <div class="split wide-left">
+<section class="slide" id="screen-declare" data-chapter="9" data-title="The real declarations">
+  <span class="tab">09 · Submitting</span>
+  <div class="head"><h2>The declarations at the bottom</h2><p class="lede">The same page, further down. These answers are signed by the company.</p></div>
+  <div class="cols l" data-widget="pins">
     <figure class="shot">
-      <div class="shot-frame"><img src="assets/img/gem-declarations.jpg" alt="GeM declarations section: GSTIN selection note, bid category, Make in India compliance, MSE advisory, EMD exemption choice and notes" width="1400" height="948" loading="lazy"></div>
-      <figcaption>GeM seller view, 2026. <a href="assets/img/gem-declarations.jpg" target="_blank" rel="noopener">Open full size</a>.</figcaption>
+      <img src="assets/img/gem/declarations.jpg" alt="GeM declarations: GSTIN note, bid category, Make in India compliance, MSE advisory, EMD exemption choice and notes, Save button" width="1400" height="948" loading="lazy">
+      <button type="button" class="pin" style="left:28.6%;top:4%" aria-label="Pin 1">1</button>
+      <button type="button" class="pin" style="left:27.6%;top:12.6%" aria-label="Pin 2">2</button>
+      <button type="button" class="pin" style="left:27.6%;top:19.4%" aria-label="Pin 3">3</button>
+      <button type="button" class="pin" style="left:28.3%;top:33.8%" aria-label="Pin 4">4</button>
+      <button type="button" class="pin" style="left:27.6%;top:45.4%" aria-label="Pin 5">5</button>
+      <button type="button" class="pin" style="left:79.5%;top:95%" aria-label="Pin 6">6</button>
     </figure>
-    <ol class="callouts">
-      <li><span><b>GSTIN for transaction charges</b>: once selected it cannot be changed. Pick the current GST number and state.</span></li>
-      <li><span><b>Bid category</b> confirms which category you are bidding in.</span></li>
-      <li><span><b>Make in India (MII) compliance</b>: answer as Finance confirms.</span></li>
-      <li><span><b>EMD exemption</b>: say yes only with valid proof uploaded.</span></li>
-      <li><span>The red advisory: wrong MSE, MII or EMD declarations can get the seller disabled on GeM.</span></li>
-      <li><span>Click <b>Save</b>. Then move to EMD/ePBG and Verify.</span></li>
+    <ol class="pins-list">
+      <li><span class="n">1</span><span>GSTIN for transaction charges. <mark>Once selected it can't be changed.</mark></span></li>
+      <li><span class="n">2</span><span>The bid category you are bidding in.</span></li>
+      <li><span class="n">3</span><span>Make in India compliance. Answer as Finance confirms.</span></li>
+      <li><span class="n">4</span><span>The advisory: wrong MSE, MII or EMD declarations can get the seller disabled.</span></li>
+      <li><span class="n">5</span><span>EMD exemption. Yes only with valid proof uploaded.</span></li>
+      <li><span class="n">6</span><span>Save, then go to EMD/ePBG and Verify.</span></li>
     </ol>
   </div>
-  <aside class="notes"><ul><li>These three radio buttons are signed by the company. Treat them like a declaration on letterhead.</li></ul></aside>
+  <aside class="notes"><ul><li>Treat these three radio buttons like a declaration on letterhead.</li></ul></aside>
 </section>
 
-<section class="slide" id="submit-final" data-chapter="9" data-title="Submitting, and what happens next">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">09 · Submitting</span></div>
-    <h2>Final submit, and what happens next</h2>
-  </div>
-  <div class="split">
+<section class="slide" id="after" data-chapter="9" data-title="After you press submit">
+  <span class="tab">09 · Submitting</span>
+  <div class="head"><h2>After you press submit</h2></div>
+  <div class="cols">
     <div class="stack">
-      <div class="panel"><h3>Before you press submit</h3><ul class="checks"><li>Open every uploaded file from the portal and check it is the final version.</li><li>Offer price matches the price break-up file and the financial letter exactly.</li><li>Every mandatory slot filled; every buyer slot either filled or deliberately left with a reason.</li><li>The authorised person is ready to e-sign (Aadhaar OTP eSign or DSC, as your account is set up).</li><li>Screenshot each tab and download the bid participation receipt.</li></ul></div>
+      <h3>Before</h3>
+      <ul>
+        <li>Open every uploaded file from the portal. Check it's the final version.</li>
+        <li>GeM price, break-up file and financial letter match to the rupee.</li>
+        <li>The authorised person is ready to e-sign (Aadhaar OTP eSign or DSC, as the account is set up).</li>
+        <li>Screenshot each tab. Download the receipt into the bid folder.</li>
+      </ul>
     </div>
     <div class="stack">
-      <div class="panel accent"><h3>After submission</h3><ol><li><b>Representation window</b>: grievances against ATC clauses go in within 4 days of bid publication, before submission.</li><li><b>Bid opening</b>, then technical evaluation.</li><li><b>Technical clarifications</b>: the buyer can ask questions with a short reply window (5 days in one of our bids). Watch the dashboard and email daily.</li><li><b>Presentation and interviews</b>, if the RFP calls for them.</li><li><b>Financial opening</b> for qualified bidders, and a reverse auction if enabled.</li><li><b>Contract on GeM</b>, then the performance guarantee within the stated days.</li></ol></div>
+      <h3>After, in order</h3>
+      <ol>
+        <li>Bid opens. Technical evaluation starts.</li>
+        <li><mark>Technical clarifications</mark>: the buyer may ask questions with a short window (5 days in one of our bids). Someone watches the dashboard and email daily.</li>
+        <li>Presentation and interviews, if the RFP has them.</li>
+        <li>Price opens for qualified bidders. A reverse auction if it's switched on.</li>
+        <li>Contract on GeM, then the performance guarantee within the stated days.</li>
+      </ol>
     </div>
   </div>
-  <aside class="notes"><ul><li>Missing a clarification request is one of the quietest ways to lose a bid. Assign someone to watch the dashboard after submission.</li></ul></aside>
+  <p class="hand">Missing a clarification request is the quietest way to lose a bid you've already won on paper.</p>
+  <aside class="notes"><ul><li>Assign the dashboard watcher before you submit, not after.</li></ul></aside>
 </section>
 
-<!-- ============ FILE LIMITS ============ -->
-<section class="slide" id="file-limits" data-chapter="10" data-title="File limits, and how to fit">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">10 · File limits</span><span class="try">Try it · check your files</span></div>
-    <h2>10 MB, 100 pages, PDF only</h2>
-    <p class="lede">These are the limits on the standard GeM upload slots. Plan the files to fit before the last day.</p>
-  </div>
-  <div class="split wide-left">
-    <div class="stack">
-      <div class="table-wrap">
-        <table id="fileTable">
-          <thead><tr><th>File</th><th class="num">Size (MB)</th><th class="num">Pages</th><th>Result</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      <div style="display:flex;gap:.5rem;flex-wrap:wrap"><button class="btn" type="button" id="addFile">Add a file</button><span class="small">Sample rows from the practice tender. Edit any number.</span></div>
+<!-- =================================================================== 10 · FILES -->
+<section class="slide" id="pdf-size" data-chapter="10" data-title="Will it fit in 10 MB?">
+  <span class="tab">10 · File limits</span>
+  <div class="head"><h2>Will it fit in 10 MB?</h2><p class="lede">A rough guide for scanned packs. Change the settings and see how many upload slots you'd need.</p></div>
+  <div class="cols" data-widget="pdfsize">
+    <div class="stack ps-grid">
+      <label class="field"><span>Pages</span><input type="number" class="typed ps-pages" value="180" min="1"></label>
+      <label class="field"><span>Scan resolution</span><select class="ps-dpi"><option value="150">150 dpi</option><option value="200" selected>200 dpi</option><option value="300">300 dpi</option></select></label>
+      <label class="check"><input type="checkbox" class="ps-colour"><span>Scanned in colour</span></label>
+      <label class="check"><input type="checkbox" class="ps-squeeze"><span>Compressed (Acrobat "Reduce File Size" or similar)</span></label>
+      <div class="ps-out stack" aria-live="polite"></div>
+      <p class="small muted">Real sizes depend on the pages. Always check the final file.</p>
     </div>
     <div class="stack">
-      <div class="panel"><h3>Making files fit</h3><ul class="checks dot"><li>Scan text at 150 to 200 dpi in greyscale. Colour only for creatives.</li><li>Compress with Acrobat's "Reduce File Size" or another offline tool. Do not upload financials to free online compressors.</li><li>Split a large ATC pack across Certificate and Additional Doc 1 to 4. Put an index on page one of each.</li><li>No passwords, no portfolios, no embedded videos. Link showreels if the RFP allows.</li><li>Open the final PDF on another computer before uploading.</li></ul></div>
+      <h3>Making files fit</h3>
+      <ul>
+        <li>Scan text pages at 150–200 dpi, greyscale. Colour only for creatives.</li>
+        <li>Compress offline. Never put audited financials into a free online compressor.</li>
+        <li>Split a big ATC pack across Certificate and Additional Doc 1 to 4, each with an index page.</li>
+        <li>No passwords, no portfolios, no embedded video.</li>
+        <li>Open the final PDF on another computer before uploading.</li>
+      </ul>
     </div>
   </div>
-  <aside class="notes"><ul><li>Change the CV bundle to 140 pages and show the split suggestion.</li></ul></aside>
+  <aside class="notes"><ul><li>Tick colour on a 180-page pack and watch it blow past 30 MB.</li></ul></aside>
 </section>
 
-<section class="slide" id="rejections" data-chapter="10" data-title="Why bids get rejected">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">10 · File limits</span></div>
-    <h2>Why bids get rejected</h2>
-    <p class="lede">The rejection clauses we flagged as critical across our 2026 trackers.</p>
+<section class="slide" id="reject" data-chapter="10" data-title="Rejected, or just marks lost?">
+  <span class="tab">10 · File limits</span>
+  <div class="head"><h2>Rejected, or just marks lost?</h2><p class="lede">From the critical-alert tabs of our 2026 trackers. Decide what each mistake costs.</p></div>
+  <div data-widget="rounds">
+    <script type="application/json">
+    {"items": [
+      {"q": "A case study mentions the fee we were paid.", "options": ["Rejected", "Marks lost", "No problem"], "answer": 0, "why": "Any financial information in the technical bid can mean outright rejection."},
+      {"q": "The Integrity Pact is on stamp paper of the wrong value.", "options": ["Rejected", "Marks lost", "No problem"], "answer": 0, "why": "A faulty or missing Integrity Pact makes the bid non-responsive."},
+      {"q": "One of the six interviewees is ill on presentation day.", "options": ["Rejected", "Marks lost", "No problem"], "answer": 1, "why": "That position scores zero. The rest of the bid survives."},
+      {"q": "A work order is attached, but it doesn't show the contract value.", "options": ["Rejected", "Marks lost", "No problem"], "answer": 1, "why": "That project won't be counted. If it was needed for eligibility, it becomes a rejection."},
+      {"q": "Bid validity is written as 90 days; the bid asks for 120.", "options": ["Rejected", "Marks lost", "No problem"], "answer": 0, "why": "A shorter validity is non-responsive."},
+      {"q": "The quote is 20% below the estimate, and a corrigendum set a 15% floor.", "options": ["Rejected", "Marks lost", "No problem"], "answer": 0, "why": "Below the floor is non-responsive, whatever the technical score."},
+      {"q": "We submitted on T-2 instead of T-3.", "options": ["Rejected", "Marks lost", "No problem"], "answer": 2, "why": "Fine, as long as it's before the deadline. T-3 is our own buffer."},
+      {"q": "We used the original RFP's 12-person team after a corrigendum cut it to 10.", "options": ["Rejected", "Marks lost", "No problem"], "answer": 1, "why": "Wrong CVs and roles cost interview marks and can make the bid look non-compliant. Always apply the latest corrigendum."}
+    ]}
+    </script>
   </div>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>Severity</th><th>Mistake</th><th>What it costs</th></tr></thead>
-      <tbody>
-        <tr><td><span class="pill bad">Rejection</span></td><td>Any financial information in the technical bid</td><td>Outright rejection of the technical bid</td></tr>
-        <tr><td><span class="pill bad">Rejection</span></td><td>Integrity Pact missing, unsigned or not on the required stamp paper</td><td>Bid treated as non-responsive</td></tr>
-        <tr><td><span class="pill bad">Rejection</span></td><td>Conditional financial bid, or nil charges quoted</td><td>Financial bid rejected</td></tr>
-        <tr><td><span class="pill bad">Rejection</span></td><td>Price below a stated floor (e.g. more than 15% under the estimate)</td><td>Rejected as non-responsive</td></tr>
-        <tr><td><span class="pill bad">Rejection</span></td><td>Bid validity shorter than required</td><td>Non-responsive</td></tr>
-        <tr><td><span class="pill bad">Rejection</span></td><td>Missing EMD, exemption proof or Bid Securing Declaration</td><td>Pre-qualification fails</td></tr>
-        <tr><td><span class="pill warn">Marks lost</span></td><td>Proposed team member absent from the interview</td><td>That person's marks, often 2 to 5 each</td></tr>
-        <tr><td><span class="pill warn">Marks lost</span></td><td>Experience proof without value, dates or completion shown</td><td>Project not counted</td></tr>
-        <tr><td><span class="pill warn">Marks lost</span></td><td>Working from the original RFP after a corrigendum</td><td>Wrong team size, wrong turnover period, wrong forms</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <aside class="notes"><ul><li>Read the first column aloud. These are the things the final reviewer checks first.</li></ul></aside>
+  <aside class="notes"><ul><li>Vote with hands before clicking.</li></ul></aside>
 </section>
 
-<!-- ============ PRACTICE ============ -->
+<!-- =================================================================== 11 · PRACTICE -->
 <section class="slide" id="practice" data-chapter="11" data-title="The practice tender">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">11 · Practice</span><span>Fictional bid · medium difficulty</span></div>
-    <h2>The practice tender</h2>
-    <p class="lede">A fictional bid assembled from patterns in our real ones, with a corrigendum and six traps. Open the full document in a new tab and work in pairs.</p>
-  </div>
-  <div class="split">
-    <div class="tender-card">
-      <header><span class="mono">GEM/2026/B/TRN-0421 · Fictional · for training only</span><b>Selection of a Digital Communication &amp; Social Media Agency for the "Haath Se" craft campaign</b><span class="small" style="color:inherit;opacity:.85">Bharat Craft &amp; Culture Mission (fictional autonomous body)</span></header>
-      <div class="kv">
-        <div>Bid end (after Corrigendum 1)</div><div>17-11-2026 15:00</div>
-        <div>Contract period</div><div>2 years, +1 optional</div>
-        <div>Estimated bid value</div><div>₹3,00,00,000</div>
-        <div>Min. average turnover</div><div>₹6 crore (3 FY)</div>
-        <div>EMD · ePBG</div><div>₹6,00,000 · 3%</div>
-        <div>Evaluation</div><div>QCBS 70:30 · cut-off 70</div>
-        <div>Type of bid</div><div>Two packet · RA no</div>
-      </div>
-    </div>
+  <span class="tab">11 · Practice</span>
+  <div class="head"><h2>The practice tender</h2><p class="lede">A fictional bid built from patterns in our real ones, at medium difficulty. It has a corrigendum and eight traps. Work in pairs.</p></div>
+  <div class="cols">
     <div class="stack">
-      <div class="panel accent"><h3>Your bidder</h3><p><b>Northstar Media</b> (fictional): 14 years old, Gurugram office, 72 employees on EPF, not an MSE. Its project list and turnover are in Section 9 of the tender document.</p></div>
-      <a class="btn primary" href="sample-tender.html" target="_blank" rel="noopener">Open the full practice tender</a>
-      <p class="small">All names, numbers and bid details in this tender are invented for training.</p>
+      <div class="clause">
+        <p><b>GEM/2026/B/TRN-0421</b> · Bharat Craft &amp; Culture Mission (fictional)</p>
+        <p>Digital Communication &amp; Social Media Agency for the "Haath Se" craft campaign. Two years, estimated ₹3 crore. QCBS 70:30, cut-off 70. EMD ₹6 lakh. Corrigendum 1 dated 30-10-2026.</p>
+      </div>
+      <div class="row"><a class="btn ink" href="practice/tender.html" target="_blank" rel="noopener">Open the tender and hunt for traps</a></div>
+      <p class="small muted">Every name, number and date in the tender is invented.</p>
     </div>
+    <div class="sticky r"><b>Your bidder: Northstar Media</b><p>Fictional. 14 years old, Gurugram office, 72 employees on EPF, not an MSE. Its projects and turnover are in section 11 of the tender.</p><p>Pairs: one reads the bid document and ATC, the other the RFP and corrigendum. Twenty minutes.</p></div>
   </div>
-  <aside class="notes"><ul><li>Pairs: one reads the bid document and ATC, the other reads the RFP and corrigendum. Twenty minutes, then exercises.</li></ul></aside>
+  <aside class="notes"><ul><li>The tender page has its own trap counter. Ask pairs to stop at six before revealing.</li></ul></aside>
 </section>
 
-<section class="slide" id="practice-tasks" data-chapter="11" data-title="Practice exercises">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">11 · Practice</span><span class="try">Try it · reveal after you answer</span></div>
-    <h2>Six exercises</h2>
-  </div>
-  <div class="stack">
-    <details class="task"><summary><span class="no">E1</span>Is Northstar eligible?</summary><p class="q">Check every PQ criterion. Watch the turnover period and the experience rule.</p><div class="body">
+<section class="slide" id="exercises" data-chapter="11" data-title="Six exercises">
+  <span class="tab">11 · Practice</span>
+  <div class="head"><h2>Six exercises</h2><p class="lede">Write your answer down before you open each one.</p></div>
+  <div>
+    <details class="answer"><summary><span class="no">E1</span>Is Northstar eligible?</summary><p class="q">Check every PQ criterion. Watch the turnover period and the experience rule.</p><div class="a">
       <p><b>Yes, but only because of Corrigendum 1.</b></p>
-      <ul class="checks dot"><li>Turnover: the original RFP period (FY 2022-23 to 2024-25) averages ₹5.27 crore, below ₹6 crore. The corrigendum moves it to FY 2023-24 to 2025-26, which averages ₹6.30 crore. Pass.</li><li>Experience: option B needs 2 projects of at least ₹1.5 crore (50% of ₹3 crore). P1 (₹1.60 crore) and P2 (₹1.55 crore) qualify. Pass.</li><li>P4 is ongoing with 60% paid, below the 80% rule. P5 is a private client. Neither counts.</li><li>Age 14 years, NCR office, 72 employees on EPF, positive net worth: all pass.</li></ul></div></details>
-    <details class="task"><summary><span class="no">E2</span>Bid or no-bid?</summary><p class="q">Use the scorecard from section 05. Which gates and factors decide it?</p><div class="body"><p><b>Bid.</b> All gates pass after the corrigendum. Strong strategic fit (craft and culture is a showcase category), realistic technical score around 78 to 82, workable terms. The main risk is the 10-person interview day and the price floor.</p></div></details>
-    <details class="task"><summary><span class="no">E3</span>What technical score can we target?</summary><p class="q">Score A1 to C4 from Northstar's profile.</p><div class="body"><p><b>About 79 out of 100.</b> A1: 6 projects of ₹50 lakh or more gives 7 of 10. A2: turnover ₹6.3 crore gives 4 of 10. A3: two case studies, 10 of 10. B: full team present, 23 of 25 is realistic. C: 35 of 45 with a strong sample campaign. The banked marks are weak (21 of 30), so the room has to carry it.</p></div></details>
-    <details class="task"><summary><span class="no">E4</span>Build the document checklist and assign owners</summary><p class="q">List every annexure and supporting document with its owner.</p><div class="body"><p>Documentation: Annexures I, II, V, VII, VIII, IX, XII and the Integrity Pact (VI). Finance: Annexure IV (CA certificate with UDIN, new FY period), audited statements, PAN, GST, EMD of ₹6 lakh (Northstar is not an MSE), Annexure XI and price break-up. HR: Annexure X CVs for <b>10</b> people (not 12), EPF extract for 72 employees. Account leads: work orders and completion certificates for P1, P2, P3, P6 and P7, plus a CA certificate of payments received for P4. Strategy and Creative: technical proposal, two case studies, sample campaign.</p></div></details>
-    <details class="task"><summary><span class="no">E5</span>Plan the upload slots</summary><p class="q">The ATC pack is 180 pages and 24 MB after compression. CVs are 30 pages. Where does everything go?</p><div class="body"><p>The pack breaks both limits (180 pages, 24 MB), so compress it and split it by annexure order:</p>
-      <ul class="checks dot"><li><b>Certificate (Requested in ATC)</b>: Annexures I, II, V to IX and XII with an index, about 60 pages.</li><li><b>Additional Doc 1</b>: Annexure III experience sheets with the matching work orders, about 90 pages.</li><li><b>Additional Doc 2</b>: remaining work orders, EMD proof, GST, PAN, incorporation and lease, about 30 pages.</li><li><b>Additional Doc 3</b>: the 10 CVs in Annexure X, 30 pages.</li><li><b>Additional Doc 4</b>: certified employee list and EPF records.</li><li><b>Experience Criteria</b> and <b>Bidder Turnover</b>: completion certificates and Annexure IV with audited statements.</li><li>Annexure XI and the price break-up go only in the financial document slot.</li></ul>
-      <p>Each file must end up under 10 MB. Open every one after upload.</p></div></details>
-    <details class="task"><summary><span class="no">E6</span>Find the six traps</summary><p class="q">There are at least six things in this tender that would hurt a careless bidder.</p><div class="body"><ol>
-      <li><b>Turnover period changed</b> in Corrigendum 1. Old CA certificate format fails.</li>
-      <li><b>Team cut from 12 to 10</b>. Old CV list is wrong.</li>
-      <li><b>GST now exclusive</b> and a <b>price floor</b>: no quote below ₹2.55 crore (15% under ₹3 crore).</li>
-      <li><b>Annexure cross-reference error</b>: the PQ table says Annexure V for the Integrity Pact; the format is Annexure VI. Raise a pre-bid query.</li>
-      <li><b>ATC demands a hard copy</b> of the Integrity Pact before the deadline. GeM's disclaimer forbids making physical documents a condition to qualify. Raise a representation within 4 days of publication (by 24-10-2026).</li>
-      <li><b>Case studies must not show fees</b>. One sample case study in the vault mentions a budget figure. Remove it.</li>
-      <li>Bonus: <b>ongoing projects</b> count only with 80% payment proven by a CA certificate.</li>
+      <ul><li>The original turnover period (FY 2022-23 to 2024-25) averages ₹5.27 crore, under the ₹6 crore bar. The corrigendum's period (FY 2023-24 to 2025-26) averages ₹6.30 crore. Pass.</li><li>Experience option B needs two projects of ₹1.5 crore or more. P1 (₹1.60 crore) and P2 (₹1.55 crore) qualify.</li><li>P4 is ongoing with 60% received, under the 80% rule. P5 is a private client. Neither counts.</li><li>Age, NCR office, 72 staff on EPF, positive net worth: all pass.</li></ul></div></details>
+    <details class="answer"><summary><span class="no">E2</span>Bid or no bid?</summary><p class="q">Use the decision note from section 05.</p><div class="a"><p><b>Bid.</b> All gates pass after the corrigendum. Strong fit, a realistic technical score near 79, workable terms. Risks: the interview day and the price floor.</p></div></details>
+    <details class="answer"><summary><span class="no">E3</span>What technical score can we aim for?</summary><p class="q">Score A1 to C4 from Northstar's profile.</p><div class="a"><p><b>About 79.</b> A1: six government projects of ₹50 lakh+ gives 7. A2: ₹6.3 crore turnover gives 4. A3: two case studies, 10. B: 23 of 25 with everyone present. C: 35 of 45. Banked marks are weak (21 of 30), so the presentation has to carry it.</p></div></details>
+    <details class="answer"><summary><span class="no">E4</span>Build the checklist and assign owners</summary><p class="q">Every annexure and supporting document, with its owner.</p><div class="a"><p>Documentation: Annexures I, II, V, VII, VIII, IX, XII and the Integrity Pact (VI). Finance: Annexure IV with UDIN for the new FY period, audited statements, PAN, GST, the ₹6 lakh EMD (Northstar isn't an MSE), Annexure XI and the price break-up. HR: <b>10</b> CVs, not 12, and the EPF list. Account leads: work orders and completion certificates for P1, P2, P3, P6, P7, plus a CA certificate of payments for P4. Strategy and Creative: proposal, case studies, sample campaign.</p></div></details>
+    <details class="answer"><summary><span class="no">E5</span>Plan the upload slots</summary><p class="q">Run the GeM simulator in section 09 until you get the receipt.</p><div class="a"><p>Experience Criteria: work orders. Bidder Turnover: Annexure IV. Certificate (ATC): the merged annexure pack. Additional Docs 1–4: experience sheets, the 10 CVs, EPF list, compressed financials. Then the proposal and the PoA. The price break-up goes only in the Offer Price tab.</p></div></details>
+    <details class="answer"><summary><span class="no">E6</span>Name the eight traps</summary><p class="q">The tender page counts them for you.</p><div class="a"><ol>
+      <li>Bid end date moved to 17-11-2026.</li>
+      <li>Turnover period changed. The old CA certificate fails.</li>
+      <li>Team cut from 12 to 10. The old CV file is wrong.</li>
+      <li>GST now exclusive.</li>
+      <li>Annexure cross-reference error: PQ-8 says Annexure V, the Integrity Pact is Annexure VI. Raise a pre-bid query.</li>
+      <li>ATC asks for a hard copy before the deadline. GeM's disclaimer forbids making physical documents a condition. Raise a representation by 24-10-2026.</li>
+      <li>P4 doesn't count: only 60% received.</li>
+      <li>Case study CS2 quotes a budget. Take it out.</li>
     </ol></div></details>
   </div>
-  <aside class="notes"><ul><li>Give 10 minutes per exercise. Reveal only after each pair has an answer written down.</li></ul></aside>
+  <aside class="notes"><ul><li>Ten minutes per exercise. Reveal only once each pair has written an answer.</li></ul></aside>
 </section>
 
-<!-- ============ QUIZ & CLOSE ============ -->
-<section class="slide" id="quiz" data-chapter="12" data-title="Quick quiz">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">12 · Quiz</span><span class="try">Try it · answer in the room</span></div>
-    <h2>Quick quiz</h2>
-    <p class="lede" id="quizScore" aria-live="polite">Score: 0 of 9</p>
+<!-- =================================================================== 12 · QUIZ -->
+<section class="slide" id="quiz" data-chapter="12" data-title="Team quiz">
+  <span class="tab">12 · Quiz</span>
+  <div class="head"><h2>Team quiz</h2><p class="lede">Split the room in two. Rename the teams. The first hand up answers.</p></div>
+  <div data-widget="quiz">
+    <script type="application/json">
+    {"questions": [
+      {"q": "What is the size limit per standard GeM upload slot?", "options": ["5 MB", "10 MB", "25 MB"], "answer": 1, "why": "One PDF, up to 10 MB and 100 pages."},
+      {"q": "The RFP says one thing; Corrigendum 2 says another. Which do you follow?", "options": ["The RFP", "Corrigendum 2", "Whichever suits us"], "answer": 1, "why": "The latest corrigendum replaces earlier text."},
+      {"q": "How long do you have to raise a representation against a bid clause?", "options": ["4 days from publication", "7 days before the deadline", "Until bid opening"], "answer": 0, "why": "Four days from publication, from the seller dashboard."},
+      {"q": "Where may prices appear?", "options": ["In case studies, if relevant", "Only on Offer Price and the break-up file", "Anywhere marked confidential"], "answer": 1, "why": "A price in the technical bid can mean outright rejection."},
+      {"q": "QCBS 70:30. A scores 90 (highest) at ₹3.0 cr. B scores 75 at ₹2.6 cr (cheapest). Who wins?", "options": ["A, about 96 to 88", "B, because it's cheaper", "A tie"], "answer": 0, "why": "A: 70 + 30 × 2.6 ÷ 3.0 = 96. B: 70 × 75 ÷ 90 + 30 = 88.3."},
+      {"q": "You're an MSE service provider. Can the buyer's ATC make you pay EMD anyway?", "options": ["Yes, ATC wins", "No, GeM's disclaimer forbids it", "Only above ₹1 crore"], "answer": 1, "why": "Asking exempt sellers for EMD through the ATC is listed as not allowed."},
+      {"q": "The bid needs 3 bids to stop automatic extension. Only 2 arrive. What happens?", "options": ["Bid cancelled", "Deadline extends automatically", "Both bids opened"], "answer": 1, "why": "GeM extends by the days the buyer set, for the set number of times."},
+      {"q": "What can a false MSE or EMD exemption declaration lead to?", "options": ["A warning email", "Disablement on GeM", "Nothing if we win"], "answer": 1, "why": "The upload page says so in red."},
+      {"q": "Which document usually arrives last?", "options": ["PAN copy", "CA certificate with UDIN", "Non-blacklisting declaration"], "answer": 1, "why": "It depends on someone outside the company. Ask on day one."}
+    ]}
+    </script>
   </div>
-  <div class="quiz" id="quizList"></div>
-  <div><button class="btn" type="button" id="quizReset">Reset quiz</button></div>
-  <aside class="notes"><ul><li>Read each question aloud, let the room vote, then click.</li></ul></aside>
+  <aside class="notes"><ul><li>Small prize for the winning team helps.</li></ul></aside>
 </section>
 
-<section class="slide" id="close" data-chapter="12" data-title="The golden rules">
-  <div class="head">
-    <div class="eyebrow"><span class="tab">Wrap-up</span></div>
-    <h2>The golden rules</h2>
-  </div>
-  <ol class="rules">
+<section class="slide" id="rules" data-chapter="12" data-title="The golden rules">
+  <span class="tab">Pin this up</span>
+  <div class="head"><h2>The golden rules</h2></div>
+  <ol class="notice">
     <li>Download everything from the source portal, every time, including every corrigendum.</li>
-    <li>Triage in five minutes, decide in one meeting, record the decision.</li>
-    <li>Claude reads, a human verifies. No page reference, no trust.</li>
-    <li>Every criterion maps to one document, one owner and one date.</li>
-    <li>CA certificates and client completion certificates are requested on day one.</li>
-    <li>Use the buyer's format word for word, same entity name everywhere.</li>
-    <li>Zero prices in the technical bid. Prices only in Offer Price and the break-up file.</li>
-    <li>Internal deadline at T-4. Upload by T-2. Never on the last day.</li>
-    <li>Every file under 10 MB and 100 pages, opened and checked after upload.</li>
-    <li>After submitting, watch the dashboard for clarifications until the result.</li>
+    <li>Triage in five minutes. Decide in one meeting. Write the decision down.</li>
+    <li>Claude reads, a person checks. No page reference, no trust.</li>
+    <li>Every criterion has one document, one owner, one date.</li>
+    <li>CA and completion certificates are requested on day one.</li>
+    <li>The buyer's format, word for word, with one legal name everywhere.</li>
+    <li>No prices anywhere in the technical bid.</li>
+    <li>Internal deadline T-4. Upload by T-2. Never on the last day.</li>
+    <li>Every file under 10 MB and 100 pages, opened again after upload.</li>
+    <li>After submitting, someone watches the dashboard until the result.</li>
   </ol>
-  <div class="grid cols-3">
-    <div class="panel"><span class="kicker">GeM</span><a href="https://gem.gov.in" target="_blank" rel="noopener">gem.gov.in</a><a href="https://bidplus.gem.gov.in/all-bids" target="_blank" rel="noopener">All bids on bidplus</a></div>
-    <div class="panel"><span class="kicker">Other portals</span><a href="https://eprocure.gov.in/cppp/" target="_blank" rel="noopener">CPPP</a><a href="https://www.ungm.org" target="_blank" rel="noopener">UNGM</a></div>
-    <div class="panel"><span class="kicker">Practice</span><a href="sample-tender.html" target="_blank" rel="noopener">The practice tender</a><button class="btn ghost" type="button" data-go="quiz">Back to the quiz</button></div>
+  <div class="row">
+    <a class="btn" href="https://bidplus.gem.gov.in/all-bids" target="_blank" rel="noopener">GeM all bids</a>
+    <a class="btn" href="https://eprocure.gov.in/cppp/" target="_blank" rel="noopener">CPPP</a>
+    <a class="btn" href="practice/tender.html" target="_blank" rel="noopener">Practice tender</a>
+    <button class="btn quiet" type="button" data-go="start">Back to the cover</button>
   </div>
-  <aside class="notes"><ul><li>Thank everyone. Next session: writing the technical proposal and preparing the team for interview day.</li></ul></aside>
+  <aside class="notes"><ul><li>Next session: writing the technical proposal and preparing the team for interview day.</li></ul></aside>
 </section>
 
   </main>
 
   <div class="bar" role="toolbar" aria-label="Slide controls">
-    <button class="btn icon menu-btn" type="button" id="menuBtn" aria-controls="rail" aria-expanded="false">☰ <span class="label">Chapters</span></button>
-    <button class="btn icon" type="button" id="prevBtn" aria-label="Previous slide">←</button>
+    <button class="btn menu-btn" type="button" id="menuBtn" aria-controls="rail" aria-expanded="false">☰ <span class="label-text">Chapters</span></button>
+    <button class="btn" type="button" id="prevBtn" aria-label="Previous slide">←</button>
     <span class="count" id="count">1 / 1</span>
-    <button class="btn icon" type="button" id="nextBtn" aria-label="Next slide">→</button>
+    <button class="btn" type="button" id="nextBtn" aria-label="Next slide">→</button>
     <div class="progress" aria-hidden="true"><i id="progress"></i></div>
     <button class="btn" type="button" id="notesBtn" aria-pressed="false">Notes</button>
-    <button class="btn" type="button" id="overviewBtn"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1" fill="currentColor"/><rect x="9" y="2" width="5" height="5" rx="1" fill="currentColor"/><rect x="2" y="9" width="5" height="5" rx="1" fill="currentColor"/><rect x="9" y="9" width="5" height="5" rx="1" fill="currentColor"/></svg><span class="label">All slides</span></button>
-    <button class="btn icon" type="button" id="themeBtn" aria-label="Switch light or dark"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor"/></svg></button>
-    <button class="btn icon" type="button" id="fullBtn" aria-label="Full screen"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="btn" type="button" id="overviewBtn" aria-label="All slides"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1" fill="currentColor"/><rect x="9" y="2" width="5" height="5" rx="1" fill="currentColor"/><rect x="2" y="9" width="5" height="5" rx="1" fill="currentColor"/><rect x="9" y="9" width="5" height="5" rx="1" fill="currentColor"/></svg><span class="label-text">All slides</span></button>
+    <button class="btn" type="button" id="themeBtn" aria-label="Switch light or dark"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor"/></svg></button>
+    <button class="btn" type="button" id="fullBtn" aria-label="Full screen"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
   </div>
 </div>
 
-<div class="notes-panel" id="notesPanel" hidden><h4>Speaker notes</h4><div id="notesBody"></div></div>
+<div class="notes-panel" id="notesPanel" hidden><h4>Trainer's notes</h4><div id="notesBody"></div></div>
 
 <div class="overview" id="overview" hidden>
   <div class="overview-inner">
-    <div class="overview-head"><h2 style="font-size:var(--step-2)">All slides</h2><button class="btn" type="button" id="overviewClose">Close</button></div>
+    <div class="overview-head"><h2>Every page in the file</h2><button class="btn" type="button" id="overviewClose">Close</button></div>
     <div class="overview-grid" id="overviewGrid"></div>
   </div>
 </div>
 
-<script src="assets/js/app.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/widgets/games.js"></script>
+<script src="assets/js/widgets/redpen.js"></script>
+<script src="assets/js/widgets/tools.js"></script>
+<script src="assets/js/widgets/claude-sim.js"></script>
+<script src="assets/js/widgets/gem-sim.js"></script>
+<script src="assets/js/deck.js"></script>
 </body>
 </html>

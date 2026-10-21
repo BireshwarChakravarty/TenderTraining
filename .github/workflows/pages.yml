@@ -1,7 +1,7 @@
 name: Publish site
 on:
   push:
-    branches: ["claude/beautiful-tesla-4p3974", "main"]
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
@@ -21,7 +21,7 @@ jobs:
       - name: Collect site files
         run: |
           mkdir -p _site
-          cp -r index.html sample-tender.html assets _site/
+          cp -r index.html practice assets _site/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
