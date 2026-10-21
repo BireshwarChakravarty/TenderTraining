@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Haath Se Practice Tender</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Mono:wght@400;600&amp;family=Public+Sans:ital,wght@0,400..700;1,400&amp;display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+  /* Layout: a single long bid dossier, contents on the left at desktop width, sections as numbered sheets. */
+  html, body { height: auto; }
+  .doc {
+    max-width: 1120px; margin: 0 auto;
+    padding-block: 1.5rem 4rem;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    display: grid; grid-template-columns: 14rem minmax(0, 1fr); gap: 2rem; align-items: start;
+  }
+  .toc { position: sticky; top: calc(1rem + env(safe-area-inset-top, 0px)); display: grid; gap: 0.2rem; font-size: 0.88rem; }
+  .toc a { color: var(--ink-2); text-decoration: none; padding: 0.25rem 0.5rem; border-radius: 6px; }
+  .toc a:hover { background: var(--sheet); color: var(--ink); }
+  .toc b { font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-2); padding: 0 0.5rem 0.4rem; }
+  .sheets { display: grid; gap: 1.25rem; min-width: 0; }
+  .sheet { background: var(--sheet); border: 1px solid var(--rule); border-radius: 12px; box-shadow: var(--shadow); padding: clamp(1.1rem, 0.8rem + 1.5vw, 2.2rem); display: grid; gap: 1rem; min-width: 0; }
+  .sheet h2 { font-size: var(--step-2); font-weight: 800; font-stretch: 106%; }
+  .sheet h3 { font-size: 1.05rem; margin-top: 0.4rem; }
+  .sheet p, .sheet li { max-width: 72ch; }
+  .banner { background: var(--warn-soft); color: var(--warn); border-radius: 10px; padding: 0.7rem 1rem; font-weight: 600; font-size: 0.92rem; }
+  .cover h1 { font-size: var(--step-3); font-weight: 900; font-stretch: 112%; letter-spacing: -0.015em; max-width: 30ch; }
+  .sec-no { font-family: var(--f-mono); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .back { justify-self: start; }
+  @media (max-width: 900px) { .doc { grid-template-columns: minmax(0, 1fr); } .toc { position: static; grid-template-columns: repeat(2, minmax(0, 1fr)); } .toc b { grid-column: 1 / -1; } }
+</style>
+</head>
+<body>
+<div class="doc">
+  <nav class="toc" aria-label="Sections">
+    <b>Contents</b>
+    <a href="#s1">1 · GeM bid document</a>
+    <a href="#s2">2 · About the buyer</a>
+    <a href="#s3">3 · Scope of work</a>
+    <a href="#s4">4 · Pre-qualification</a>
+    <a href="#s5">5 · Technical evaluation</a>
+    <a href="#s6">6 · Financial and commercial</a>
+    <a href="#s7">7 · Team and annexures</a>
+    <a href="#s8">8 · Buyer ATC</a>
+    <a href="#s9">9 · Corrigendum 1</a>
+    <a href="#s10">10 · Upload slots</a>
+    <a href="#s11">11 · Your bidder</a>
+    <a href="index.html#practice-tasks">Back to the exercises</a>
+  </nav>
+
+  <main class="sheets">
+    <section class="sheet cover">
+      <div class="banner">Training document. Every name, number and date in this tender is invented. It is not a real GeM bid.</div>
+      <span class="sec-no">GEM/2026/B/TRN-0421 · Dated 20-10-2026</span>
+      <h1>Selection of a Digital Communication &amp; Social Media Agency for the "Haath Se" craft campaign</h1>
+      <p class="lede">Bharat Craft &amp; Culture Mission (BCCM), a fictional autonomous body under a central ministry. Read every section, including the corrigendum, before you answer the exercises.</p>
+      <a class="btn back" href="index.html#practice">← Back to the training deck</a>
+    </section>
+
+    <section class="sheet" id="s1">
+      <span class="sec-no">Section 1</span>
+      <h2>GeM bid document · Bid details</h2>
+      <div class="table-wrap"><table>
+        <tbody>
+          <tr><th>Bid End Date/Time</th><td class="mono">10-11-2026 15:00:00</td></tr>
+          <tr><th>Bid Opening Date/Time</th><td class="mono">10-11-2026 15:30:00</td></tr>
+          <tr><th>Bid Offer Validity (From End Date)</th><td class="mono">120 (Days)</td></tr>
+          <tr><th>Organisation Name</th><td>Bharat Craft &amp; Culture Mission</td></tr>
+          <tr><th>Item Category</th><td>Hiring of Social Media Agency - Social Media Content development and Management; As per RFP; As per RFP</td></tr>
+          <tr><th>Contract Period</th><td class="mono">2 Year(s)</td></tr>
+          <tr><th>Minimum Average Annual Turnover of the bidder (For 3 Years)</th><td class="mono">600 Lakh(s)</td></tr>
+          <tr><th>Years of Past Experience Required for same/similar service</th><td class="mono">5 Year(s)</td></tr>
+          <tr><th>Past Experience of Similar Services required</th><td>Yes</td></tr>
+          <tr><th>MSE Relaxation for Years of Experience and Turnover</th><td>No</td></tr>
+          <tr><th>Startup Relaxation for Years of Experience and Turnover</th><td>No</td></tr>
+          <tr><th>Document required from seller</th><td>Experience Criteria, Bidder Turnover, Certificate (Requested in ATC), Additional Doc 1 (Requested in ATC), Additional Doc 2 (Requested in ATC), Additional Doc 3 (Requested in ATC), Additional Doc 4 (Requested in ATC)</td></tr>
+          <tr><th>Show documents uploaded by bidders to all bidders participated in bid?</th><td>Yes</td></tr>
+          <tr><th>Minimum number of bids required to disable automatic bid extension</th><td class="mono">3</td></tr>
+          <tr><th>Number of days for which Bid would be auto-extended · count</th><td class="mono">5 · 1</td></tr>
+          <tr><th>Bid to RA enabled</th><td>No</td></tr>
+          <tr><th>Type of Bid</th><td>Two Packet Bid</td></tr>
+          <tr><th>Time allowed for Technical Clarifications during technical evaluation</th><td class="mono">5 Days</td></tr>
+          <tr><th>Estimated Bid Value</th><td class="mono">30000000</td></tr>
+          <tr><th>Evaluation Method</th><td>Total value wise evaluation · QCBS, Technical : Financial = 70 : 30 · Minimum technical score 70</td></tr>
+          <tr><th>Financial Document Indicating Price Breakup Required</th><td>Yes</td></tr>
+          <tr><th>EMD Amount</th><td class="mono">600000</td></tr>
+          <tr><th>ePBG Percentage · Duration</th><td class="mono">3.00% · 27 months</td></tr>
+          <tr><th>MII Compliance</th><td>Yes</td></tr>
+          <tr><th>Pre-bid meeting</th><td class="mono">27-10-2026 11:00:00 · Online</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Past experience of similar services (standard clause)</h3>
+      <p>The bidder must have successfully executed or completed similar services over the last three years, that is, the current financial year and the last three financial years (ending March before bid opening): three similar completed services each costing not less than 40% of the estimated cost; or two similar completed services each costing not less than 50% of the estimated cost; or one similar completed service costing not less than 80% of the estimated cost.</p>
+    </section>
+
+    <section class="sheet" id="s2">
+      <span class="sec-no">Section 2 · RFP</span>
+      <h2>About the buyer and the campaign</h2>
+      <p>BCCM promotes India's handloom and handicraft traditions and connects artisan clusters with domestic and global buyers. "Haath Se" (By Hand) is its flagship two-year campaign to position handmade Indian products as contemporary, sustainable and export-ready, and to grow BCCM's own digital channels into the main source of information for buyers, designers and artisans.</p>
+      <ul>
+        <li><b>Audiences</b>: urban consumers aged 20 to 40, designers and retailers, export buyers, artisans and self-help groups, media and policymakers.</li>
+        <li><b>Languages</b>: Hindi and English, plus Bengali, Tamil, Marathi and Odia for artisan-facing content.</li>
+        <li><b>Objective</b>: double follower base and triple engagement across BCCM handles in 24 months; build a library of 200 artisan stories.</li>
+      </ul>
+    </section>
+
+    <section class="sheet" id="s3">
+      <span class="sec-no">Section 3 · RFP</span>
+      <h2>Scope of work</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Platform</th><th>Content</th><th>Minimum volume</th></tr></thead>
+        <tbody>
+          <tr><td>Instagram</td><td>Posts, carousels, stories, reels</td><td>2 posts a day · 8 reels a month</td></tr>
+          <tr><td>Facebook</td><td>Posts, albums, live sessions</td><td>2 posts a day</td></tr>
+          <tr><td>X</td><td>Posts, threads, event coverage</td><td>3 posts a day</td></tr>
+          <tr><td>LinkedIn</td><td>Trade and export content, articles</td><td>1 post a day · 2 articles a month</td></tr>
+          <tr><td>YouTube</td><td>Artisan films (2–3 min), Shorts</td><td>2 films a month · 8 Shorts a month</td></tr>
+          <tr><td>WhatsApp channel</td><td>Artisan and buyer updates</td><td>3 updates a week</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Turnaround and reporting</h3>
+      <ul>
+        <li>Text posts within 1 hour of request, image creatives within 4 hours, video edits within 1 working day.</li>
+        <li>Crisis or misinformation alert to BCCM within 2 hours of detection, with a holding response.</li>
+        <li>Content calendar by the 25th of the previous month. Monthly performance report by the 5th. Quarterly strategy review.</li>
+        <li>Two themed campaigns a quarter, each with a campaign deck 15 days before launch.</li>
+        <li>Two resources on-site at BCCM, New Delhi, three days a week. Listening and analytics tools at the agency's cost.</li>
+      </ul>
+    </section>
+
+    <section class="sheet" id="s4">
+      <span class="sec-no">Section 4 · RFP</span>
+      <h2>Pre-qualification criteria</h2>
+      <p>All criteria must be met. Bids failing any criterion will not be evaluated technically.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>PQ</th><th>Criterion</th><th>Supporting document</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">PQ-1</td><td>Company or LLP registered in India for at least 7 years as on the bid end date.</td><td>Certificate of Incorporation</td></tr>
+          <tr><td class="mono">PQ-2</td><td>Average annual turnover of at least ₹6 crore over FY 2022-23, 2023-24 and 2024-25 from digital, social media or communication services.</td><td>CA or statutory auditor certificate with UDIN as per Annexure IV</td></tr>
+          <tr><td class="mono">PQ-3</td><td>Positive net worth in each of the three financial years in PQ-2.</td><td>Audited financial statements</td></tr>
+          <tr><td class="mono">PQ-4</td><td>Past experience as per the GeM bid document, for Central or State Government, PSU or autonomous bodies only. Ongoing projects count only if at least 80% of the contract value has been received, certified by a CA.</td><td>Work orders with completion certificates; Annexure III per project</td></tr>
+          <tr><td class="mono">PQ-5</td><td>At least 60 full-time employees in digital, creative or social media roles as on the bid end date.</td><td>Certified employee list with EPF records</td></tr>
+          <tr><td class="mono">PQ-6</td><td>EMD of ₹6,00,000 as per the GeM bid document, or valid exemption.</td><td>EMD proof or exemption certificate</td></tr>
+          <tr><td class="mono">PQ-7</td><td>Not blacklisted or debarred by any government body or PSU as on the bid end date.</td><td>Declaration, Annexure V</td></tr>
+          <tr><td class="mono">PQ-8</td><td>Signed Integrity Pact on ₹100 non-judicial stamp paper.</td><td>Integrity Pact, Annexure V</td></tr>
+          <tr><td class="mono">PQ-9</td><td>Office in Delhi NCR.</td><td>Lease or ownership proof</td></tr>
+          <tr><td class="mono">PQ-10</td><td>Valid GST and PAN in the bidder's name.</td><td>Self-attested copies</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="sheet" id="s5">
+      <span class="sec-no">Section 5 · RFP</span>
+      <h2>Technical evaluation · 100 marks · minimum 70</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Code</th><th>Criterion</th><th>Scoring</th><th class="num">Marks</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">A1</td><td>Similar projects for government, PSU or autonomous bodies, each ₹50 lakh or more, completed or ongoing, in the last 5 years</td><td>3 projects = 4 · 5 = 7 · 7 or more = 10</td><td class="num">10</td></tr>
+          <tr><td class="mono">A2</td><td>Average annual turnover (as in PQ-2)</td><td>₹6–10 cr = 4 · ₹10–20 cr = 7 · above ₹20 cr = 10</td><td class="num">10</td></tr>
+          <tr><td class="mono">A3</td><td>Case studies of similar work with measurable outcomes</td><td>5 marks each, maximum 2</td><td class="num">10</td></tr>
+          <tr><td class="mono">B</td><td>Key team, assessed at in-person interview: Account Director (12+ yrs) 5 · Social Media Strategist (8+) 4 · Bilingual Content Lead (6+) 4 · Creative Lead (6+) 4 · Video Producer (5+) 4 · Analytics &amp; ORM Lead (5+) 4</td><td>By experience and interview. All proposed members must attend.</td><td class="num">25</td></tr>
+          <tr><td class="mono">C1</td><td>Understanding of BCCM, the craft sector and audiences</td><td>Presentation, 45 min + 15 min Q&amp;A</td><td class="num">10</td></tr>
+          <tr><td class="mono">C2</td><td>Approach, content calendar, governance, crisis protocol</td><td>Presentation</td><td class="num">15</td></tr>
+          <tr><td class="mono">C3</td><td>Sample campaign "Haath Se: Made by Hand, Made in Bharat". Mandatory: 1 reel script, 1 carousel, 1 static, 1 artisan story concept, 1 KPI dashboard</td><td>Presentation</td><td class="num">15</td></tr>
+          <tr><td class="mono">C4</td><td>Innovation, including responsible use of AI tools</td><td>Presentation</td><td class="num">5</td></tr>
+          <tr><th colspan="3">Total</th><th class="num">100</th></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="sheet" id="s6">
+      <span class="sec-no">Section 6 · RFP</span>
+      <h2>Financial bid and commercial terms</h2>
+      <ul>
+        <li>The financial quote is the grand total for 24 months, <b>inclusive of GST</b>, entered on GeM. A price break-up as per Annexure XI is uploaded in the financial document slot only.</li>
+        <li>Final score = 70 × (bidder's technical score ÷ highest technical score) + 30 × (lowest quoted price ÷ bidder's quoted price).</li>
+        <li>No financial information of any kind may appear in the technical bid. Violation leads to outright rejection.</li>
+        <li>Conditional bids and nil quotes are rejected.</li>
+        <li>Rates fixed for the contract period. No advance. Monthly payment in arrears against approved deliverables.</li>
+        <li>Liquidated damages: 0.5% of contract value per week of delay, capped at 10%. BCCM may terminate when the cap is reached.</li>
+        <li>ePBG of 3% within 15 days of contract. Option clause: quantity or duration may change by up to 25%.</li>
+      </ul>
+    </section>
+
+    <section class="sheet" id="s7">
+      <span class="sec-no">Section 7 · RFP</span>
+      <h2>Team and annexures</h2>
+      <h3>Dedicated team: 12 positions</h3>
+      <p>Account Director · Account Manager 1 · Account Manager 2 · Social Media Strategist · Bilingual Content Lead · Content Writer 1 · Content Writer 2 · Creative Lead · Designer · Video Producer / Editor · Analytics &amp; ORM Lead · Community Manager. CVs in Annexure X, at most 3 pages each, signed by the person and countersigned by the authorised signatory.</p>
+      <h3>Annexures</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>No.</th><th>Annexure</th><th>Packet</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">I</td><td>Bid Submission Letter</td><td>Technical</td></tr>
+          <tr><td class="mono">II</td><td>Bidder Profile</td><td>Technical</td></tr>
+          <tr><td class="mono">III</td><td>Experience Details (one sheet per project)</td><td>Technical</td></tr>
+          <tr><td class="mono">IV</td><td>CA Certificate: Turnover and Net Worth (with UDIN)</td><td>Technical</td></tr>
+          <tr><td class="mono">V</td><td>Non-Blacklisting Declaration</td><td>Technical</td></tr>
+          <tr><td class="mono">VI</td><td>Integrity Pact (₹100 non-judicial stamp paper)</td><td>Technical</td></tr>
+          <tr><td class="mono">VII</td><td>Power of Attorney</td><td>Technical</td></tr>
+          <tr><td class="mono">VIII</td><td>Land Border Declaration (GFR 144(xi))</td><td>Technical</td></tr>
+          <tr><td class="mono">IX</td><td>No-Deviation Certificate</td><td>Technical</td></tr>
+          <tr><td class="mono">X</td><td>CV Format</td><td>Technical</td></tr>
+          <tr><td class="mono">XI</td><td>Financial Bid Letter and Price Break-up</td><td>Financial only</td></tr>
+          <tr><td class="mono">XII</td><td>Conflict of Interest Declaration</td><td>Technical</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="sheet" id="s8">
+      <span class="sec-no">Section 8</span>
+      <h2>Buyer added bid-specific ATC</h2>
+      <ol>
+        <li>Whenever there is any conflict between these Additional Terms and Conditions and the GTC of GeM, the provisions in these ATC shall prevail.</li>
+        <li>All documents listed in Section 4 and the annexures shall be merged in the order of the annexure list and uploaded under "Certificate (Requested in ATC)" and Additional Docs 1 to 4.</li>
+        <li>The original Integrity Pact and, where applicable, the EMD exemption certificate shall be delivered in hard copy to BCCM, New Delhi before the bid end date, failing which the bid shall be rejected.</li>
+        <li>Case studies and presentations shall demonstrate scope, approach and outcomes. Commercial details of past assignments shall not be disclosed.</li>
+        <li>BCCM may call all proposed team members for interview on the presentation day. Absence of a proposed member will result in zero marks for that position.</li>
+      </ol>
+      <p class="small">Representation against any clause may be raised from the seller dashboard within 4 days of bid publication.</p>
+    </section>
+
+    <section class="sheet" id="s9">
+      <span class="sec-no">Section 9 · Dated 30-10-2026</span>
+      <h2>Corrigendum 1</h2>
+      <p>The following changes supersede the corresponding provisions of the bid document and RFP. All other terms remain unchanged.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Clause</th><th>Original</th><th>Revised</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">1</td><td>Bid end and opening</td><td>10-11-2026 15:00 · 15:30</td><td>17-11-2026 15:00 · 15:30</td></tr>
+          <tr><td class="mono">2</td><td>PQ-2 turnover period</td><td>FY 2022-23, 2023-24, 2024-25</td><td>FY 2023-24, 2024-25, 2025-26</td></tr>
+          <tr><td class="mono">3</td><td>Team (Section 7)</td><td>12 positions</td><td>10 positions. Account Manager 2 and Content Writer 2 deleted.</td></tr>
+          <tr><td class="mono">4</td><td>Financial quote (Section 6)</td><td>Inclusive of GST</td><td>Exclusive of GST. GST paid as applicable.</td></tr>
+          <tr><td class="mono">5</td><td>New clause (Section 6)</td><td>—</td><td>Bidders shall not quote more than 15% below the Estimated Bid Value. Such bids shall be treated as non-responsive.</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Pre-bid clarifications (extract)</h3>
+      <ul>
+        <li><b>Q</b>: Will provisional accounts be accepted for the latest year? <b>A</b>: CA-certified provisional accounts are acceptable where the audit is pending.</li>
+        <li><b>Q</b>: Annexure references in Section 4 appear inconsistent. <b>A</b>: Bidders shall submit documents as per the RFP.</li>
+      </ul>
+    </section>
+
+    <section class="sheet" id="s10">
+      <span class="sec-no">Section 10</span>
+      <h2>Upload slots configured for this bid</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Slot</th><th>Rule</th></tr></thead>
+        <tbody>
+          <tr><td>Experience Criteria *</td><td>PDF, up to 10 MB, 100 pages</td></tr>
+          <tr><td>Bidder Turnover *</td><td>PDF, up to 10 MB, 100 pages</td></tr>
+          <tr><td>Certificate (Requested in ATC) *</td><td>Merge all ATC documents into one file. PDF, up to 10 MB, 100 pages</td></tr>
+          <tr><td>Additional Doc 1–4 (Requested in ATC) *</td><td>PDF, up to 10 MB, 100 pages each</td></tr>
+          <tr><td>Technical Proposal and Presentation</td><td>PDF</td></tr>
+          <tr><td>Power of Attorney</td><td>PDF</td></tr>
+          <tr><td>Financial Document indicating price break-up *</td><td>PDF, up to 10 MB. Financial packet.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="sheet" id="s11">
+      <span class="sec-no">Section 11 · Exercise data</span>
+      <h2>Your bidder: Northstar Media Pvt Ltd (fictional)</h2>
+      <div class="grid cols-2">
+        <div class="table-wrap"><table>
+          <tbody>
+            <tr><th>Incorporated</th><td>2012 (14 years)</td></tr>
+            <tr><th>Office</th><td>Gurugram, Haryana (Delhi NCR)</td></tr>
+            <tr><th>Employees on EPF, digital and creative roles</th><td class="tabular">72</td></tr>
+            <tr><th>MSE status</th><td>Not an MSE</td></tr>
+            <tr><th>GeM service offering</th><td>Held in "Hiring of Social Media Agency"</td></tr>
+            <tr><th>Government work</th><td>Every financial year since FY 2019-20</td></tr>
+          </tbody>
+        </table></div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Financial year</th><th class="num">Turnover (₹ cr)</th><th>Net worth</th></tr></thead>
+          <tbody>
+            <tr><td>2022-23</td><td class="num">4.10</td><td>Positive</td></tr>
+            <tr><td>2023-24</td><td class="num">5.40</td><td>Positive</td></tr>
+            <tr><td>2024-25</td><td class="num">6.30</td><td>Positive</td></tr>
+            <tr><td>2025-26 (provisional, CA-certified)</td><td class="num">7.20</td><td>Positive</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <h3>Project list</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Client</th><th>Scope</th><th>Period</th><th class="num">Value (₹ cr)</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">P1</td><td>A state tourism department</td><td>Social media management</td><td>Apr 2023 – Mar 2025</td><td class="num">1.60</td><td>Completed</td></tr>
+          <tr><td class="mono">P2</td><td>A central ministry</td><td>Digital campaign and social media</td><td>Jul 2023 – Jun 2024</td><td class="num">1.55</td><td>Completed</td></tr>
+          <tr><td class="mono">P3</td><td>A central PSU</td><td>Social media and content</td><td>Feb 2024 – Jan 2025</td><td class="num">0.90</td><td>Completed</td></tr>
+          <tr><td class="mono">P4</td><td>An autonomous body</td><td>Social media agency</td><td>Oct 2024 – ongoing</td><td class="num">2.60</td><td>Ongoing, 60% received</td></tr>
+          <tr><td class="mono">P5</td><td>A private FMCG brand</td><td>Social media and influencer</td><td>Jan 2024 – Dec 2025</td><td class="num">3.00</td><td>Completed</td></tr>
+          <tr><td class="mono">P6</td><td>A state health mission</td><td>IEC digital campaign</td><td>Apr 2024 – Mar 2025</td><td class="num">0.65</td><td>Completed</td></tr>
+          <tr><td class="mono">P7</td><td>A municipal corporation</td><td>Social media handles</td><td>Jan 2023 – Dec 2023</td><td class="num">0.55</td><td>Completed</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Case studies in the vault</h3>
+      <ul>
+        <li><b>CS1 · State tourism</b>: followers up 3.2 times in 18 months, engagement rate from 1.1% to 4.6%, 40 creator collaborations.</li>
+        <li><b>CS2 · Central ministry campaign</b>: 120 million impressions, 9 trending hashtags, "delivered within a ₹1.55 crore budget".</li>
+      </ul>
+      <h3>Proposed team</h3>
+      <p>Twelve CVs are ready from an earlier draft, following the original Section 7. All six key roles meet the minimum experience in Section 5.</p>
+      <a class="btn primary back" href="index.html#practice-tasks">Go to the exercises</a>
+    </section>
+  </main>
+</div>
+<script>
+  (function () {
+    try { var t = localStorage.getItem("tt-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) { /* storage unavailable */ }
+  })();
+</script>
+</body>
+</html>
