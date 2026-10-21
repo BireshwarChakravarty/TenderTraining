@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Tender Training</h1>
   <p><strong>Winning on GeM: a hands-on training deck for the Avian WE bid team.</strong></p>
-  <p><a href="docs/facilitator-guide.md">Facilitator guide</a> · <a href="docs/editing-content.md">Editing the content</a> · <a href="practice/tender.html">Practice tender</a></p>
+  <p><a href="https://bireshwarchakravarty.github.io/TenderTraining/"><strong>Open the training</strong></a> · <a href="docs/facilitator-guide.md">Facilitator guide</a> · <a href="docs/editing-content.md">Editing the content</a> · <a href="practice/tender.html">Practice tender</a></p>
 </div>
 
 ![The deck's cover, styled as an office file](docs/screenshots/start.jpg)
@@ -85,7 +85,7 @@ CI runs both on every push and pull request. See [CONTRIBUTING.md](CONTRIBUTING.
 
 ## Publishing
 
-`.github/workflows/pages.yml` publishes the site to GitHub Pages on every push to `main`. Turn it on once under **Settings → Pages → Source: GitHub Actions**.
+The site lives at **https://bireshwarchakravarty.github.io/TenderTraining/**. On every push to `main`, `.github/workflows/pages.yml` copies the site files to the `gh-pages` branch, which GitHub Pages serves.
 
 ## Privacy
 
