@@ -19,11 +19,15 @@ Each slide is a `<section class="slide">`:
 - `data-chapter` is the chapter number (0 to 12) shown in the left-hand list.
 - Slides appear in the order they are written.
 
+Chapter dividers are `<section class="slide divider-slide" id="chN" data-chapter="N">`. They list the slides in their chapter automatically. The cover is `#start` and the thank-you slide is `#thanks` (fireworks start when it is shown).
+
 Handy building blocks: `<p class="hand">` for a red-pen note, `<mark>` to highlight, `<div class="sticky">` for a sticky note, `<div class="clause">` for typed contract text, and `<table class="ledger">` for tables.
+
+Numbers with `data-count="12"` count up when their slide appears.
 
 ## Interactive pieces
 
-An interactive piece is an element with `data-widget="…"`. Most read their content from a JSON block inside them. Edit the JSON and reload. If it doesn't appear, check the JSON is valid: every string in double quotes, no comma after the last item.
+An interactive piece is an element with `data-widget="…"`. In the presenter view, **Reveal answers** shows its answers and **Reset** rebuilds it from the original markup. Most read their content from a JSON block inside them. Edit the JSON and reload. If it doesn't appear, check the JSON is valid: every string in double quotes, no comma after the last item.
 
 | Widget | JSON shape |
 | --- | --- |

@@ -1,5 +1,15 @@
 # Changelog
 
+## 3.0.0 · 2026-10-22
+
+- Modern redesign: full-screen slides, a friendly rounded typeface, green, marigold, sky and coral chapter colours, and a clickable chapter progress bar.
+- Motion: an animated cover with drifting colour, letter-by-letter title and counting numbers; full-colour chapter dividers; slides that glide in with their content rising in order; flipping index cards.
+- Celebrations and sound: confetti on right answers and wins, fireworks on the new thank-you slide, optional sound effects.
+- Two links: a presenter view sized for a projector, with a QR code for attendees, Reveal answers, Reset, notes, laser pointer, blank screen and text size; and an attendee view where answers stay hidden.
+- Question rounds show one big question at a time in the presenter view.
+- New "Thank you, and best of luck" closing slide.
+- Fixed tables being clipped inside slides.
+
 ## 2.0.0 · 2026-10-22
 
 A rebuild for the first live session.

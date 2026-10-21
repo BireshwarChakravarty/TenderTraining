@@ -18,7 +18,7 @@ jobs:
       - name: Build the site folder
         run: |
           mkdir -p _site
-          cp -r index.html practice assets _site/
+          cp -r index.html present practice assets _site/
           touch _site/.nojekyll
       - name: Push to gh-pages
         run: |

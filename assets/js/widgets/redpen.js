@@ -32,8 +32,10 @@
           if (t.classList.contains("found")) return;
           mark(t);
           if (say) { say.className = "rp-say fb ok"; say.textContent = found === errors.length ? "That's all of them." : t.dataset.why; }
+          if (found === errors.length) TT.fx?.win(t); else TT.fx?.good(t);
         } else {
           flash(t);
+          TT.fx?.bad();
           t.classList.add("cleared");
           if (say) { say.className = "rp-say fb"; say.textContent = t.dataset.ok || "That one is fine."; }
         }
@@ -41,7 +43,12 @@
       t.addEventListener("click", act);
       t.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); act(); } });
     });
-    reveal?.addEventListener("click", () => errors.forEach(t => mark(t, true)));
+    const showAll = () => {
+      errors.forEach(t => mark(t, true));
+      if (say) { say.className = "rp-say fb ok"; say.textContent = `All ${errors.length} shown.`; }
+    };
+    reveal?.addEventListener("click", showAll);
     update();
+    return { reveal: showAll };
   });
 })();

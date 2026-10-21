@@ -8,64 +8,78 @@
 <meta name="description" content="Avian WE tender training: finding, reading, preparing and submitting a GeM bid, with a practice tender.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&amp;family=Courier+Prime:wght@400;700&amp;family=Hind:wght@400;500;600&amp;family=Kalam:wght@400;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&amp;family=Courier+Prime:wght@400;700&amp;family=Figtree:ital,wght@0,400..800;1,400..700&amp;display=swap">
 <link rel="stylesheet" href="assets/css/deck.css">
 <link rel="stylesheet" href="assets/css/widgets.css">
 </head>
 <body>
 <div class="app">
-
-  <nav class="rail" id="rail" aria-label="Chapters">
-    <div class="brand"><b>Winning on GeM</b><span>Bid team training · Avian WE</span></div>
-    <ol class="chapters" id="chapters"></ol>
-    <div class="rail-foot">
-      <span><kbd>←</kbd> <kbd>→</kbd> move · <kbd>O</kbd> all slides · <kbd>N</kbd> notes · <kbd>F</kbd> full screen · <kbd>T</kbd> theme</span>
-      <span>Made from our own 2026 bids. Client names, money and people's details are left out.</span>
-    </div>
-  </nav>
+  <header class="topbar">
+    <div class="chapterbar" id="chapterbar" aria-label="Chapters"></div>
+    <div class="topline"><span class="logo"><i aria-hidden="true"></i>Winning on GeM</span><span class="chapter-name" id="chapterName"></span><span class="count" id="count">1 / 1</span></div>
+  </header>
 
   <main class="stage" id="stage">
 
 <!-- =================================================================== 00 · THE FILE -->
-<section class="slide cover-slide" id="start" data-chapter="0" data-title="Winning on GeM">
-  <div class="file-cover">
-    <div class="fc-top"><span>File No. BT/GeM/2026/01</span><span>Avian WE · Bid Team</span></div>
-    <h1>Winning on GeM</h1>
-    <p class="fc-sub">How we find a government bid, read it, decide, build every document, and submit it without losing a mark.</p>
-    <dl class="fc-fields">
-      <dt>Subject</dt><dd>Tender training, session 1</dd>
-      <dt>Portal</dt><dd>Government e-Marketplace (GeM)</dd>
-      <dt>Practice bid</dt><dd>GEM/2026/B/TRN-0421 (fictional)</dd>
-      <dt>Time</dt><dd>3½ hours with a break, or 2½ for the short version</dd>
-    </dl>
-    <button class="btn ink fc-open" type="button" data-go="contents">Open the file →</button>
-    <span class="stamp cover-stamp" aria-hidden="true">For training<small>Not a real bid</small></span>
+<section class="slide cover" id="start" data-chapter="0" data-title="Winning on GeM">
+  <div class="deco" aria-hidden="true"><div class="aurora"><i></i><i></i><i></i><i></i></div></div>
+  <div class="cover-grid">
+    <div>
+      <span class="kicker"><b>AVIAN WE</b> Bid team training · Session 1</span>
+      <h1 class="title-xl"><span data-split>Winning on</span> <span class="accent">GeM</span></h1>
+      <p class="cover-sub">Find a government bid, read it, decide, build every document and submit it without losing a mark.</p>
+      <div class="journey" aria-label="The journey">
+        <span style="--k:0"><b>1</b> Find</span><span style="--k:1"><b>2</b> Read</span><span style="--k:2"><b>3</b> Decide</span><span style="--k:3"><b>4</b> Prepare</span><span style="--k:4"><b>5</b> Submit</span><span style="--k:5"><b>6</b> Win</span>
+      </div>
+      <div class="stats">
+        <div><b data-count="12">12</b><span>hands-on games</span></div>
+        <div><b data-count="1">1</b><span>GeM simulator</span></div>
+        <div><b data-count="8">8</b><span>traps to find</span></div>
+        <div><b data-count="10">10</b><span>golden rules</span></div>
+      </div>
+      <div class="row" style="margin-top:2rem"><button class="btn ink" type="button" data-go="contents">Let's begin →</button><span class="small muted">Press → or swipe to move</span></div>
+    </div>
+    <div class="join presenter-only">
+      <b>Follow along on your phone</b>
+      <img src="assets/img/qr-attendee.svg" alt="QR code for the attendee link" width="240" height="240">
+      <span>bireshwarchakravarty.github.io/TenderTraining</span>
+    </div>
   </div>
-  <aside class="notes"><ul><li>Welcome. Everything today is hands-on. Laptops open, one per pair.</li><li>Every example comes from bids our team ran this year for central ministries and agencies. Names and numbers are taken out.</li><li>N opens these notes, O shows every slide.</li></ul></aside>
+  <aside class="notes"><ul><li>Welcome. Ask everyone to scan the QR code. They play along on their own phones and laptops.</li><li>Every example comes from bids our team ran this year for central ministries and agencies. Names and numbers are taken out.</li><li>Keys: R reveals answers, L is a laser pointer, B blanks the screen, + and − change text size.</li></ul></aside>
 </section>
 
-<section class="slide" id="contents" data-chapter="0" data-title="Contents of the file">
-  <span class="tab">Index</span>
-  <div class="head"><h2>What's in this file</h2><p class="lede">Ten stops, in the order a bid actually moves. Then a practice tender and a quiz.</p></div>
+<section class="slide" id="contents" data-chapter="0" data-title="Today's journey">
+  <span class="tab">Agenda</span>
+  <div class="head"><h2>Today's journey</h2><p class="lede">Ten stops, in the order a bid actually moves. Then a practice tender and a quiz.</p></div>
   <ol class="contents">
-    <li><button type="button" data-go="platforms"><span class="no">01</span><b>Where government tenders live</b><span class="pg">p. 3</span></button></li>
-    <li><button type="button" data-go="scout"><span class="no">02</span><b>Finding bids on GeM</b><span class="pg">p. 7</span></button></li>
-    <li><button type="button" data-go="claude-flow"><span class="no">03</span><b>Reading the scope with Claude</b><span class="pg">p. 10</span></button></li>
-    <li><button type="button" data-go="evidence"><span class="no">04</span><b>Eligibility into documents</b><span class="pg">p. 14</span></button></li>
-    <li><button type="button" data-go="decision"><span class="no">05</span><b>Bid or no bid</b><span class="pg">p. 17</span></button></li>
-    <li><button type="button" data-go="qcbs"><span class="no">06</span><b>The scoring matrix</b><span class="pg">p. 19</span></button></li>
-    <li><button type="button" data-go="doc-kinds"><span class="no">07</span><b>Making the documents</b><span class="pg">p. 21</span></button></li>
-    <li><button type="button" data-go="owners"><span class="no">08</span><b>Teams and the tracker</b><span class="pg">p. 24</span></button></li>
-    <li><button type="button" data-go="gem-sim"><span class="no">09</span><b>Submitting on GeM</b><span class="pg">p. 27</span></button></li>
-    <li><button type="button" data-go="pdf-size"><span class="no">10</span><b>File limits and rejections</b><span class="pg">p. 31</span></button></li>
-    <li><button type="button" data-go="practice"><span class="no">11</span><b>Practice tender</b><span class="pg">p. 33</span></button></li>
-    <li><button type="button" data-go="quiz"><span class="no">12</span><b>Quiz and the golden rules</b><span class="pg">p. 35</span></button></li>
+    <li data-chapter="1"><button type="button" data-go="ch1"><span class="no">01</span><b>Where government tenders live</b><span class="pg">Every portal, then GeM</span></button></li>
+    <li data-chapter="2"><button type="button" data-go="ch2"><span class="no">02</span><b>Finding bids on GeM</b><span class="pg">Search and triage</span></button></li>
+    <li data-chapter="3"><button type="button" data-go="ch3"><span class="no">03</span><b>Reading the scope with Claude</b><span class="pg">Read 100 pages fast</span></button></li>
+    <li data-chapter="4"><button type="button" data-go="ch4"><span class="no">04</span><b>Eligibility into documents</b><span class="pg">Proof for every rule</span></button></li>
+    <li data-chapter="5"><button type="button" data-go="ch5"><span class="no">05</span><b>Bid or no bid</b><span class="pg">One meeting, one call</span></button></li>
+    <li data-chapter="6"><button type="button" data-go="ch6"><span class="no">06</span><b>The scoring matrix</b><span class="pg">Where marks are won</span></button></li>
+    <li data-chapter="7"><button type="button" data-go="ch7"><span class="no">07</span><b>Making the documents</b><span class="pg">Annexures to stamp paper</span></button></li>
+    <li data-chapter="8"><button type="button" data-go="ch8"><span class="no">08</span><b>Teams and the tracker</b><span class="pg">Nothing gets missed</span></button></li>
+    <li data-chapter="9"><button type="button" data-go="ch9"><span class="no">09</span><b>Submitting on GeM</b><span class="pg">The five tabs, live</span></button></li>
+    <li data-chapter="10"><button type="button" data-go="ch10"><span class="no">10</span><b>File limits and rejections</b><span class="pg">10 MB, 100 pages</span></button></li>
+    <li data-chapter="11"><button type="button" data-go="ch11"><span class="no">11</span><b>Practice tender</b><span class="pg">Eight traps to find</span></button></li>
+    <li data-chapter="12"><button type="button" data-go="ch12"><span class="no">12</span><b>Quiz and the golden rules</b><span class="pg">Teams and prizes</span></button></li>
   </ol>
-  <div class="sticky r"><b>How this works</b><p>Almost every page asks you to do something: answer, match, sort, circle the mistake, or run the simulator. Nothing you type leaves the browser.</p></div>
+  <div class="sticky"><b>How this works</b><p>Almost every page asks you to do something: answer, match, sort, circle the mistake, or run the simulator. Nothing you type leaves your browser.</p></div>
   <aside class="notes"><ul><li>Each line is clickable. Use it to jump back during questions.</li></ul></aside>
 </section>
 
 <!-- =================================================================== 01 · PLATFORMS -->
+<section class="slide divider-slide" id="ch1" data-chapter="1" data-title="Chapter 01 · Where government tenders live">
+  <div class="deco" aria-hidden="true"><span class="ring"></span><span class="ring two"></span><span class="big-no">01</span></div>
+  <span class="eyebrow">Chapter 01</span>
+  <h2>Where government tenders live</h2>
+  <p class="lede">Every portal we watch, why GeM comes first, and the words you will hear every day.</p>
+  <div class="inside" aria-label="In this chapter"></div>
+  <aside class="notes"><ul><li>Chapter 01. Click a topic to jump straight to it.</li></ul></aside>
+</section>
+
 <section class="slide" id="platforms" data-chapter="1" data-title="Where government tenders live">
   <span class="tab">01 · Platforms</span>
   <div class="head"><h2>Where government tenders live</h2><p class="lede">There is no single portal. These are the ones a communications agency should watch.</p></div>
@@ -154,6 +168,15 @@
 </section>
 
 <!-- =================================================================== 02 · SCOUTING -->
+<section class="slide divider-slide" id="ch2" data-chapter="2" data-title="Chapter 02 · Finding bids on GeM">
+  <div class="deco" aria-hidden="true"><span class="ring"></span><span class="ring two"></span><span class="big-no">02</span></div>
+  <span class="eyebrow">Chapter 02</span>
+  <h2>Finding bids on GeM</h2>
+  <p class="lede">Search like a pro, log every bid, and triage page one in five minutes.</p>
+  <div class="inside" aria-label="In this chapter"></div>
+  <aside class="notes"><ul><li>Chapter 02. Click a topic to jump straight to it.</li></ul></aside>
+</section>
+
 <section class="slide" id="scout" data-chapter="2" data-title="Finding bids on GeM">
   <span class="tab">02 · Scouting</span>
   <div class="head"><h2>Finding bids on GeM</h2><div class="note-row"><p class="lede">Search, then put anything relevant into the pipeline the same day, even if we drop it later.</p></div></div>
@@ -214,19 +237,15 @@
     {"fields": [
       ["बिड बंद होने की तारीख/समय", "Bid End Date/Time", "17-11-2026 15:00:00", "The hard deadline. Check the corrigendum tab, because extensions are common. Our internal deadline sits four days earlier."],
       ["बिड पेशकश वैधता", "Bid Offer Validity (From End Date)", "120 (Days)", "Our offer must stay valid this long. Every submission letter must say the same number."],
-      ["संगठन का नाम", "Organisation Name", "Bharat Craft & Culture Mission", "Who the buyer is. Check our history with them and any conflict of interest."],
       ["वस्तु श्रेणी", "Item Category", "Hiring of Social Media Agency", "We need a service offering in exactly this category, or we can't participate."],
-      ["अनुबंध अवधि", "Contract Period", "2 Year(s)", "Price the whole term. Rates are usually fixed throughout."],
       ["न्यूनतम औसत वार्षिक टर्नओवर", "Minimum Average Annual Turnover (3 Years)", "600 Lakh(s)", "Pass or fail. Confirm which three financial years apply, because corrigenda change this."],
       ["विगत अनुभव के वर्ष", "Years of Past Experience Required", "5 Year(s)", "Years of similar government work, with a contract for each year."],
-      ["एमएसई को छूट", "MSE Relaxation for Experience and Turnover", "No", "If Yes, MSEs and DPIIT startups are relaxed on these criteria, with proof uploaded."],
       ["सभी निविदाकारों को दस्तावेज़ दिखाएं?", "Show uploaded documents to all bidders?", "Yes", "Competitors may see what we upload. Upload what is asked and nothing more."],
       ["स्वतः विस्तार रोकने हेतु न्यूनतम बिड", "Minimum bids to disable automatic extension", "3", "With fewer bids, GeM moves the deadline on its own, here by 5 days, once. Don't plan around it."],
       ["बिड का प्रकार", "Type of Bid", "Two Packet Bid", "Technical packet first. Price opens only for those who qualify."],
       ["अनुमानित बिड मूल्य", "Estimated Bid Value", "30000000", "Sets EMD and eligibility thresholds. Look for a price floor in the ATC and corrigenda."],
       ["मूल्यांकन पद्धति", "Evaluation Method", "QCBS 70:30 · cut-off 70", "Quality is 70% of the final score. Technical marks matter more than a lower price."],
-      ["ईएमडी राशि", "EMD Amount", "600000", "Arrange it, or confirm exemption, in week one."],
-      ["रिवर्स नीलामी", "Bid to RA enabled", "No", "No reverse auction. The price you submit is final."]
+      ["ईएमडी राशि", "EMD Amount", "600000", "Arrange it, or confirm exemption, in week one."]
     ],
     "checks": [
       {"q": "At least 10 days left before the deadline?", "pass": true, "fail": "too little time for a QCBS bid."},
@@ -251,6 +270,15 @@
 </section>
 
 <!-- =================================================================== 03 · CLAUDE -->
+<section class="slide divider-slide" id="ch3" data-chapter="3" data-title="Chapter 03 · Reading the scope with Claude">
+  <div class="deco" aria-hidden="true"><span class="ring"></span><span class="ring two"></span><span class="big-no">03</span></div>
+  <span class="eyebrow">Chapter 03</span>
+  <h2>Reading the scope with Claude</h2>
+  <p class="lede">Let Claude read 120 pages in minutes. Then catch it when it slips.</p>
+  <div class="inside" aria-label="In this chapter"></div>
+  <aside class="notes"><ul><li>Chapter 03. Click a topic to jump straight to it.</li></ul></aside>
+</section>
+
 <section class="slide" id="claude-flow" data-chapter="3" data-title="Reading the scope with Claude">
   <span class="tab">03 · Scope with Claude</span>
   <div class="head"><h2>Claude reads 120 pages in minutes. You check it.</h2></div>
@@ -365,6 +393,15 @@
 </section>
 
 <!-- =================================================================== 04 · ELIGIBILITY -->
+<section class="slide divider-slide" id="ch4" data-chapter="4" data-title="Chapter 04 · Eligibility into documents">
+  <div class="deco" aria-hidden="true"><span class="ring"></span><span class="ring two"></span><span class="big-no">04</span></div>
+  <span class="eyebrow">Chapter 04</span>
+  <h2>Eligibility into documents</h2>
+  <p class="lede">Every criterion needs one piece of proof. Miss one and the bid is never opened.</p>
+  <div class="inside" aria-label="In this chapter"></div>
+  <aside class="notes"><ul><li>Chapter 04. Click a topic to jump straight to it.</li></ul></aside>
+</section>
+
 <section class="slide" id="evidence" data-chapter="4" data-title="Match criterion to evidence">
   <span class="tab">04 · Eligibility</span>
   <div class="head"><h2>Every criterion needs one piece of evidence</h2><p class="lede">Pre-qualification is pass or fail. Miss one line and the technical bid is never opened.</p></div>
@@ -419,6 +456,15 @@
 </section>
 
 <!-- =================================================================== 05 · DECISION -->
+<section class="slide divider-slide" id="ch5" data-chapter="5" data-title="Chapter 05 · Bid or no bid">
+  <div class="deco" aria-hidden="true"><span class="ring"></span><span class="ring two"></span><span class="big-no">05</span></div>
+  <span class="eyebrow">Chapter 05</span>
+  <h2>Bid or no bid</h2>
+  <p class="lede">Gates, weights and commercial red flags. One meeting, one decision.</p>
+  <div class="inside" aria-label="In this chapter"></div>
+  <aside class="notes"><ul><li>Chapter 05. Click a topic to jump straight to it.</li></ul></aside>
+</section>
+
 <section class="slide" id="decision" data-chapter="5" data-title="Bid or no bid">
   <span class="tab">05 · Decision</span>
   <div class="head"><h2>Bid or no bid, in one meeting</h2><p class="lede">Bid manager, the account lead, Finance and the signatory. Thirty minutes, the Claude summary, and this note.</p></div>
@@ -465,6 +511,15 @@
 </section>
 
 <!-- =================================================================== 06 · SCORING -->
+<section class="slide divider-slide" id="ch6" data-chapter="6" data-title="Chapter 06 · The scoring matrix">
+  <div class="deco" aria-hidden="true"><span class="ring"></span><span class="ring two"></span><span class="big-no">06</span></div>
+  <span class="eyebrow">Chapter 06</span>
+  <h2>The scoring matrix</h2>
+  <p class="lede">How QCBS really picks the winner, and where your marks are hiding.</p>
+  <div class="inside" aria-label="In this chapter"></div>
+  <aside class="notes"><ul><li>Chapter 06. Click a topic to jump straight to it.</li></ul></aside>
+</section>
+
 <section class="slide" id="qcbs" data-chapter="6" data-title="How QCBS picks the winner">
   <span class="tab">06 · Scoring</span>
   <div class="head"><h2>How QCBS picks the winner</h2><p class="lede">Final = 70 × (your tech ÷ highest tech) + 30 × (lowest price ÷ your price). Move the sliders.</p></div>
@@ -509,6 +564,15 @@
 </section>
 
 <!-- =================================================================== 07 · DOCUMENTS -->
+<section class="slide divider-slide" id="ch7" data-chapter="7" data-title="Chapter 07 · Making the documents">
+  <div class="deco" aria-hidden="true"><span class="ring"></span><span class="ring two"></span><span class="big-no">07</span></div>
+  <span class="eyebrow">Chapter 07</span>
+  <h2>Making the documents</h2>
+  <p class="lede">Six kinds of document, seven mistakes in one letter, and a vault that saves weeks.</p>
+  <div class="inside" aria-label="In this chapter"></div>
+  <aside class="notes"><ul><li>Chapter 07. Click a topic to jump straight to it.</li></ul></aside>
+</section>
+
 <section class="slide" id="doc-kinds" data-chapter="7" data-title="Six kinds of documents">
   <span class="tab">07 · Documents</span>
   <div class="head"><h2>Six kinds of document, six lead times</h2></div>
@@ -575,6 +639,15 @@
 </section>
 
 <!-- =================================================================== 08 · TEAMS -->
+<section class="slide divider-slide" id="ch8" data-chapter="8" data-title="Chapter 08 · Teams and the tracker">
+  <div class="deco" aria-hidden="true"><span class="ring"></span><span class="ring two"></span><span class="big-no">08</span></div>
+  <span class="eyebrow">Chapter 08</span>
+  <h2>Teams and the tracker</h2>
+  <p class="lede">One owner per document, a backward plan, and a tracker everyone trusts.</p>
+  <div class="inside" aria-label="In this chapter"></div>
+  <aside class="notes"><ul><li>Chapter 08. Click a topic to jump straight to it.</li></ul></aside>
+</section>
+
 <section class="slide" id="owners" data-chapter="8" data-title="Who owns which document?">
   <span class="tab">08 · Teams</span>
   <div class="head"><h2>Who owns which document?</h2><p class="lede">One owner per document. Click a document, then its team.</p></div>
@@ -653,6 +726,15 @@
 </section>
 
 <!-- =================================================================== 09 · SUBMITTING -->
+<section class="slide divider-slide" id="ch9" data-chapter="9" data-title="Chapter 09 · Submitting on GeM">
+  <div class="deco" aria-hidden="true"><span class="ring"></span><span class="ring two"></span><span class="big-no">09</span></div>
+  <span class="eyebrow">Chapter 09</span>
+  <h2>Submitting on GeM</h2>
+  <p class="lede">Submit the practice bid yourself, then see the real screens.</p>
+  <div class="inside" aria-label="In this chapter"></div>
+  <aside class="notes"><ul><li>Chapter 09. Click a topic to jump straight to it.</li></ul></aside>
+</section>
+
 <section class="slide" id="gem-sim" data-chapter="9" data-title="Submit the practice bid">
   <span class="tab">09 · Submitting</span>
   <div class="head"><h2>Submit the practice bid</h2><p class="lede">The five participation tabs, with the practice tender's rules switched on. Some files on the table are traps.</p></div>
@@ -665,6 +747,12 @@
       {"label": "Hiring of Social Media Agency - Social Media Content development and Management", "id": "Offering SM-0091 · matches the bid", "ok": true}
      ],
      "floor": 25500000, "emd": 600000,
+     "answers": {"price": 28000000, "emdMode": "Bank Guarantee", "emdRef": "BG/2026/7781",
+      "slots": {"Experience Criteria": "WorkOrders_CompletionCerts.pdf", "Bidder Turnover": "AnnexIV_CA_Turnover_NetWorth.pdf",
+       "Certificate (Requested in ATC)": "ATC_Annexures_merged.pdf", "Additional Doc 1 (Requested in ATC)": "AnnexIII_Experience_Sheets.pdf",
+       "Additional Doc 2 (Requested in ATC)": "AnnexX_CVs_10_members.pdf", "Additional Doc 3 (Requested in ATC)": "EPF_Employee_List.pdf",
+       "Additional Doc 4 (Requested in ATC)": "Audited_Financials_3FY_compressed.pdf", "Technical Proposal and Presentation": "Technical_Proposal.pdf",
+       "Power of Attorney": "PoA_Notarised.pdf"}},
      "gstins": ["06AAACN0000A1Z5 · Haryana", "07AAACN0000A1Z3 · Delhi"],
      "slots": [
       {"name": "Experience Criteria", "required": true, "std": true, "want": "experience"},
@@ -776,6 +864,15 @@
 </section>
 
 <!-- =================================================================== 10 · FILES -->
+<section class="slide divider-slide" id="ch10" data-chapter="10" data-title="Chapter 10 · File limits and rejections">
+  <div class="deco" aria-hidden="true"><span class="ring"></span><span class="ring two"></span><span class="big-no">10</span></div>
+  <span class="eyebrow">Chapter 10</span>
+  <h2>File limits and rejections</h2>
+  <p class="lede">10 MB, 100 pages, PDF only, and the mistakes that end bids.</p>
+  <div class="inside" aria-label="In this chapter"></div>
+  <aside class="notes"><ul><li>Chapter 10. Click a topic to jump straight to it.</li></ul></aside>
+</section>
+
 <section class="slide" id="pdf-size" data-chapter="10" data-title="Will it fit in 10 MB?">
   <span class="tab">10 · File limits</span>
   <div class="head"><h2>Will it fit in 10 MB?</h2><p class="lede">A rough guide for scanned packs. Change the settings and see how many upload slots you'd need.</p></div>
@@ -823,6 +920,15 @@
 </section>
 
 <!-- =================================================================== 11 · PRACTICE -->
+<section class="slide divider-slide" id="ch11" data-chapter="11" data-title="Chapter 11 · The practice tender">
+  <div class="deco" aria-hidden="true"><span class="ring"></span><span class="ring two"></span><span class="big-no">11</span></div>
+  <span class="eyebrow">Chapter 11</span>
+  <h2>The practice tender</h2>
+  <p class="lede">A fictional bid with eight traps. Work in pairs.</p>
+  <div class="inside" aria-label="In this chapter"></div>
+  <aside class="notes"><ul><li>Chapter 11. Click a topic to jump straight to it.</li></ul></aside>
+</section>
+
 <section class="slide" id="practice" data-chapter="11" data-title="The practice tender">
   <span class="tab">11 · Practice</span>
   <div class="head"><h2>The practice tender</h2><p class="lede">A fictional bid built from patterns in our real ones, at medium difficulty. It has a corrigendum and eight traps. Work in pairs.</p></div>
@@ -866,6 +972,15 @@
 </section>
 
 <!-- =================================================================== 12 · QUIZ -->
+<section class="slide divider-slide" id="ch12" data-chapter="12" data-title="Chapter 12 · Quiz and the golden rules">
+  <div class="deco" aria-hidden="true"><span class="ring"></span><span class="ring two"></span><span class="big-no">12</span></div>
+  <span class="eyebrow">Chapter 12</span>
+  <h2>Quiz and the golden rules</h2>
+  <p class="lede">Two teams, nine questions, one winner.</p>
+  <div class="inside" aria-label="In this chapter"></div>
+  <aside class="notes"><ul><li>Chapter 12. Click a topic to jump straight to it.</li></ul></aside>
+</section>
+
 <section class="slide" id="quiz" data-chapter="12" data-title="Team quiz">
   <span class="tab">12 · Quiz</span>
   <div class="head"><h2>Team quiz</h2><p class="lede">Split the room in two. Rename the teams. The first hand up answers.</p></div>
@@ -906,36 +1021,72 @@
     <a class="btn" href="https://bidplus.gem.gov.in/all-bids" target="_blank" rel="noopener">GeM all bids</a>
     <a class="btn" href="https://eprocure.gov.in/cppp/" target="_blank" rel="noopener">CPPP</a>
     <a class="btn" href="practice/tender.html" target="_blank" rel="noopener">Practice tender</a>
-    <button class="btn quiet" type="button" data-go="start">Back to the cover</button>
   </div>
   <aside class="notes"><ul><li>Next session: writing the technical proposal and preparing the team for interview day.</li></ul></aside>
 </section>
 
-  </main>
-
-  <div class="bar" role="toolbar" aria-label="Slide controls">
-    <button class="btn menu-btn" type="button" id="menuBtn" aria-controls="rail" aria-expanded="false">☰ <span class="label-text">Chapters</span></button>
-    <button class="btn" type="button" id="prevBtn" aria-label="Previous slide">←</button>
-    <span class="count" id="count">1 / 1</span>
-    <button class="btn" type="button" id="nextBtn" aria-label="Next slide">→</button>
-    <div class="progress" aria-hidden="true"><i id="progress"></i></div>
-    <button class="btn" type="button" id="notesBtn" aria-pressed="false">Notes</button>
-    <button class="btn" type="button" id="overviewBtn" aria-label="All slides"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1" fill="currentColor"/><rect x="9" y="2" width="5" height="5" rx="1" fill="currentColor"/><rect x="2" y="9" width="5" height="5" rx="1" fill="currentColor"/><rect x="9" y="9" width="5" height="5" rx="1" fill="currentColor"/></svg><span class="label-text">All slides</span></button>
-    <button class="btn" type="button" id="themeBtn" aria-label="Switch light or dark"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor"/></svg></button>
-    <button class="btn" type="button" id="fullBtn" aria-label="Full screen"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<section class="slide finale" id="thanks" data-chapter="12" data-title="Thank you">
+  <div class="deco" aria-hidden="true"><div class="aurora"><i></i><i></i><i></i><i></i></div></div>
+  <span class="kicker"><b>THAT'S A WRAP</b> Winning on GeM · Session 1</span>
+  <h2>Thank you</h2>
+  <p class="lede">Best of luck with your first bid. Go win one.</p>
+  <p class="sub">Keep the golden rules close, run the triage every morning, and never upload on the last day.</p>
+  <div class="row">
+    <button class="btn" type="button" data-go="rules">The golden rules</button>
+    <a class="btn" href="practice/tender.html" target="_blank" rel="noopener">Practice tender</a>
+    <button class="btn" type="button" data-go="start">Back to the start</button>
   </div>
+  <div class="join presenter-only">
+    <b>Keep this training</b>
+    <img src="assets/img/qr-attendee.svg" alt="QR code for the attendee link" width="200" height="200">
+    <span>bireshwarchakravarty.github.io/TenderTraining</span>
+  </div>
+  <aside class="notes"><ul><li>Thank the room. Fireworks are automatic.</li><li>Next session: writing the technical proposal and preparing the team for interview day.</li></ul></aside>
+</section>
+
+  </main>
 </div>
+
+<nav class="controls" aria-label="Slide controls">
+  <button class="cbtn" type="button" id="menuBtn" aria-controls="drawer" aria-expanded="false" aria-label="Chapters"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+  <button class="cbtn hide-narrow" type="button" id="overviewBtn" aria-label="All slides (O)"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1.2" fill="currentColor"/><rect x="9" y="2" width="5" height="5" rx="1.2" fill="currentColor"/><rect x="2" y="9" width="5" height="5" rx="1.2" fill="currentColor"/><rect x="9" y="9" width="5" height="5" rx="1.2" fill="currentColor"/></svg></button>
+  <span class="sep presenter-only"></span>
+  <button class="cbtn reveal presenter-only" type="button" id="revealBtn" title="Show the answers on this slide (R)">Reveal answers</button>
+  <button class="cbtn presenter-only" type="button" id="resetBtn" title="Put this slide back to the start">Reset</button>
+  <button class="cbtn presenter-only" type="button" id="notesBtn" aria-pressed="false" title="Trainer's notes (N)">Notes</button>
+  <span class="presenter-only hide-narrow" style="display:inline-flex;align-items:center"><button class="cbtn" type="button" id="zoomOut" aria-label="Smaller text (−)">A−</button><span class="zoom-label" id="zoomLabel">100%</span><button class="cbtn" type="button" id="zoomIn" aria-label="Bigger text (+)">A+</button></span>
+  <span class="sep"></span>
+  <button class="cbtn hide-narrow" type="button" id="soundBtn" aria-pressed="false" aria-label="Sound effects (S)"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3v10l-4-3H2z" fill="currentColor"/><path d="M11 5.5a3.5 3.5 0 0 1 0 5M12.6 3.6a6 6 0 0 1 0 8.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+  <button class="cbtn hide-narrow" type="button" id="themeBtn" aria-label="Light or dark (T)"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor"/></svg></button>
+  <button class="cbtn hide-narrow" type="button" id="fullBtn" aria-label="Full screen (F)"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <span class="sep"></span>
+  <button class="cbtn" type="button" id="prevBtn" aria-label="Previous slide"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button class="cbtn go" type="button" id="nextBtn" aria-label="Next slide"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+</nav>
+
+<aside class="drawer" id="drawer" aria-label="Chapters">
+  <span class="logo"><i aria-hidden="true"></i>Winning on GeM</span>
+  <ol class="chapters" id="chapters"></ol>
+  <div class="drawer-foot">
+    <span class="presenter-only hand">Presenter view</span>
+    <span><kbd>←</kbd> <kbd>→</kbd> move · <kbd>O</kbd> all slides · <kbd>S</kbd> sound · <kbd>F</kbd> full screen · <kbd>T</kbd> theme</span>
+    <span class="presenter-only"><kbd>R</kbd> reveal · <kbd>N</kbd> notes · <kbd>L</kbd> laser · <kbd>B</kbd> blank screen · <kbd>+</kbd> <kbd>−</kbd> text size</span>
+    <span>Made from our own 2026 bids. Client names, money and people's details are left out.</span>
+  </div>
+</aside>
+<div class="scrim" id="scrim" hidden></div>
 
 <div class="notes-panel" id="notesPanel" hidden><h4>Trainer's notes</h4><div id="notesBody"></div></div>
 
 <div class="overview" id="overview" hidden>
   <div class="overview-inner">
-    <div class="overview-head"><h2>Every page in the file</h2><button class="btn" type="button" id="overviewClose">Close</button></div>
+    <div class="overview-head"><h2>Every slide</h2><button class="btn" type="button" id="overviewClose">Close</button></div>
     <div class="overview-grid" id="overviewGrid"></div>
   </div>
 </div>
 
 <script src="assets/js/core.js"></script>
+<script src="assets/js/fx.js"></script>
 <script src="assets/js/widgets/games.js"></script>
 <script src="assets/js/widgets/redpen.js"></script>
 <script src="assets/js/widgets/tools.js"></script>

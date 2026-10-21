@@ -12,7 +12,7 @@
    }                                                price | stale (old CVs) | big (too large); must: required upload */
 (() => {
   "use strict";
-  const { el, inr } = TT;
+  const { $, el, inr } = TT;
 
   TT.register("gemsim", (root, data) => {
     const json = root.querySelector('script[type="application/json"]');
@@ -32,12 +32,13 @@
 
     const alert = (msgs, tone = "bad") => {
       if (!msgs.length) { alertBox.hidden = true; return; }
+      if (tone === "bad") TT.fx?.bad(alertBox);
       alertBox.hidden = false; alertBox.className = `sim-alert ${tone}`;
       alertBox.replaceChildren(el("ul", {}, msgs.map(m => el("li", { text: m }))));
     };
     const saveBtn = (label, fn) => el("button", { type: "button", class: "btn ink", text: label, onclick: fn });
     const go = i => { s.tab = i; alert([]); draw(); };
-    const complete = i => { s.done[i] = true; alert([]); go(Math.min(i + 1, TABS.length - 1)); };
+    const complete = i => { s.done[i] = true; alert([]); TT.fx?.good(nav.children[i]); go(Math.min(i + 1, TABS.length - 1)); };
 
     const slotIssues = (slot, f) => {
       if (!f) return [];
@@ -171,6 +172,7 @@
             const d = new Date();
             s.submitted = { when: d.toLocaleString("en-GB", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" }), ack: `TRN-${String(d.getTime()).slice(-8)}` };
             s.done[4] = true; alert([]); draw();
+            TT.fx?.stamp(); setTimeout(() => TT.fx?.win($(".receipt .stamp", root)), 200);
           }));
         return [el("h3", { text: "Verify and submit" }), list, opened,
           el("button", { type: "button", class: "btn ink", hidden: s.otp, text: "e-Sign and submit", onclick: () => {
@@ -183,11 +185,29 @@
       },
     ];
 
+    /* The presenter's Reveal fills every tab correctly and opens Upload Documents to show the right slots. */
+    const answerKey = () => {
+      const ok = data.offerings.findIndex(o => o.ok);
+      const key = data.answers || {};
+      s = fresh();
+      Object.assign(s, {
+        offering: ok, price: String(key.price || data.floor), gst: false,
+        breakup: (data.files.find(f => f.kind === "price") || {}).name || "",
+        slots: { ...(key.slots || {}) }, gstin: data.gstins[0], mii: "Yes", emdEx: "No",
+        emdAmt: String(data.emd), emdMode: key.emdMode || "Bank Guarantee", emdRef: key.emdRef || "BG/2026/0001", checked: true,
+      });
+      s.done = TABS.map((_, i) => i < 4);
+      s.tab = 2;
+      alert(["Answer key: every tab filled correctly. Open each tab to walk through it, then press e-Sign on Verify."], "ok");
+      draw();
+    };
+
     function draw() {
       nav.replaceChildren(...TABS.map((t, i) => el("li", {}, el("button", { type: "button", "aria-current": String(i === s.tab), onclick: () => go(i) },
         el("span", { text: t }), s.done[i] ? el("span", { class: "tick", "aria-label": "saved", text: "✓" }) : ""))));
       panel.replaceChildren(...tabs[s.tab]());
     }
     draw();
+    return { reveal: answerKey };
   });
 })();

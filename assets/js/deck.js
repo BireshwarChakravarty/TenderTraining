@@ -1,51 +1,129 @@
-/* Slide navigation: chapters rail, overview, speaker notes, theme, keyboard and swipe. */
+/* Slide navigation: chapter progress bar, drawer, overview, notes, presenter tools, keyboard and swipe. */
 (() => {
   "use strict";
   const { $, $$, el, store } = TT;
 
-  const CHAPTERS = ["The file", "Platforms", "Scouting on GeM", "Scope with Claude", "Eligibility", "Bid or no-bid",
+  const CHAPTERS = ["Welcome", "Platforms", "Scouting on GeM", "Scope with Claude", "Eligibility", "Bid or no-bid",
     "Scoring", "Documents", "Teams & tracker", "Submitting", "File limits", "Practice tender", "Quiz & wrap-up"];
+  const presenter = TT.mode === "present";
   const slides = $$(".slide");
+  const chapterOf = s => Number(s.dataset.chapter);
   let current = -1;
 
-  const chapterList = $("#chapters");
-  CHAPTERS.forEach((name, i) => {
-    const first = slides.findIndex(s => Number(s.dataset.chapter) === i);
-    if (first < 0) return;
-    chapterList.append(el("li", {}, el("button", { type: "button", "data-chapter": String(i), onclick: () => { go(first); closeRail(); } },
-      el("span", { class: "no" }, String(i).padStart(2, "0")), el("span", { text: name }))));
+  /* Chapter dividers list the slides inside their chapter as buttons. */
+  $$(".divider-slide").forEach(d => {
+    const box = $(".inside", d);
+    if (!box) return;
+    slides.filter(s => chapterOf(s) === chapterOf(d) && s !== d).forEach((s, k) =>
+      box.append(el("button", { type: "button", style: `--k:${k}`, "data-go": s.id, text: s.dataset.title })));
   });
 
+  /* Cover title: split into letters so they can rise one by one. */
+  $$(".title-xl [data-split]").forEach(node => {
+    let k = 0;
+    const words = node.textContent.split(" ");
+    node.textContent = "";
+    words.forEach((w, wi) => {
+      const word = el("span", { class: "w" });
+      [...w].forEach(ch => word.append(el("span", { class: "ch", style: `--k:${k++}`, text: ch })));
+      node.append(word);
+      if (wi < words.length - 1) node.append(" ");
+    });
+  });
+
+  /* Top progress bar: one segment per chapter, filled as you go. */
+  const bar = $("#chapterbar");
+  const segs = CHAPTERS.map((name, i) => {
+    const members = slides.filter(s => chapterOf(s) === i);
+    if (!members.length) return null;
+    const b = el("button", { type: "button", "data-chapter": String(i), style: `--n:${members.length}`, title: name, "aria-label": `Go to ${name}`, onclick: () => go(slides.indexOf(members[0])) }, el("i"));
+    bar.append(b);
+    return { b, members };
+  });
+
+  /* Drawer with chapters */
+  const chapterList = $("#chapters");
+  CHAPTERS.forEach((name, i) => {
+    const first = slides.findIndex(s => chapterOf(s) === i);
+    if (first < 0) return;
+    chapterList.append(el("li", {}, el("button", { type: "button", "data-chapter": String(i), onclick: () => { go(first); openDrawer(false); } },
+      el("span", { class: "no", text: String(i).padStart(2, "0") }), el("span", { text: name }))));
+  });
+
+  /* Overview grid */
   const grid = $("#overviewGrid");
-  slides.forEach((s, i) => grid.append(el("button", { type: "button", onclick: () => { go(i); showOverview(false); } },
-    el("small", { text: `${String(i + 1).padStart(2, "0")} · ${CHAPTERS[Number(s.dataset.chapter)]}` }),
-    el("span", { text: s.dataset.title || s.id }))));
+  slides.forEach((s, i) => grid.append(el("button", { type: "button", "data-chapter": s.dataset.chapter, onclick: () => { go(i); showOverview(false); } },
+    el("small", { text: `${String(i + 1).padStart(2, "0")} · ${CHAPTERS[chapterOf(s)]}` }), el("span", { text: s.dataset.title || s.id }))));
 
   function go(i, { fromHash = false } = {}) {
     if (i < 0 || i >= slides.length || i === current) return;
     const back = i < current;
-    slides.forEach((s, j) => { s.hidden = j !== i; s.classList.remove("is-entering", "from-left"); });
     const s = slides[i];
-    if (current >= 0) { s.classList.add("is-entering"); if (back) s.classList.add("from-left"); }
+    slides.forEach(x => { x.hidden = x !== s; x.classList.remove("enter", "back"); });
+    if (current >= 0 && !TT.reduceMotion()) {
+      [...s.children].forEach((c, k) => c.style.setProperty("--i", String(k)));
+      void s.offsetWidth;
+      s.classList.add("enter");
+      if (back) s.classList.add("back");
+      TT.fx?.whoosh();
+    }
     s.scrollTop = 0;
     current = i;
+    const ch = chapterOf(s);
     $("#count").textContent = `${i + 1} / ${slides.length}`;
-    $("#progress").style.width = `${((i + 1) / slides.length) * 100}%`;
+    $("#chapterName").textContent = ch ? `${String(ch).padStart(2, "0")} · ${CHAPTERS[ch]}` : "";
+    segs.forEach((seg, k) => {
+      if (!seg) return;
+      const idx = seg.members.indexOf(s);
+      const fill = k < ch ? 100 : k > ch ? 0 : ((idx + 1) / seg.members.length) * 100;
+      seg.b.firstChild.style.width = `${fill}%`;
+    });
     $("#prevBtn").disabled = i === 0;
     $("#nextBtn").disabled = i === slides.length - 1;
-    $$("#chapters button").forEach(b => b.setAttribute("aria-current", String(b.dataset.chapter === s.dataset.chapter)));
+    $("#revealBtn").disabled = !TT.canReveal(s);
+    $("#resetBtn").disabled = !s.querySelector("[data-widget], details.answer");
+    $$("#chapters button").forEach(b => b.setAttribute("aria-current", String(Number(b.dataset.chapter) === ch)));
     $$("#overviewGrid button").forEach((b, j) => b.setAttribute("aria-current", String(j === i)));
     const notes = $("aside.notes", s);
     $("#notesBody").innerHTML = notes ? notes.innerHTML : "<p>No notes for this slide.</p>";
     document.title = i === 0 ? "Winning on GeM" : `${s.dataset.title} · Winning on GeM`;
-    if (!fromHash && s.id) { try { history.replaceState(null, "", `#${s.id}`); } catch { /* sandboxed frame */ } }
+    if (!fromHash && s.id) { try { history.replaceState(null, "", `${location.pathname}${location.search}#${s.id}`); } catch { /* sandboxed frame */ } }
     s.dispatchEvent(new CustomEvent("slide:shown", { bubbles: true }));
+    fit();
   }
   const goId = id => { const i = slides.findIndex(s => s.id === id); if (i >= 0) go(i); };
   const next = () => go(current + 1);
   const prev = () => go(current - 1);
   window.TTDeck = { go, goId, next, prev };
 
+  /* Presenter view: give each slide the biggest type that fits the screen without scrolling.
+     Starts at 1.6vw (about 31px on a 1080p projector) and steps down to 1.15vw at the smallest.
+     A− and A+ scale both ends for the room; a slide still too long at the smallest size scrolls. */
+  let zoom = Number(store.get("tt-zoom")) || 1;
+  function fit() {
+    if (!presenter || current < 0) return;
+    const root = document.documentElement, s = slides[current];
+    const vw = innerWidth / 100;
+    const max = Math.min(56, Math.max(18, 1.6 * vw * zoom)), min = Math.max(16, Math.min(max, 1.15 * vw * zoom));
+    let size = max;
+    root.style.fontSize = `${size}px`;
+    while (s.scrollHeight > s.clientHeight + 2 && size > min) {
+      size = Math.max(min, size - 0.06 * max);
+      root.style.fontSize = `${size}px`;
+    }
+  }
+  const setZoom = z => { zoom = Math.min(1.6, Math.max(0.7, Math.round(z * 10) / 10)); store.set("tt-zoom", String(zoom)); $("#zoomLabel").textContent = `${Math.round(zoom * 100)}%`; fit(); };
+  $("#zoomOut").addEventListener("click", () => setZoom(zoom - 0.1));
+  $("#zoomIn").addEventListener("click", () => setZoom(zoom + 0.1));
+  $("#zoomLabel").textContent = `${Math.round(zoom * 100)}%`;
+  let fitTimer = null;
+  const refit = () => { clearTimeout(fitTimer); fitTimer = setTimeout(fit, 80); };
+  addEventListener("resize", refit);
+  // Web fonts arrive after the first measurement and change line lengths, so measure again.
+  document.fonts?.ready.then(() => fit());
+  document.fonts?.addEventListener?.("loadingdone", refit);
+
+  /* Buttons */
   $("#nextBtn").addEventListener("click", next);
   $("#prevBtn").addEventListener("click", prev);
   document.addEventListener("click", e => {
@@ -61,6 +139,14 @@
   };
   $("#notesBtn").addEventListener("click", () => showNotes());
 
+  const revealHere = () => { if (presenter && current >= 0) { TT.reveal(slides[current]); TT.fx?.good($("#revealBtn")); fit(); } };
+  $("#revealBtn").addEventListener("click", revealHere);
+  $("#resetBtn").addEventListener("click", () => { if (current >= 0) { TT.reset(slides[current]); fit(); } });
+  if (presenter) {
+    // Keep presenter mode when opening the practice tender in a new tab.
+    $$('a[href^="practice/"]').forEach(a => { const [path, hash] = a.getAttribute("href").split("#"); a.href = `${path}?mode=present${hash ? `#${hash}` : ""}`; });
+  }
+
   const overview = $("#overview");
   const showOverview = force => {
     const show = force ?? overview.hidden;
@@ -69,6 +155,11 @@
   };
   $("#overviewBtn").addEventListener("click", () => showOverview(true));
   $("#overviewClose").addEventListener("click", () => showOverview(false));
+
+  const drawer = $("#drawer"), scrim = $("#scrim");
+  const openDrawer = open => { drawer.classList.toggle("open", open); scrim.hidden = !open; $("#menuBtn").setAttribute("aria-expanded", String(open)); };
+  $("#menuBtn").addEventListener("click", () => openDrawer(!drawer.classList.contains("open")));
+  scrim.addEventListener("click", () => openDrawer(false));
 
   const saved = store.get("tt-theme");
   if (saved) document.documentElement.dataset.theme = saved;
@@ -79,35 +170,40 @@
     store.set("tt-theme", root.dataset.theme);
   });
 
+  const soundBtn = $("#soundBtn");
+  const paintSound = () => { soundBtn.setAttribute("aria-pressed", String(!!TT.fx?.soundOn)); soundBtn.title = TT.fx?.soundOn ? "Sound on (S)" : "Sound off (S)"; };
+  soundBtn.addEventListener("click", () => { TT.fx?.setSound(!TT.fx.soundOn); paintSound(); if (TT.fx?.soundOn) TT.fx.good(soundBtn); });
+  paintSound();
+
   $("#fullBtn").addEventListener("click", async () => {
     try { if (document.fullscreenElement) await document.exitFullscreen(); else await document.documentElement.requestFullscreen(); }
     catch { /* full screen not available */ }
   });
 
-  const rail = $("#rail");
-  const closeRail = () => { rail.classList.remove("open"); $("#menuBtn").setAttribute("aria-expanded", "false"); };
-  $("#menuBtn").addEventListener("click", () => {
-    const open = !rail.classList.contains("open");
-    rail.classList.toggle("open", open);
-    $("#menuBtn").setAttribute("aria-expanded", String(open));
-  });
-
+  /* Keyboard */
   document.addEventListener("keydown", e => {
     if (e.target.closest("input, textarea, select, [contenteditable]")) return;
     if (e.metaKey || e.ctrlKey || e.altKey) return;
-    const k = e.key;
-    if (!overview.hidden) { if (k === "Escape" || k.toLowerCase() === "o") showOverview(false); return; }
+    const k = e.key, lk = k.toLowerCase();
+    if (!overview.hidden) { if (k === "Escape" || lk === "o") showOverview(false); return; }
     if (k === "ArrowRight" || k === "PageDown" || (k === " " && !e.target.closest("button, summary, a"))) { e.preventDefault(); next(); }
     else if (k === "ArrowLeft" || k === "PageUp") { e.preventDefault(); prev(); }
     else if (k === "Home") go(0);
     else if (k === "End") go(slides.length - 1);
-    else if (k.toLowerCase() === "n") showNotes();
-    else if (k.toLowerCase() === "o") showOverview(true);
-    else if (k.toLowerCase() === "t") $("#themeBtn").click();
-    else if (k.toLowerCase() === "f") $("#fullBtn").click();
-    else if (k === "Escape") { showNotes(false); closeRail(); }
+    else if (lk === "o") showOverview(true);
+    else if (lk === "t") $("#themeBtn").click();
+    else if (lk === "f") $("#fullBtn").click();
+    else if (lk === "s") soundBtn.click();
+    else if (lk === "n" && presenter) showNotes();
+    else if (lk === "r" && presenter) revealHere();
+    else if (lk === "l" && presenter) TT.fx?.toggleLaser();
+    else if (lk === "b" && presenter) TT.fx?.toggleBlackout();
+    else if ((k === "+" || k === "=") && presenter) setZoom(zoom + 0.1);
+    else if ((k === "-" || k === "_") && presenter) setZoom(zoom - 0.1);
+    else if (k === "Escape") { showNotes(false); openDrawer(false); }
   });
 
+  /* Swipe */
   let touch = null;
   const stage = $("#stage");
   stage.addEventListener("touchstart", e => { const t = e.touches[0]; touch = { x: t.clientX, y: t.clientY }; }, { passive: true });
@@ -120,7 +216,7 @@
     if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 1.6) (dx < 0 ? next : prev)();
   });
 
-  window.addEventListener("hashchange", () => {
+  addEventListener("hashchange", () => {
     const i = slides.findIndex(s => s.id === location.hash.slice(1));
     if (i >= 0) go(i, { fromHash: true });
   });

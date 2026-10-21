@@ -1,43 +1,48 @@
-/* Layout: one long bid dossier. Contents on the left at desktop width, numbered sheets, a trap-hunt bar pinned to the bottom. */
+/* Layout: one long bid dossier. Contents on the left at desktop width, numbered sections as cards,
+   and a trap-hunt bar pinned to the bottom of the screen. */
 html, body.tender-page { height: auto; }
+body.tender-page { overflow: auto; background: var(--bg-2); }
 .doc {
-  max-width: 1140px; margin: 0 auto;
-  padding-block: 1.6rem 7rem;
+  max-width: 1180px; margin: 0 auto;
+  padding-block: 2rem 8rem;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
-  display: grid; grid-template-columns: 13.5rem minmax(0, 1fr); gap: 2rem; align-items: start;
+  display: grid; grid-template-columns: 14rem minmax(0, 1fr); gap: 2rem; align-items: start;
 }
-.toc { position: sticky; top: calc(1rem + env(safe-area-inset-top, 0px)); display: grid; gap: 0.15rem; font-size: 0.95rem; }
-.toc b { font-family: var(--f-typed); color: var(--ink-2); padding: 0 0.5rem 0.4rem; }
-.toc a { color: var(--ink-2); text-decoration: none; padding: 0.22rem 0.5rem; border-radius: 3px; }
-.toc a:hover { color: var(--ink); background: var(--paper); }
-.sheets { display: grid; gap: 1.4rem; min-width: 0; }
-.sheet { background: var(--paper); box-shadow: var(--shadow); border-radius: 3px; border-top: 4px solid var(--file); padding: clamp(1.2rem, 0.8rem + 1.6vw, 2.4rem); display: grid; gap: 0.9rem; min-width: 0; }
-.sheet h1 { font-size: clamp(1.9rem, 1.3rem + 2.2vw, 3rem); font-weight: 900; font-stretch: 80%; letter-spacing: -0.015em; max-width: 26ch; }
-.sheet h2 { font-size: 1.6rem; font-weight: 850; font-stretch: 84%; }
-.sheet h3 { font-size: 1.1rem; font-weight: 750; margin-top: 0.3rem; }
+.toc { position: sticky; top: calc(1.2rem + env(safe-area-inset-top, 0px)); display: grid; gap: 0.15rem; font-size: 0.95rem; }
+.toc b { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); padding: 0 0.6rem 0.5rem; }
+.toc a { color: var(--ink-2); text-decoration: none; padding: 0.3rem 0.6rem; border-radius: 8px; transition: background 150ms, color 150ms; }
+.toc a:hover { color: var(--ink); background: var(--bg); }
+.sheets { display: grid; gap: 1.2rem; min-width: 0; }
+.sheet { background: var(--bg); box-shadow: var(--shadow-1); border-radius: 18px; padding: clamp(1.2rem, 0.8rem + 1.6vw, 2.4rem); display: grid; gap: 0.95rem; min-width: 0; animation: rise 600ms var(--ease) both; }
+.sheet h1 { font-size: clamp(2rem, 1.3rem + 2.4vw, 3.4rem); font-weight: 800; letter-spacing: -0.03em; max-width: 24ch; }
+.sheet h2 { font-size: 1.7rem; font-weight: 800; letter-spacing: -0.02em; }
+.sheet h3 { font-size: 1.12rem; font-weight: 750; margin-top: 0.3rem; }
 .sheet p, .sheet li { max-width: 74ch; }
-.sheet .ledger th { font-weight: 600; }
-.sheet .ledger tbody th { font-family: var(--f-body); font-size: 0.92rem; color: var(--ink-2); width: 46%; }
-.sec { font-family: var(--f-typed); color: var(--red); font-weight: 700; }
-.banner { background: var(--amber-soft); color: var(--amber); padding: 0.6rem 0.9rem; font-weight: 600; }
+.sheet .ledger tbody th { font-family: var(--f-body); font-size: 0.92rem; font-weight: 600; color: var(--ink-2); width: 46%; text-transform: none; letter-spacing: 0; background: transparent; }
+.sec { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); }
+.banner { background: var(--sun-soft); color: var(--sun-ink); padding: 0.7rem 1rem; font-weight: 700; border-radius: 12px; }
+.cover-sheet { background: linear-gradient(135deg, var(--green-soft), var(--sun-soft)); }
 .cover-sheet .btn { justify-self: start; }
-.cover-sheet .sticky { margin-block: 0.4rem; }
+.cover-sheet .sticky { margin-block: 0.4rem; background: var(--bg); }
 
 .hunt-bar {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 15;
-  display: flex; align-items: center; gap: 0.9rem; flex-wrap: wrap;
-  padding-block: 0.6rem calc(0.6rem + env(safe-area-inset-bottom, 0px));
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-  background: var(--sticky); color: var(--sticky-ink); box-shadow: 0 -8px 20px -14px rgb(0 0 0 / 45%);
+  position: fixed; left: 50%; bottom: max(14px, env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 15;
+  width: min(1100px, calc(100vw - 28px));
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  padding: 0.7rem 1rem 0.7rem 1.2rem; border-radius: 20px;
+  background: var(--ink); color: var(--bg); box-shadow: var(--shadow-2);
 }
-.hunt-bar .rp-say { flex: 1; min-width: 12rem; margin: 0; padding: 0; border: 0; background: transparent; color: inherit; }
-.hunt-bar .tally { color: var(--red); }
+.hunt-bar .rp-say { flex: 1; min-width: 12rem; margin: 0; padding: 0; background: transparent; color: inherit; }
+.hunt-bar .tally { color: var(--sun); }
+.hunt-bar .btn { background: transparent; color: inherit; border-color: color-mix(in srgb, var(--bg) 30%, transparent); }
 .hunt-log { position: relative; }
-.hunt-log summary { cursor: pointer; font-weight: 600; }
-.hunt-log .rp-log { position: absolute; bottom: calc(100% + 0.8rem); right: 0; width: min(28rem, 86vw); max-height: 50vh; overflow-y: auto; background: var(--paper); color: var(--ink); padding: 0.9rem 1rem 0.9rem 2rem; box-shadow: var(--shadow); }
+.hunt-log summary { cursor: pointer; font-weight: 700; }
+.hunt-log .rp-log { position: absolute; bottom: calc(100% + 1rem); right: 0; width: min(30rem, 86vw); max-height: 50vh; overflow-y: auto; background: var(--bg); color: var(--ink); padding: 1rem 1.1rem 1rem 2.1rem; box-shadow: var(--shadow-2); border-radius: 16px; }
 .hunt-log .rp-log:empty::before { content: "None yet."; color: var(--ink-2); margin-left: -1rem; }
+
+.present .doc { max-width: none; padding-inline: 3vw; }
+.present .sheet { font-size: 1.05rem; }
 
 @media (max-width: 900px) {
   .doc { grid-template-columns: minmax(0, 1fr); }

@@ -59,17 +59,23 @@
       if (timer) { clearInterval(timer); timer = null; startBtn.textContent = "Resume"; return; }
       if (left === 0) left = 300;
       startBtn.textContent = "Pause";
-      timer = setInterval(() => { left = Math.max(0, left - 1); paint(); if (!left) { clearInterval(timer); timer = null; startBtn.textContent = "Restart"; } }, 1000);
+      timer = setInterval(() => {
+        left = Math.max(0, left - 1); paint();
+        if (left <= 10 && left > 0) TT.fx?.tick();
+        if (!left) { clearInterval(timer); timer = null; startBtn.textContent = "Restart"; TT.fx?.stamp(); }
+      }, 1000);
     });
     paint();
 
     const list = $(".kill", root);
     const verdict = $(".verdict", root);
     const answers = new Map();
+    const setters = [];
     data.checks.forEach((c, i) => {
       const yes = el("button", { type: "button", class: "opt", text: "Yes" });
       const no = el("button", { type: "button", class: "opt", text: "No" });
       const set = v => { answers.set(i, v); yes.setAttribute("aria-pressed", String(v)); no.setAttribute("aria-pressed", String(!v)); judge(); };
+      setters.push(() => set(c.pass));
       yes.addEventListener("click", () => set(true)); no.addEventListener("click", () => set(false));
       list.append(el("li", {}, el("span", { text: c.q }), el("span", { class: "opts" }, yes, no)));
     });
@@ -78,8 +84,10 @@
       if (failed.length) { verdict.className = "verdict fb bad"; verdict.textContent = `Drop it or escalate: ${failed[0].fail}`; return; }
       if (answers.size < data.checks.length) { verdict.className = "verdict fb"; verdict.textContent = `${data.checks.length - answers.size} questions left.`; return; }
       verdict.className = "verdict fb ok"; verdict.textContent = "Worth a full read. Send it to Claude and book the bid or no-bid meeting.";
+      if (answers.size === data.checks.length) TT.fx?.good(verdict);
     }
     judge();
+    return { reveal: () => setters.forEach(f => f()) };
   });
 
   /* experience: the 3 × 40%, 2 × 50%, 1 × 80% rule, drawn as bars. */
@@ -95,6 +103,7 @@
       list.append(el("label", { class: "exp-row" }, el("span", { class: "typed", text: `P${i + 1}` }), input,
         el("button", { type: "button", class: "btn quiet", "aria-label": `Remove project ${i + 1}`, text: "×", onclick: e => { e.currentTarget.parentNode.remove(); render(); } })));
     };
+    let lastPass = null;
     [1.6, 1.3, 0.9].forEach(addRow);
     addBtn.addEventListener("click", () => { addRow(1); render(); });
     est.addEventListener("input", render);
@@ -114,7 +123,10 @@
         out.append(el("div", { class: "exp-opt" },
           el("div", { class: "row between" }, el("b", { text: `${name} · ${n} project${n > 1 ? "s" : ""} of ${crore(need)} or more` }), el("span", { class: `pill ${ok ? "ok" : "bad"}`, text: ok ? `meets (${have})` : `short (${have} of ${n})` })), bars));
       });
-      out.append(el("p", { class: `stamp ${pass ? "green" : ""} exp-stamp`, text: pass ? "Eligible" : "Not eligible" }));
+      const stamp = el("p", { class: `stamp ${pass ? "green" : ""} exp-stamp`, text: pass ? "Eligible" : "Not eligible" });
+      out.append(stamp);
+      if (lastPass !== null && lastPass !== pass) { stamp.classList.add("thump"); TT.fx?.stamp(); if (pass) TT.fx?.good(stamp); }
+      lastPass = pass;
     }
     render();
   });
@@ -143,7 +155,7 @@
       const stamp = $(".stamp", note);
       stamp.className = `stamp ${tone}`;
       stamp.textContent = word;
-      if (last && last !== word && !reduceMotion()) { void stamp.offsetWidth; stamp.classList.add("thump"); }
+      if (last && last !== word && !reduceMotion()) { void stamp.offsetWidth; stamp.classList.add("thump"); TT.fx?.stamp(); }
       last = word;
     };
     $$("input", root).forEach(i => i.addEventListener("input", render));

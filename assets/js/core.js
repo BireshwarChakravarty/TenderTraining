@@ -58,16 +58,54 @@ window.TT = (() => {
     else fallback();
   };
 
+  /* Two ways to open the deck:
+     presenter  (?mode=present, or /present/) big type for a projector, trainer notes, Reveal and Reset
+     attendee   (default)                     normal size, no notes, answers stay hidden until revealed in the room
+     The choice is kept for the browser tab so links between pages keep it. */
+  const mode = (() => {
+    let m = null;
+    try { m = new URLSearchParams(location.search).get("mode"); } catch { /* no query string */ }
+    if (m === "present" || m === "attend") { try { sessionStorage.setItem("tt-mode", m); } catch { /* storage blocked */ } return m; }
+    try { return sessionStorage.getItem("tt-mode") || "attend"; } catch { return "attend"; }
+  })();
+  const setMode = m => {
+    try { sessionStorage.setItem("tt-mode", m); } catch { /* storage blocked */ }
+    location.reload();
+  };
+  document.documentElement.classList.add(mode === "present" ? "present" : "attend");
+
+  /* Widgets register an init function. It may return { reveal } so the presenter can show the answers.
+     The original markup is kept so a widget can be reset to its starting state. */
   const registry = {};
   const register = (name, init) => { registry[name] = init; };
+  const start = node => {
+    const init = registry[node.dataset.widget];
+    if (!init) return;
+    node.dataset.ready = "1";
+    try { node._tt = init(node, data(node)) || {}; } catch (err) { node._tt = {}; console.error(`Widget "${node.dataset.widget}" failed`, err); }
+  };
   const initAll = (root = document) => {
     $$("[data-widget]", root).forEach(node => {
-      const init = registry[node.dataset.widget];
-      if (!init || node.dataset.ready) return;
-      node.dataset.ready = "1";
-      try { init(node, data(node)); } catch (err) { console.error(`Widget "${node.dataset.widget}" failed`, err); }
+      if (!registry[node.dataset.widget] || node.dataset.ready) return;
+      node._ttMarkup = node.innerHTML;
+      start(node);
     });
   };
+  const widgetsIn = root => $$("[data-widget]", root).filter(n => n.dataset.ready);
+  const canReveal = root => widgetsIn(root).some(n => typeof n._tt?.reveal === "function") || !!root.querySelector("details.answer");
+  const reveal = root => {
+    widgetsIn(root).forEach(n => { try { n._tt?.reveal?.(); } catch (err) { console.error("Reveal failed", err); } });
+    $$("details.answer", root).forEach(d => { d.open = true; });
+  };
+  const resetWidget = n => {
+    if (n._ttMarkup == null) return;
+    n.innerHTML = n._ttMarkup;
+    start(n);
+  };
+  const reset = root => {
+    widgetsIn(root).forEach(resetWidget);
+    $$("details.answer", root).forEach(d => { d.open = false; });
+  };
 
-  return { $, $$, el, store, data, shuffle, reduceMotion, fmt, inr, crore, flash, copyText, register, initAll };
+  return { $, $$, el, store, data, shuffle, reduceMotion, fmt, inr, crore, flash, copyText, register, initAll, mode, setMode, canReveal, reveal, reset, resetWidget };
 })();

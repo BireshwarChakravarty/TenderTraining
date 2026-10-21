@@ -4,10 +4,23 @@ A run sheet for **Winning on GeM**. The full session takes about three and a hal
 
 ## Before the session
 
-- Open `index.html` on the presenting laptop and press `F` for full screen. Press `N` once to check the trainer's notes open.
-- Trainees work in pairs with one laptop each. Share the deck link so they can open the practice tender (`practice/tender.html`) themselves.
+- On the presenting laptop open the **presenter link**, `https://bireshwarchakravarty.github.io/TenderTraining/present/`, and press `F` for full screen.
+- Test the room: stand at the back. If text is hard to read, press `+` once or twice. The size is remembered.
+- Attendees scan the QR code on the cover, or open `https://bireshwarchakravarty.github.io/TenderTraining/`. They play every activity on their own phone or laptop; answers stay hidden until you reveal them.
+- Sound effects are on in the presenter view. Press `S` to turn them off, or plug in speakers.
 - Pick a real upcoming GeM bid end date for the timeline slide.
 - Have two team names ready for the quiz, and a small prize.
+
+## Presenter controls
+
+| Key | What it does |
+| --- | --- |
+| `R` or **Reveal answers** | Shows the answers on the current slide: puts every document in its lane, pairs every criterion, circles every mistake, fills the GeM simulator with the answer key, opens the exercise answers. On question rounds it reveals the current question. |
+| **Reset** | Puts the slide back to its starting state for the next group. |
+| `L` | Laser pointer that follows the mouse. |
+| `B` | Blanks the screen. Press again, or click, to come back. |
+| `+` / `−` | Text size for the room. Each slide still fits itself to the screen. |
+| `N` | Trainer's notes for the slide. They show on the projector, so open them only when needed. |
 
 ## Run sheet
 
@@ -27,7 +40,7 @@ A run sheet for **Winning on GeM**. The full session takes about three and a hal
 | 2:30 | File limits | PDF size, rejected or marks lost | Hands up before each click on the rejection round. |
 | 2:40 | Practice tender | Practice, trap hunt | Pairs split the reading. Stop at six traps found, then reveal. |
 | 3:00 | Exercises | E1 to E3 in the room, E4 to E6 as homework | Answers written down before revealing. |
-| 3:20 | Quiz and rules | Team quiz, golden rules | Finish on the golden rules slide. |
+| 3:20 | Quiz and rules | Team quiz, golden rules, thank you | Finish on the thank-you slide. The fireworks start on their own. |
 
 ## The short version (2½ hours)
 
