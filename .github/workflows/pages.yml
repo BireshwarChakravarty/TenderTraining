@@ -7,6 +7,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  pages: write
 concurrency:
   group: pages
   cancel-in-progress: true
@@ -29,3 +30,12 @@ jobs:
           git add -A
           git commit -q -m "Publish ${GITHUB_SHA::7}"
           git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+      - name: Ask GitHub Pages to rebuild
+        # Pushes made with GITHUB_TOKEN don't start a Pages build on their own.
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          api="https://api.github.com/repos/${GITHUB_REPOSITORY}/pages"
+          auth=(-H "Authorization: Bearer ${GH_TOKEN}" -H "Accept: application/vnd.github+json")
+          curl -sS "${auth[@]}" "$api" | grep -E '"(build_type|branch|path|status|html_url)"' || true
+          curl -sS -f -X POST "${auth[@]}" "$api/builds"
