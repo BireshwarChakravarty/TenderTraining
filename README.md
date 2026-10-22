@@ -110,7 +110,7 @@ On every push to `main`, `.github/workflows/pages.yml` deploys the site to GitHu
 
 ## Privacy
 
-This repository is public. It holds no client financials, bank details, quoted prices, real bid numbers or personal data. The screenshots come from the GeM seller view with the account name removed. The practice tender, its buyer and its bidder are fictional.
+This repository is public. It holds no client financials, bank details, quoted prices, real bid numbers or personal data. The screenshots come from the GeM seller view with the account name removed. The practice tender and its buyer are fictional. The bidder is Avian WE, but its practice profile (turnover, projects, staff) is made up.
 
 ## License
 

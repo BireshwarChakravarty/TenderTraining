@@ -126,7 +126,7 @@
             if (!s.gstin) errs.push("Select the GSTIN for transaction charges.");
             if (!s.mii) errs.push("Answer the Make in India question.");
             if (!s.emdEx) errs.push("Answer the EMD exemption question.");
-            else if (s.emdEx === "Yes") errs.push("Northstar is not an MSE. A false EMD exemption claim can get the seller disabled on GeM.");
+            else if (s.emdEx === "Yes") errs.push("Avian WE is not an MSE. A false EMD exemption claim can get the seller disabled on GeM.");
             if (errs.length) return alert(errs);
             complete(2);
           })];
