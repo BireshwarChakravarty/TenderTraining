@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.1.0 · 2026-10-22
+
+- Presenter view never scrolls. A slide too long for the screen is laid out wider and scaled to fit, and fits itself again when answers are revealed.
+- Exercises show in two columns and the GeM simulator's upload rows are tighter on the big screen.
+- New dark theme: midnight blue with cyan, violet, pink and electric-yellow accents, replacing the warm orange look.
+- The site now deploys with GitHub Pages' own Actions deploy, so every push to `main` goes live.
+
 ## 3.0.0 · 2026-10-22
 
 - Modern redesign: full-screen slides, a friendly rounded typeface, green, marigold, sky and coral chapter colours, and a clickable chapter progress bar.

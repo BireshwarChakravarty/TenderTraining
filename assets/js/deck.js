@@ -96,21 +96,50 @@
   const prev = () => go(current - 1);
   window.TTDeck = { go, goId, next, prev };
 
-  /* Presenter view: give each slide the biggest type that fits the screen without scrolling.
-     Starts at 1.6vw (about 31px on a 1080p projector) and steps down to 1.15vw at the smallest.
-     A− and A+ scale both ends for the room; a slide still too long at the smallest size scrolls. */
+  /* Presenter view: every slide fills the screen without scrolling.
+     Type starts at 1.6vw (about 31px on a 1080p TV) and steps down to 1.15vw. A slide still too
+     long at that size is scaled down to fit: first laid out on a wider page (so lines get longer
+     and the slide shorter), or, if that doesn't fit, kept at its width and shrunk as a whole.
+     A− and A+ scale both ends for the room. */
   let zoom = Number(store.get("tt-zoom")) || 1;
+  let quietUntil = 0;
+  const scale = (s, k, wide) => {
+    s.classList.toggle("scaled", k < 1);
+    s.classList.toggle("wide", k < 1 && wide);
+    if (k < 1) s.style.setProperty("--k", k.toFixed(4)); else s.style.removeProperty("--k");
+  };
   function fit() {
     if (!presenter || current < 0) return;
     const root = document.documentElement, s = slides[current];
+    root.classList.add("fitting"); // measure final sizes, not the start of a transition
+    slides.forEach(x => scale(x, 1));
     const vw = innerWidth / 100;
     const max = Math.min(56, Math.max(18, 1.6 * vw * zoom)), min = Math.max(16, Math.min(max, 1.15 * vw * zoom));
+    const over = () => s.scrollHeight > s.clientHeight + 2;
     let size = max;
     root.style.fontSize = `${size}px`;
-    while (s.scrollHeight > s.clientHeight + 2 && size > min) {
+    while (over() && size > min) {
       size = Math.max(min, size - 0.06 * max);
       root.style.fontSize = `${size}px`;
     }
+    if (over()) {
+      const k0 = s.clientHeight / s.scrollHeight;
+      scale(s, k0, true);
+      if (over()) scale(s, k0, false);
+      else {
+        // The wider page has room to spare: grow it back as far as it still fits.
+        let lo = k0, hi = 1;
+        for (let n = 0; n < 6; n++) { const k = (lo + hi) / 2; scale(s, k, true); if (over()) hi = k; else lo = k; }
+        scale(s, lo, true);
+      }
+    }
+    root.classList.remove("fitting");
+    quietUntil = performance.now() + 250;
+  }
+  // Answers, feedback and lists change a slide's height, so measure again when they do.
+  if (presenter && "ResizeObserver" in window) {
+    const watch = new ResizeObserver(() => { if (performance.now() > quietUntil) refit(); });
+    slides.forEach(x => [...x.children].forEach(c => watch.observe(c)));
   }
   const setZoom = z => { zoom = Math.min(1.6, Math.max(0.7, Math.round(z * 10) / 10)); store.set("tt-zoom", String(zoom)); $("#zoomLabel").textContent = `${Math.round(zoom * 100)}%`; fit(); };
   $("#zoomOut").addEventListener("click", () => setZoom(zoom - 0.1));

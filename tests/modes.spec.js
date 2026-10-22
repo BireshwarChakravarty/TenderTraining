@@ -12,7 +12,7 @@ test.describe("presenter view on a projector", () => {
     expect(px).toBeGreaterThanOrEqual(24);
   });
 
-  test("every slide fits the width in presenter mode", async ({ page }) => {
+  test("every slide fits the screen in presenter mode, with no scrolling", async ({ page }) => {
     const errors = [];
     page.on("pageerror", e => errors.push(e.message));
     await page.goto("/?mode=present");
@@ -22,6 +22,8 @@ test.describe("presenter view on a projector", () => {
       await expect(page.locator(`#${id}`)).toBeVisible();
       const { sw, cw } = await page.evaluate(() => ({ sw: document.documentElement.scrollWidth, cw: document.documentElement.clientWidth }));
       expect(sw, `slide ${id} scrolls sideways`).toBeLessThanOrEqual(cw);
+      await expect.poll(() => page.evaluate(i => { const s = document.getElementById(i); return s.scrollHeight - s.clientHeight; }, id),
+        { message: `slide ${id} scrolls down` }).toBeLessThanOrEqual(2);
     }
     expect(errors).toEqual([]);
   });
