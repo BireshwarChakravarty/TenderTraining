@@ -9,7 +9,9 @@
      gstins: ["…"],
      slots: [{ name, required, std, want }],        std: 10 MB / 100 pages applies; want: file kind expected
      files: [{ name, mb, pages, kind, must }]       kind: experience | turnover | atc | add | proposal | poa |
-   }                                                price | stale (old CVs) | big (too large); must: required upload */
+   }                                                price | stale (old CVs) | big (too large) |
+                                                    udyam (MSE proof for EMD exemption) | oldmsme (lapsed EM-II memorandum);
+                                                    must: required upload */
 (() => {
   "use strict";
   const { $, el, inr } = TT;
@@ -18,7 +20,7 @@
     const json = root.querySelector('script[type="application/json"]');
     const TABS = ["Catalogue Offering", "Offer Price", "Upload Documents", "EMD / ePBG", "Verify Bid Participation"];
     let s;
-    const fresh = () => ({ tab: 0, done: TABS.map(() => false), offering: null, price: "", gst: false, breakup: "", slots: {}, gstin: "", mii: "", emdEx: "", emdAmt: "", emdMode: "", emdRef: "", checked: false, otp: false, submitted: null });
+    const fresh = () => ({ tab: 0, done: TABS.map(() => false), offering: null, price: "", gst: false, breakup: "", slots: {}, gstin: "", mii: "", emdEx: "", emdDoc: "", emdAmt: "", emdMode: "", emdRef: "", checked: false, otp: false, submitted: null });
     s = fresh();
 
     const fileBy = name => data.files.find(f => f.name === name);
@@ -103,15 +105,18 @@
           paint();
           return el("div", { class: "sim-slot" }, el("span", {}, slot.name, slot.required ? el("span", { class: "req", text: " *" }) : ""), el("div", { class: "stack tight" }, sel, meta));
         });
-        const radio = (name, key, opts) => el("span", { class: "opts" }, opts.map(o => el("label", { class: "check" },
-          el("input", { type: "radio", name, checked: s[key] === o, onchange: () => { s[key] = o; } }), el("span", { text: o }))));
+        const radio = (name, key, opts, then) => el("span", { class: "opts" }, opts.map(o => el("label", { class: "check" },
+          el("input", { type: "radio", name, checked: s[key] === o, onchange: () => { s[key] = o; then?.(); } }), el("span", { text: o }))));
+        const emdDoc = el("select", { "aria-label": "EMD exemption document", onchange: e => { s.emdDoc = e.target.value; } },
+          el("option", { value: "", text: "Upload File…" }), data.files.map(f => el("option", { value: f.name, selected: s.emdDoc === f.name, text: f.name })));
         const gstin = el("select", { "aria-label": "GSTIN for transaction charges", onchange: e => { s.gstin = e.target.value; } },
           el("option", { value: "", text: "Please Select" }), data.gstins.map(g => el("option", { value: g, selected: s.gstin === g, text: g })));
         return [el("h3", { text: "Upload Documents" }), el("div", { class: "sim-slots" }, rows),
           el("hr", { class: "divider" }),
           el("label", { class: "field" }, el("span", { text: "GSTIN for transaction charges * (cannot be changed later)" }), gstin),
           el("div", { class: "sim-q" }, el("span", { text: "Do you comply with Public Procurement (Preference to MII) Order 2017?" }), radio("sim-mii", "mii", ["Yes", "No"])),
-          el("div", { class: "sim-q" }, el("span", { text: "Do you want to request for EMD Exemption? *" }), radio("sim-emd", "emdEx", ["Yes", "No"])),
+          el("div", { class: "sim-q" }, el("span", { text: "Do you want to request for EMD Exemption? *" }), radio("sim-emd", "emdEx", ["Yes", "No"], draw)),
+          s.emdEx === "Yes" ? el("label", { class: "field" }, el("span", { text: "EMD exemption document *" }), emdDoc) : "",
           saveBtn("Save", () => {
             const errs = [];
             const used = {};
@@ -126,17 +131,32 @@
             if (!s.gstin) errs.push("Select the GSTIN for transaction charges.");
             if (!s.mii) errs.push("Answer the Make in India question.");
             if (!s.emdEx) errs.push("Answer the EMD exemption question.");
-            else if (s.emdEx === "Yes") errs.push("Avian WE is not an MSE. A false EMD exemption claim can get the seller disabled on GeM.");
+            else if (s.emdEx === "Yes") {
+              const f = fileBy(s.emdDoc);
+              if (!f) errs.push("Upload the proof for the EMD exemption. A claim without valid proof can get the seller disabled on GeM.");
+              else if (f.kind === "oldmsme") errs.push("The EM-II memorandum is no longer valid: Udyam registration replaced it in 2020. Upload the Udyam Registration Certificate.");
+              else if (f.kind !== "udyam") errs.push(`"${f.name}" doesn't prove MSE status. Upload the Udyam Registration Certificate.`);
+            }
             if (errs.length) return alert(errs);
             complete(2);
           })];
       },
       () => {
+        if (s.emdEx === "Yes") {
+          return [el("h3", { text: "EMD details" }),
+            el("p", { text: `Exemption requested as an MSE. Proof attached: ${s.emdDoc || "none yet"}. No EMD to pay.` }),
+            el("p", { class: "small muted", text: "The ePBG is still due if you win, unless the bid document exempts it." }),
+            saveBtn("Save and continue", () => {
+              if (fileBy(s.emdDoc)?.kind !== "udyam") return alert(["Go back to Upload Documents and attach the Udyam Registration Certificate."]);
+              complete(3);
+            })];
+        }
         const amt = el("input", { type: "number", class: "typed", value: s.emdAmt, "aria-label": "EMD amount", oninput: e => { s.emdAmt = e.target.value; } });
         const mode = el("select", { "aria-label": "EMD mode", onchange: e => { s.emdMode = e.target.value; } }, el("option", { value: "", text: "Select…" }),
           ["Bank Guarantee", "Online transfer", "Fixed Deposit Receipt", "Insurance Surety Bond"].map(m => el("option", { value: m, selected: s.emdMode === m, text: m })));
         const ref = el("input", { type: "text", class: "typed", value: s.emdRef, placeholder: "UTR or BG number", "aria-label": "Reference number", oninput: e => { s.emdRef = e.target.value; } });
         return [el("h3", { text: "EMD details" }), el("p", { class: "small muted", text: `Beneficiary as stated in the bid document. Advisory bank as per bid.` }),
+          el("p", { class: "hand", text: `Avian We is an MSE. It could claim the exemption instead of locking up ${inr(data.emd)}.` }),
           el("label", { class: "field" }, el("span", { text: "EMD amount (₹) *" }), amt),
           el("label", { class: "field" }, el("span", { text: "Mode *" }), mode),
           el("label", { class: "field" }, el("span", { text: "Reference number *" }), ref),
@@ -193,7 +213,7 @@
       Object.assign(s, {
         offering: ok, price: String(key.price || data.floor), gst: false,
         breakup: (data.files.find(f => f.kind === "price") || {}).name || "",
-        slots: { ...(key.slots || {}) }, gstin: data.gstins[0], mii: "Yes", emdEx: "No",
+        slots: { ...(key.slots || {}) }, gstin: data.gstins[0], mii: "Yes", emdEx: key.emdEx || "No", emdDoc: key.emdDoc || "",
         emdAmt: String(data.emd), emdMode: key.emdMode || "Bank Guarantee", emdRef: key.emdRef || "BG/2026/0001", checked: true,
       });
       s.done = TABS.map((_, i) => i < 4);

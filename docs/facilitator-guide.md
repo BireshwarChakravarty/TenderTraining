@@ -50,6 +50,7 @@ Skip the keyword list, the vault, the tracker and "After you press submit". Give
 
 - **Claude simulator:** the wrong lines are the 10-11-2026 deadline (moved by Corrigendum 1), "private-sector projects count" (PQ-4 is government only), and "hard-copy requirement withdrawn" (the corrigendum never mentions it).
 - **Letter:** wrong bid number, wrong entity name, conditional acceptance, 90-day validity, old bid end date, a fee in the technical bid, signed by the wrong person.
+- **GeM simulator:** Avian We is an MSE, so the right EMD answer is the exemption, proved with the Udyam Registration Certificate. The old EM-II MSME memorandum is the trap. Paying the EMD also works, but locks up ₹6 lakh for nothing.
 - **Practice tender traps:** old bid end date, old turnover period, Annexure V cited for the Integrity Pact, GST-inclusive price, twelve-person team, the hard-copy ATC clause, P4 at 60% paid, and the budget figure in case study CS2.
 - **Exercises:** the full answers sit behind each "show answer" on the exercises slide.
 

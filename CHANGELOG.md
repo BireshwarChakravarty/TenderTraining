@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.2.0 · 2026-10-22
+
+- The practice bidder is Avian We, based in New Delhi, labelled "Bidder". Its practice figures stay made up.
+- Avian We is an MSE: the simulator now takes the EMD exemption with the Udyam certificate, and catches the lapsed EM-II memorandum. The exercises and the practice tender point out that this bid gives MSEs no turnover or experience relaxation.
+
 ## 3.1.0 · 2026-10-22
 
 - Presenter view never scrolls. A slide too long for the screen is laid out wider and scaled to fit, and fits itself again when answers are revealed.

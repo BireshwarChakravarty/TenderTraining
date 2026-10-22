@@ -83,14 +83,15 @@ test.describe("games and tools", () => {
     await sim.locator("input[name=sim-emd]").first().check();
     await sim.getByRole("button", { name: "Save", exact: true }).click();
     await expect(sim.locator(".sim-alert")).toContainText("over the 10 MB limit");
-    await expect(sim.locator(".sim-alert")).toContainText("not an MSE");
+    await expect(sim.locator(".sim-alert")).toContainText("Upload the proof for the EMD exemption");
     await sim.getByLabel("Additional Doc 4 (Requested in ATC)", { exact: true }).selectOption("Audited_Financials_3FY_compressed.pdf");
-    await sim.locator("input[name=sim-emd]").nth(1).check();
+    await sim.getByLabel("EMD exemption document").selectOption("MSME_EM-II_Memorandum_2016.pdf");
+    await sim.getByRole("button", { name: "Save", exact: true }).click();
+    await expect(sim.locator(".sim-alert")).toContainText("EM-II memorandum is no longer valid");
+    await sim.getByLabel("EMD exemption document").selectOption("Udyam_Registration_Certificate.pdf");
     await sim.getByRole("button", { name: "Save", exact: true }).click();
 
-    await sim.getByLabel("EMD amount").fill("600000");
-    await sim.getByLabel("EMD mode").selectOption("Bank Guarantee");
-    await sim.getByLabel("Reference number").fill("BG/2026/7781");
+    await expect(sim).toContainText("No EMD to pay");
     await sim.getByRole("button", { name: "Save and continue" }).click();
 
     await sim.getByLabel(/I opened every uploaded file/).check();
