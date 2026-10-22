@@ -156,7 +156,7 @@
           ["Bank Guarantee", "Online transfer", "Fixed Deposit Receipt", "Insurance Surety Bond"].map(m => el("option", { value: m, selected: s.emdMode === m, text: m })));
         const ref = el("input", { type: "text", class: "typed", value: s.emdRef, placeholder: "UTR or BG number", "aria-label": "Reference number", oninput: e => { s.emdRef = e.target.value; } });
         return [el("h3", { text: "EMD details" }), el("p", { class: "small muted", text: `Beneficiary as stated in the bid document. Advisory bank as per bid.` }),
-          el("p", { class: "hand", text: `Avian We is an MSE. It could claim the exemption instead of locking up ${inr(data.emd)}.` }),
+          el("p", { class: "hand", text: `Avian We. is an MSE. It could claim the exemption instead of locking up ${inr(data.emd)}.` }),
           el("label", { class: "field" }, el("span", { text: "EMD amount (₹) *" }), amt),
           el("label", { class: "field" }, el("span", { text: "Mode *" }), mode),
           el("label", { class: "field" }, el("span", { text: "Reference number *" }), ref),
