@@ -102,7 +102,6 @@
      and the slide shorter), or, if that doesn't fit, kept at its width and shrunk as a whole.
      A− and A+ scale both ends for the room. */
   let zoom = Number(store.get("tt-zoom")) || 1;
-  let quietUntil = 0;
   const scale = (s, k, wide) => {
     s.classList.toggle("scaled", k < 1);
     s.classList.toggle("wide", k < 1 && wide);
@@ -134,12 +133,12 @@
       }
     }
     root.classList.remove("fitting");
-    quietUntil = performance.now() + 250;
   }
-  // Answers, feedback and lists change a slide's height, so measure again when they do.
+  // Late images, answers and feedback can make a slide taller after it was fitted, so fit again
+  // whenever the slide on screen overflows. (Reveal and Reset call fit() themselves.)
   if (presenter && "ResizeObserver" in window) {
-    const watch = new ResizeObserver(() => { if (performance.now() > quietUntil) refit(); });
-    slides.forEach(x => [...x.children].forEach(c => watch.observe(c)));
+    const watch = new ResizeObserver(() => { const s = slides[current]; if (s && s.scrollHeight > s.clientHeight + 2) refit(); });
+    slides.forEach(x => [x, ...x.children].forEach(c => watch.observe(c)));
   }
   const setZoom = z => { zoom = Math.min(1.6, Math.max(0.7, Math.round(z * 10) / 10)); store.set("tt-zoom", String(zoom)); $("#zoomLabel").textContent = `${Math.round(zoom * 100)}%`; fit(); };
   $("#zoomOut").addEventListener("click", () => setZoom(zoom - 0.1));
