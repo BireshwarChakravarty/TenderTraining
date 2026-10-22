@@ -230,8 +230,11 @@
 .sim-slots { display: grid; gap: 0.1rem; }
 .sim-slot { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 0.9rem; align-items: start; padding: 0.5rem 0; border-bottom: 1px solid var(--line); font-size: 0.94rem; }
 .sim-slot .req { color: var(--coral); }
-.present .sim-slot { padding: 0.3rem 0; align-items: center; }
-.present .sim-slot .stack { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); align-items: center; gap: 0.8rem; }
+.present .sim-slots { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2rem; }
+.present .sim-slot { padding: 0.3rem 0; align-items: center; grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.7fr); gap: 0.7rem; }
+.present .sim-slot .stack { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 0.6rem; }
+.present .sim-slot .stack > .muted { white-space: nowrap; }
+.present .sim-slot .stack > .sim-err { grid-column: 1 / -1; } /* a warning gets its own line under the file */
 .sim-err { color: var(--coral); font-weight: 600; }
 .sim-q { display: flex; justify-content: space-between; gap: 0.8rem; flex-wrap: wrap; align-items: center; font-size: 0.96rem; }
 .sim-q .check { align-items: center; }

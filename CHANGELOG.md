@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.3.1 · 2026-10-22
+
+Audit fixes.
+
+- The bid letter's reference no longer carries the old company's initials (now AW/BID/2026/118).
+- On the big screen the GeM simulator's upload slots sit in two columns, so the revealed answer key reads larger; file-size warnings wrap under the file.
+- The thank-you slide no longer clips on small screens.
+- README screenshots refreshed; an unused, outdated screenshot removed.
+
 ## 3.3.0 · 2026-10-22
 
 - Ready for a MacBook Air on Safari or Chrome: sound starts reliably in Safari, full screen works in older Safari, blurred panels render in Safari, and the presenter view keeps the screen awake.

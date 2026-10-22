@@ -124,7 +124,12 @@
     if (over()) {
       const k0 = s.clientHeight / s.scrollHeight;
       scale(s, k0, true);
-      if (over()) scale(s, k0, false);
+      if (over()) {
+        // Shrink the slide as a whole, a little more each pass if it still overflows.
+        let k = k0;
+        scale(s, k, false);
+        for (let n = 0; n < 6 && over(); n++) { k *= (s.clientHeight / s.scrollHeight) * 0.99; scale(s, k, false); }
+      }
       else {
         // The wider page has room to spare: grow it back as far as it still fits.
         let lo = k0, hi = 1;
