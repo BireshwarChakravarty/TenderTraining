@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Tender Training</h1>
-  <p><strong>Winning on GeM: a hands-on, animated training deck for the Avian We. bid team.</strong></p>
+  <p><strong>The Tender Playbook: a hands-on, animated training deck for the Avian We. bid team.</strong></p>
   <p>
     <a href="https://bireshwarchakravarty.github.io/TenderTraining/present/"><strong>Presenter link</strong></a> ·
     <a href="https://bireshwarchakravarty.github.io/TenderTraining/"><strong>Attendee link</strong></a> ·

@@ -1,6 +1,6 @@
 # Facilitator guide
 
-A run sheet for **Winning on GeM**. The full session takes about three and a half hours with a ten-minute break. A short version for two and a half hours is at the end.
+A run sheet for **The Tender Playbook**. The full session takes about three and a half hours with a ten-minute break. A short version for two and a half hours is at the end.
 
 ## Before the session
 

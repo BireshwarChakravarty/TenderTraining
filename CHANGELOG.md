@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.0 · 2026-10-22
+
+- The session is renamed **The Tender Playbook**: cover, title bar, browser tab, thank-you slide, README and guides.
+
 ## 3.3.1 · 2026-10-22
 
 Audit fixes.

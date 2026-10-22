@@ -86,7 +86,7 @@
     $$("#overviewGrid button").forEach((b, j) => b.setAttribute("aria-current", String(j === i)));
     const notes = $("aside.notes", s);
     $("#notesBody").innerHTML = notes ? notes.innerHTML : "<p>No notes for this slide.</p>";
-    document.title = i === 0 ? "Winning on GeM" : `${s.dataset.title} · Winning on GeM`;
+    document.title = i === 0 ? "The Tender Playbook" : `${s.dataset.title} · The Tender Playbook`;
     if (!fromHash && s.id) { try { history.replaceState(null, "", `${location.pathname}${location.search}#${s.id}`); } catch { /* sandboxed frame */ } }
     s.dispatchEvent(new CustomEvent("slide:shown", { bubbles: true }));
     fit();
