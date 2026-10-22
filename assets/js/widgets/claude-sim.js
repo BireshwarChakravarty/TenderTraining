@@ -24,7 +24,7 @@
           el("div", { class: "attach" }, p.files.map(f => el("span", { text: f }))), copy),
         el("div", { class: "msg ai" }, el("span", { class: "who", text: "Claude" }), thinking, answer));
 
-      let flagged = false;
+      let flagged = false, touched = false; // touched: a line was clicked before the answer finished
       const catchIt = (line, c) => {
         flagged = true;
         line.classList.add("caught");
@@ -36,6 +36,7 @@
         const line = el("button", { type: "button", class: "claim" }, el("span", { text: c.text }));
         const cite = el("a", { class: "cite typed", href: c.href, target: "_blank", rel: "noopener", text: c.cite });
         line.addEventListener("click", () => {
+          touched = true;
           if (flagged) return;
           if (c.wrong) {
             catchIt(line, c);
@@ -65,7 +66,7 @@
         p.claims.forEach((c, i) => setTimeout(() => {
           if (token !== run) return;
           answer.append(claimNode(c));
-          if (i === p.claims.length - 1) {
+          if (i === p.claims.length - 1 && !touched) {
             fb.className = "cs-fb fb warn";
             fb.textContent = "One line in this answer is wrong. Click the line you would not trust, then open its source to prove it.";
           }
