@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.3.0 · 2026-10-22
+
+- Ready for a MacBook Air on Safari or Chrome: sound starts reliably in Safari, full screen works in older Safari, blurred panels render in Safari, and the presenter view keeps the screen awake.
+- A clicker's blank-screen button (`.`) blanks the TV.
+- Trackpad swipes no longer bounce the page.
+- CI also runs every check in Safari's engine at a MacBook Air screen size.
+- Facilitator guide: a set-up checklist for presenting from a Mac.
+
 ## 3.2.0 · 2026-10-22
 
 - The practice bidder is Avian We, based in New Delhi, labelled "Bidder". Its practice figures stay made up.

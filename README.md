@@ -59,7 +59,7 @@ Twelve chapters, each opened by a full-colour divider, from finding a bid to the
 | `→` `Space` / `←` | Next / previous slide |
 | `R` | Reveal the answers on this slide (presenter) |
 | `L` | Laser pointer (presenter) |
-| `B` | Blank the screen (presenter) |
+| `B` or `.` | Blank the screen (presenter) |
 | `+` / `−` | Bigger or smaller text (presenter) |
 | `N` | Trainer's notes (presenter) |
 | `O` | Every slide at a glance |
@@ -99,7 +99,7 @@ scripts/serve.mjs       zero-dependency static server
 
 ```sh
 npm run lint       # ESLint
-npm test           # Playwright: every slide on desktop, phone and a 1080p projector, plus each activity
+npm test           # Playwright: every slide on desktop, phone and a 1080p projector, plus each activity (CI adds Safari's engine)
 ```
 
 CI runs both on every push and pull request. See [CONTRIBUTING.md](CONTRIBUTING.md).

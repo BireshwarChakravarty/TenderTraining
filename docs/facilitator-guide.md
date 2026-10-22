@@ -9,6 +9,17 @@ A run sheet for **Winning on GeM**. The full session takes about three and a hal
 - Attendees scan the QR code on the cover, or open `https://bireshwarchakravarty.github.io/TenderTraining/`. They play every activity on their own phone or laptop; answers stay hidden until you reveal them.
 - Sound effects are on in the presenter view. Press `S` to turn them off, or plug in speakers.
 - Pick a real upcoming GeM bid end date for the timeline slide.
+
+### On the MacBook Air
+
+Safari and Chrome both work.
+
+- Connect the TV with HDMI (a USB-C to HDMI adapter if needed). In **System Settings → Displays**, mirror the laptop to the TV. The deck sizes itself to whatever resolution is chosen; 1080p is a safe default.
+- Turn on **Do Not Disturb** from Control Centre so notifications don't appear on the TV.
+- Check **System Settings → Sound → Output** is set to the TV if you want the sound effects through its speakers.
+- Press `F` for full screen in either browser (`Ctrl` + `⌘` + `F` also works in Safari). The screen stays awake while the presenter link is open; keep the charger plugged in anyway.
+- Avoid two-finger sideways swipes on the trackpad: they can take the browser back a page. If that happens, press `⌘` + `]` to return.
+- A presentation clicker works: its next and back buttons move slides, and its blank-screen button (`.` or `B`) blanks the TV.
 - Have two team names ready for the quiz, and a small prize.
 
 ## Presenter controls
@@ -18,7 +29,7 @@ A run sheet for **Winning on GeM**. The full session takes about three and a hal
 | `R` or **Reveal answers** | Shows the answers on the current slide: puts every document in its lane, pairs every criterion, circles every mistake, fills the GeM simulator with the answer key, opens the exercise answers. On question rounds it reveals the current question. |
 | **Reset** | Puts the slide back to its starting state for the next group. |
 | `L` | Laser pointer that follows the mouse. |
-| `B` | Blanks the screen. Press again, or click, to come back. |
+| `B` or `.` | Blanks the screen. Press again, or click, to come back. A clicker's blank button does the same. |
 | `+` / `−` | Text size for the room. Each slide still fits itself to the screen. |
 | `N` | Trainer's notes for the slide. They show on the projector, so open them only when needed. |
 

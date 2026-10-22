@@ -204,9 +204,22 @@
   paintSound();
 
   $("#fullBtn").addEventListener("click", async () => {
-    try { if (document.fullscreenElement) await document.exitFullscreen(); else await document.documentElement.requestFullscreen(); }
-    catch { /* full screen not available */ }
+    const d = document, root = d.documentElement;
+    try {
+      if (d.fullscreenElement || d.webkitFullscreenElement) await (d.exitFullscreen || d.webkitExitFullscreen).call(d);
+      else await (root.requestFullscreen || root.webkitRequestFullscreen).call(root);
+    } catch { /* full screen not available */ }
   });
+
+  /* Presenter view: keep the laptop's screen awake for the whole session (Chrome, and Safari 16.4+). */
+  if (presenter && navigator.wakeLock) {
+    let lock = null;
+    const hold = async () => { if (lock || document.visibilityState !== "visible") return; try { lock = await navigator.wakeLock.request("screen"); lock.addEventListener("release", () => { lock = null; }); } catch { /* not allowed yet */ } };
+    hold();
+    addEventListener("pointerdown", hold);
+    addEventListener("keydown", hold);
+    document.addEventListener("visibilitychange", hold);
+  }
 
   /* Keyboard */
   document.addEventListener("keydown", e => {
@@ -225,7 +238,7 @@
     else if (lk === "n" && presenter) showNotes();
     else if (lk === "r" && presenter) revealHere();
     else if (lk === "l" && presenter) TT.fx?.toggleLaser();
-    else if (lk === "b" && presenter) TT.fx?.toggleBlackout();
+    else if ((lk === "b" || k === ".") && presenter) TT.fx?.toggleBlackout(); // "." is the blank-screen button on most clickers
     else if ((k === "+" || k === "=") && presenter) setZoom(zoom + 0.1);
     else if ((k === "-" || k === "_") && presenter) setZoom(zoom - 0.1);
     else if (k === "Escape") { showNotes(false); openDrawer(false); }

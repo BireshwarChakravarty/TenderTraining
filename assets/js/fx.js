@@ -72,7 +72,14 @@
   /* ---------- Sound (Web Audio, generated, no files) ---------- */
   let audio = null;
   let soundOn = (store.get("tt-sound") ?? (TT.mode === "present" ? "on" : "off")) === "on";
-  const ac = () => { if (!audio) { try { audio = new (window.AudioContext || window.webkitAudioContext)(); } catch { audio = null; } } return audio; };
+  const ac = () => {
+    if (!audio) { try { audio = new (window.AudioContext || window.webkitAudioContext)(); } catch { audio = null; } }
+    if (audio?.state === "suspended") audio.resume().catch(() => {}); // Safari and Chrome start it paused until a click or key press
+    return audio;
+  };
+  const unlock = () => { if (soundOn) ac(); };
+  addEventListener("pointerdown", unlock, { once: true });
+  addEventListener("keydown", unlock, { once: true });
   const tone = (freq, dur = 0.12, type = "sine", when = 0, gain = 0.12) => {
     const a = ac(); if (!a || !soundOn) return;
     const t = a.currentTime + when;

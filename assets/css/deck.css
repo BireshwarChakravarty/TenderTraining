@@ -64,7 +64,7 @@
 
 * { box-sizing: border-box; }
 html { font-size: clamp(15px, 0.45vw + 9px, 19px); }
-html, body { height: 100%; }
+html, body { height: 100%; overscroll-behavior: none; } /* no rubber-band or swipe-back from a trackpad */
 body { margin: 0; background: var(--glow), var(--bg); background-attachment: fixed; color: var(--ink); font-family: var(--f-body); font-size: 1rem; line-height: 1.55; -webkit-font-smoothing: antialiased; overflow: hidden; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
 a { color: var(--green); text-underline-offset: 3px; }
@@ -156,7 +156,7 @@ mark, .hl { background: linear-gradient(transparent 55%, color-mix(in srgb, var(
 .chapters button[aria-current="true"] { background: var(--c-soft); font-weight: 700; }
 .drawer-foot { margin-top: auto; font-size: 0.82rem; color: var(--ink-2); display: grid; gap: 0.5rem; }
 kbd { font-family: var(--f-mono); font-size: 0.75rem; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; padding: 0 0.3rem; background: var(--bg-2); color: var(--ink); }
-.scrim { position: fixed; inset: 0; z-index: 25; background: rgb(0 0 0 / 30%); backdrop-filter: blur(2px); }
+.scrim { position: fixed; inset: 0; z-index: 25; background: rgb(0 0 0 / 30%); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); }
 
 /* Notes */
 .notes-panel { position: fixed; z-index: 21; right: max(14px, env(safe-area-inset-right, 0px)); bottom: calc(72px + env(safe-area-inset-bottom, 0px)); width: min(30rem, calc(100vw - 28px)); max-height: 55vh; overflow-y: auto; padding: 1.1rem 1.25rem 1.2rem; background: var(--ink); color: var(--bg); border-radius: var(--radius); box-shadow: var(--shadow-2); font-size: 16px; animation: rise 300ms var(--ease); }
@@ -164,7 +164,7 @@ kbd { font-family: var(--f-mono); font-size: 0.75rem; border: 1px solid var(--li
 .notes-panel ul { padding-left: 1.1em; }
 
 /* Overview */
-.overview { position: fixed; inset: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 94%, transparent); backdrop-filter: blur(12px); overflow-y: auto; padding-block: calc(1.5rem + env(safe-area-inset-top, 0px)) 3rem; padding-left: max(16px, env(safe-area-inset-left, 0px), 4vw); padding-right: max(16px, env(safe-area-inset-right, 0px), 4vw); animation: fade 220ms ease; }
+.overview { position: fixed; inset: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 94%, transparent); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); overflow-y: auto; padding-block: calc(1.5rem + env(safe-area-inset-top, 0px)) 3rem; padding-left: max(16px, env(safe-area-inset-left, 0px), 4vw); padding-right: max(16px, env(safe-area-inset-right, 0px), 4vw); animation: fade 220ms ease; }
 @keyframes fade { from { opacity: 0; } }
 .overview-inner { max-width: 1400px; margin: 0 auto; display: grid; gap: 1.4rem; }
 .overview-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
